@@ -16,6 +16,7 @@
 #include <iostream>
 #include "../config/settings.h"
 #include "drawing.h"
+#include "glsl/cache.h"
 
 #define DEBUG 0
 
@@ -100,6 +101,18 @@ void glLinkProgram(GLuint program) {
     LOG()
 
     LOG_D("glLinkProgram(%d)", program)
+
+    // Captura a key do binary cache ANTES de qualquer clear de shaderInfo.
+    // shaderInfo.converted contém o ESSL que foi enviado ao driver por glShaderSource.
+    // Se frag_data_changed==1, o source patched será recompilado logo abaixo,
+    // então a key mais representativa é o source patched; caso contrário é o converted.
+    std::string pb_key;
+    if (!shaderInfo.converted.empty()) {
+        pb_key = shaderInfo.frag_data_changed
+                     ? shaderInfo.frag_data_changed_converted
+                     : shaderInfo.converted;
+    }
+
     if (!shaderInfo.converted.empty() && shaderInfo.frag_data_changed) {
         const GLchar* patched = shaderInfo.frag_data_changed_converted.c_str();
         GLES.glShaderSource(shaderInfo.id, 1, &patched, nullptr);
@@ -150,7 +163,23 @@ void glLinkProgram(GLuint program) {
         }
     }
 
-    GLES.glLinkProgram(program);
+    // --- Program Binary Cache ---
+    // Key capturada antes do link. shaderInfo já foi limpo acima,
+    // então usamos a versão convertida que foi enviada ao driver via glShaderSource.
+    // Se frag_data_changed estava ativo, o shader foi recompilado com o source patched;
+    // nesse caso shaderInfo.converted foi zerado, então key_src fica vazio
+    // e o cache é simplesmente ignorado com segurança.
+    if (!pb_key.empty() && ProgramBinaryCache::get_instance().tryLoad(program, pb_key)) {
+        // Hit: programa já compilado carregado do cache, sem link.
+    } else {
+        GLES.glLinkProgram(program);
+
+        GLint linkOk = 0;
+        GLES.glGetProgramiv(program, GL_LINK_STATUS, &linkOk);
+        if (linkOk && !pb_key.empty()) {
+            ProgramBinaryCache::get_instance().store(program, pb_key);
+        }
+    }
 
     CHECK_GL_ERROR
 }

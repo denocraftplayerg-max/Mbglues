@@ -68,4 +68,50 @@ private:
     void flushIfDue();
 };
 
+
+// ---------------------------------------------------------------------------
+// ProgramBinaryCache — caches compiled driver binaries via GL_OES_get_program_binary.
+// On a cache hit the program is loaded with glProgramBinary, skipping both the
+// GLSL→ESSL translation and the driver's shader compiler entirely.
+// ---------------------------------------------------------------------------
+class ProgramBinaryCache {
+public:
+    ProgramBinaryCache();
+    ~ProgramBinaryCache();
+
+    ProgramBinaryCache(const ProgramBinaryCache&) = delete;
+    ProgramBinaryCache& operator=(const ProgramBinaryCache&) = delete;
+
+    // Returns true and uploads the binary if a hit is found for this key.
+    bool tryLoad(GLuint program, const std::string& key);
+    // Reads the compiled binary from the driver and stores it for this key.
+    void store(GLuint program, const std::string& key);
+
+    static ProgramBinaryCache& get_instance();
+
+private:
+    struct Entry {
+        std::string key;
+        GLenum format;
+        std::vector<uint8_t> data;
+    };
+
+    // Disk layout: <count as size_t> then for each entry:
+    //   <key_len size_t> <key bytes> <format GLenum> <data_len size_t> <data bytes>
+    bool load();
+    void save();
+
+    std::string cachePath() const;
+
+    // LRU list + map, same pattern as the GLSL cache.
+    std::list<Entry> list_;
+    UnorderedMap<std::string, std::list<Entry>::iterator> map_;
+    size_t totalBytes_ = 0;
+
+    int  pendingEntries_ = 0;
+    int64_t lastSaveNs_  = 0;
+
+    static int64_t now_ns();
+};
+
 #endif

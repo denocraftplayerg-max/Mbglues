@@ -379,3 +379,199 @@ Cache& Cache::get_instance() {
     static Cache s_cache;
     return s_cache;
 }
+
+
+// ===========================================================================
+// ProgramBinaryCache implementation
+// ===========================================================================
+#include <vector>
+#include "../../gles/loader.h"   // GLES.glGetProgramiv / glGetProgramBinary / glProgramBinary
+
+namespace {
+    // Re-use the same flush policy as the GLSL cache.
+    constexpr int   kPBPendingBeforeSave = 8;
+    constexpr int64_t kPBSaveIntervalNs  = 5LL * 1000 * 1000 * 1000;
+    // Hard cap: keep program binaries under 128 MB total.
+    constexpr size_t kPBMaxBytes = 128ULL * 1024 * 1024;
+} // namespace
+
+int64_t ProgramBinaryCache::now_ns() {
+    timespec ts{};
+    if (clock_gettime(CLOCK_MONOTONIC, &ts) != 0) return 0;
+    return static_cast<int64_t>(ts.tv_sec) * 1000000000LL +
+           static_cast<int64_t>(ts.tv_nsec);
+}
+
+std::string ProgramBinaryCache::cachePath() const {
+    if (!mg_directory_path) return "";
+    return std::string(mg_directory_path) + "/program_binary_cache.bin";
+}
+
+ProgramBinaryCache::ProgramBinaryCache() {
+    load();
+    lastSaveNs_ = now_ns();
+}
+
+ProgramBinaryCache::~ProgramBinaryCache() {
+    if (pendingEntries_ > 0) save();
+}
+
+bool ProgramBinaryCache::tryLoad(GLuint program, const std::string& key) {
+    auto it = map_.find(key);
+    if (it == map_.end()) return false;
+
+    // Move to back (LRU).
+    list_.splice(list_.end(), list_, it->second);
+    const Entry& e = *it->second;
+
+    GLES.glProgramBinary(program, e.format,
+                         e.data.data(), static_cast<GLsizei>(e.data.size()));
+
+    GLint ok = 0;
+    GLES.glGetProgramiv(program, GL_LINK_STATUS, &ok);
+    if (!ok) {
+        // Binary is stale (driver update, etc.) — evict it.
+        totalBytes_ -= e.data.size();
+        list_.erase(it->second);
+        map_.erase(it);
+        ++pendingEntries_; // trigger a save to drop the bad entry from disk
+        return false;
+    }
+    return true;
+}
+
+void ProgramBinaryCache::store(GLuint program, const std::string& key) {
+    GLint binaryLength = 0;
+    GLES.glGetProgramiv(program, GL_PROGRAM_BINARY_LENGTH, &binaryLength);
+    if (binaryLength <= 0) return;
+
+    GLenum format = 0;
+    std::vector<uint8_t> data(static_cast<size_t>(binaryLength));
+    GLsizei written = 0;
+    GLES.glGetProgramBinary(program, binaryLength, &written, &format, data.data());
+    if (written <= 0) return;
+    data.resize(static_cast<size_t>(written));
+
+    // Evict existing entry for the same key if present.
+    if (auto it = map_.find(key); it != map_.end()) {
+        totalBytes_ -= it->second->data.size();
+        list_.erase(it->second);
+        map_.erase(it);
+    }
+
+    list_.push_back(Entry{key, format, std::move(data)});
+    map_[key] = std::prev(list_.end());
+    totalBytes_ += list_.back().data.size();
+
+    // Evict oldest entries while over the cap.
+    while (totalBytes_ > kPBMaxBytes && !list_.empty()) {
+        totalBytes_ -= list_.front().data.size();
+        map_.erase(list_.front().key);
+        list_.pop_front();
+    }
+
+    ++pendingEntries_;
+    // Flush policy: same as GLSL cache.
+    if (pendingEntries_ >= kPBPendingBeforeSave ||
+        (now_ns() - lastSaveNs_) >= kPBSaveIntervalNs) {
+        save();
+    }
+}
+
+bool ProgramBinaryCache::load() {
+    const std::string path = cachePath();
+    if (path.empty()) return false;
+
+    std::ifstream file(path, std::ios::binary);
+    if (!file) return false;
+
+    try {
+        size_t count = 0;
+        file.read(reinterpret_cast<char*>(&count), sizeof(count));
+
+        while (count--) {
+            size_t keyLen = 0;
+            file.read(reinterpret_cast<char*>(&keyLen), sizeof(keyLen));
+            if (!file || keyLen > 65536) break; // sanity
+
+            std::string key(keyLen, '\0');
+            file.read(key.data(), static_cast<std::streamsize>(keyLen));
+
+            GLenum format = 0;
+            file.read(reinterpret_cast<char*>(&format), sizeof(format));
+
+            size_t dataLen = 0;
+            file.read(reinterpret_cast<char*>(&dataLen), sizeof(dataLen));
+            if (!file || dataLen > 64ULL * 1024 * 1024) break; // sanity: 64 MB per entry
+
+            std::vector<uint8_t> data(dataLen);
+            file.read(reinterpret_cast<char*>(data.data()),
+                      static_cast<std::streamsize>(dataLen));
+            if (!file) break;
+
+            if (map_.count(key)) continue;
+
+            totalBytes_ += dataLen;
+            list_.push_back(Entry{std::move(key), format, std::move(data)});
+            map_[list_.back().key] = std::prev(list_.end());
+        }
+
+        // Apply size cap to whatever was on disk.
+        while (totalBytes_ > kPBMaxBytes && !list_.empty()) {
+            totalBytes_ -= list_.front().data.size();
+            map_.erase(list_.front().key);
+            list_.pop_front();
+        }
+        return true;
+    } catch (...) {
+        LOG_W_FORCE("Error loading program binary cache — clearing.")
+        list_.clear();
+        map_.clear();
+        totalBytes_ = 0;
+        save();
+        return false;
+    }
+}
+
+void ProgramBinaryCache::save() {
+    pendingEntries_ = 0;
+    lastSaveNs_     = now_ns();
+
+    const std::string path = cachePath();
+    if (path.empty()) return;
+
+    const std::string tmp = path + ".new";
+    {
+        std::ofstream file(tmp, std::ios::binary);
+        if (!file) return;
+
+        const size_t count = list_.size();
+        file.write(reinterpret_cast<const char*>(&count), sizeof(count));
+
+        for (const auto& e : list_) {
+            const size_t keyLen = e.key.size();
+            file.write(reinterpret_cast<const char*>(&keyLen), sizeof(keyLen));
+            file.write(e.key.data(), static_cast<std::streamsize>(keyLen));
+            file.write(reinterpret_cast<const char*>(&e.format), sizeof(e.format));
+            const size_t dataLen = e.data.size();
+            file.write(reinterpret_cast<const char*>(&dataLen), sizeof(dataLen));
+            file.write(reinterpret_cast<const char*>(e.data.data()),
+                       static_cast<std::streamsize>(dataLen));
+        }
+
+        file.flush();
+        if (!file) {
+            file.close();
+            std::remove(tmp.c_str());
+            return;
+        }
+    }
+
+    if (std::rename(tmp.c_str(), path.c_str()) != 0)
+        std::remove(tmp.c_str());
+}
+
+ProgramBinaryCache& ProgramBinaryCache::get_instance() {
+    static ProgramBinaryCache s_instance;
+    return s_instance;
+}
