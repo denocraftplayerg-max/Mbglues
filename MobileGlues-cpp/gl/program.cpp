@@ -1,3 +1,4 @@
+#include "program_binary.h"
 // MobileGlues - gl/program.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
@@ -15,7 +16,7 @@
 #include <cstring>
 #include <iostream>
 #include "../config/settings.h"
-#include "drawing.h"
+#include "program_binary.h"\n#include "drawing.h"
 
 #define DEBUG 0
 
@@ -97,6 +98,10 @@ void GenerateDefaultFSSource() {
 
 static UnorderedMap<unsigned, GLuint> DefaultFSMap; // essl version <-> shader id
 void glLinkProgram(GLuint program) {
+\
+    std::string name = "program_" + std::to_string(program);\n    if (program_binary_loaded[name]) {\n        LOG_D("Program %d already loaded from binary, skipping link", program);\n        return;\n    }
+\n    // Verifica se ja carregou do cache\n    std::string name = "program_" + std::to_string(program);\n    if (program_binary_loaded[name]) {\n        LOG_D("Program %d already loaded from binary, skipping link", program);\n        return;\n    }\n\
+    std::string name = "program_" + std::to_string(program);\n    if (program_binary_loaded[name]) {\n        LOG_D("Program %d already loaded from binary, skipping link", program);\n        return;\n    }
     LOG()
 
     LOG_D("glLinkProgram(%d)", program)
@@ -118,6 +123,8 @@ void glLinkProgram(GLuint program) {
     shaderInfo.id = 0;
     shaderInfo.converted = "";
     shaderInfo.frag_data_changed_converted.clear();
+\
+    if (programBinarySupported()) {\n        GLint linkStatus = 0;\n        GLES.glGetProgramiv(program, GL_LINK_STATUS, &linkStatus);\n        if (linkStatus == GL_TRUE) {\n            if (saveProgramBinary(program, name)) {\n                LOG_D("Saved program %d binary to cache", program);\n            } else {\n                LOG_W("Failed to save program %d binary to cache", program);\n            }\n        }\n    }
     shaderInfo.frag_data_changed = 0;
 
     // Generate defaut fragment shader if needed
@@ -215,7 +222,7 @@ GLuint glCreateProgram() {
         }
     }
     program_map_should_generate_fs[program] = ShouldGenerateFSState::Unknown;
-
+\n    // Cache de binarios\n    std::string name = "program_" + std::to_string(program);\n    if (programBinarySupported() && loadProgramBinary(program, name)) {\n        program_binary_loaded[name] = true;\n        program_name_map[program] = name;\n        LOG_D("Program %d loaded from binary cache", program);\n    } else {\n        program_binary_loaded[name] = false;\n        program_name_map[program] = name;\n    }\n
     CHECK_GL_ERROR
     return program;
 }

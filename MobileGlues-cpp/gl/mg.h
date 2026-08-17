@@ -68,6 +68,8 @@ extern "C"
     extern hardware_t hardware;
 
     struct gl_state_s {
+\
+UnorderedMap<GLuint, std::string> program_name_map;\nUnorderedMap<std::string, bool> program_binary_loaded;
         GLsizei proxy_width;
         GLsizei proxy_height;
         GLenum proxy_intformat;
@@ -98,6 +100,8 @@ extern "C"
         GLint pack_skip_images;
     };
     typedef struct gl_state_s* gl_state_t;
+\
+UnorderedMap<GLuint, std::string> program_name_map;\nUnorderedMap<std::string, bool> program_binary_loaded;
     // Where gl_state points when no tracked context is current. Every member is a
     // scalar, so this is constant-initialised and is already usable while the
     // library's own constructors run.
