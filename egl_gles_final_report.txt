@@ -1,0 +1,1275 @@
+==========================================================================
+      RELATÓRIO MESTRE DE ENGENHARIA REVERSA: EGL & OPENGL ES             
+==========================================================================
+Gerado em: Sun Aug 16 17:23:51 CAT 2026
+
+==========================================================================
+ 1. INTERFACES EGL DETETADAS (Contexto & Superfícies)                    
+==========================================================================
+[+] Ficheiro: libEGL.so
+      Class:                             ELF64
+      Machine:                           AArch64
+  -> Funções EGL Expostas:
+     [egl] eglBindAPI
+     [egl] eglBindTexImage
+     [egl] eglChooseConfig
+     [egl] eglClientWaitSync
+     [egl] eglClientWaitSyncKHR
+     [egl] eglCopyBuffers
+     [egl] eglCreateContext
+     [egl] eglCreateImage
+     [egl] eglCreateImageKHR
+     [egl] eglCreatePbufferFromClientBuffer
+     [egl] eglCreatePbufferSurface
+     [egl] eglCreatePixmapSurface
+     [egl] eglCreatePlatformPixmapSurface
+     [egl] eglCreatePlatformWindowSurface
+     [egl] eglCreateStreamFromFileDescriptorKHR
+     [egl] eglCreateStreamKHR
+     [egl] eglCreateStreamProducerSurfaceKHR
+     [egl] eglCreateSync
+     [egl] eglCreateSyncKHR
+     [egl] eglCreateWindowSurface
+     [egl] eglDestroyContext
+     [egl] eglDestroyImage
+     [egl] eglDestroyImageKHR
+     [egl] eglDestroyStreamKHR
+     [egl] eglDestroySurface
+     [egl] eglDestroySync
+     [egl] eglDestroySyncKHR
+     [egl] eglDupNativeFenceFDANDROID
+     [egl] eglGetCompositorTimingANDROID
+     [egl] eglGetCompositorTimingSupportedANDROID
+     [egl] eglGetConfigAttrib
+     [egl] eglGetConfigs
+     [egl] eglGetCurrentContext
+     [egl] eglGetCurrentDisplay
+     [egl] eglGetCurrentSurface
+     [egl] eglGetDisplay
+     [egl] eglGetError
+     [egl] eglGetFrameTimestampSupportedANDROID
+     [egl] eglGetFrameTimestampsANDROID
+     [egl] eglGetNativeClientBufferANDROID
+     [egl] eglGetNextFrameIdANDROID
+     [egl] eglGetPlatformDisplay
+     [egl] eglGetProcAddress
+     [egl] eglGetStreamFileDescriptorKHR
+     [egl] eglGetSyncAttrib
+     [egl] eglGetSyncAttribKHR
+     [egl] eglGetSystemTimeFrequencyNV
+     [egl] eglGetSystemTimeNV
+     [egl] eglInitialize
+     [egl] eglLockSurfaceKHR
+     [egl] eglMakeCurrent
+     [egl] eglPresentationTimeANDROID
+     [egl] eglQueryAPI
+     [egl] eglQueryContext
+     [egl] eglQueryStreamKHR
+     [egl] eglQueryStreamTimeKHR
+     [egl] eglQueryStreamu64KHR
+     [egl] eglQueryString
+     [egl] eglQueryStringImplementationANDROID
+     [egl] eglQuerySurface
+     [egl] eglQueryUseAngle
+     [egl] eglReleaseTexImage
+     [egl] eglReleaseThread
+     [egl] eglSetDamageRegionKHR
+     [egl] eglSignalSyncKHR
+     [egl] eglStreamAttribKHR
+     [egl] eglStreamConsumerAcquireKHR
+     [egl] eglStreamConsumerGLTextureExternalKHR
+     [egl] eglStreamConsumerReleaseKHR
+     [egl] eglSurfaceAttrib
+     [egl] eglSwapBuffers
+     [egl] eglSwapBuffersWithDamageKHR
+     [egl] eglSwapInterval
+     [egl] eglTerminate
+     [egl] eglUnlockSurfaceKHR
+     [egl] eglWaitClient
+     [egl] eglWaitGL
+     [egl] eglWaitNative
+     [egl] eglWaitSync
+     [egl] eglWaitSyncKHR
+  -> Extensões EGL Internas:
+     [ext]  EGL_ANDROID_blob_cache
+     [ext]  EGL_ANDROID_blob_cache 
+     [ext] EGL_ANDROID_GLES_layers EGL_ANGLE_platform_angle EGL_EXT_client_extensions EGL_KHR_platform_android 
+     [ext] EGL_ANDROID_blob_cache
+     [ext] EGL_ANDROID_blob_cache 
+     [ext] EGL_ANDROID_blob_cache advertised, but unable to get eglSetBlobCacheFuncsANDROID
+     [ext] EGL_ANDROID_blob_cache get: negative sizes are not allowed
+     [ext] EGL_ANDROID_blob_cache set: negative sizes are not allowed
+     [ext] EGL_ANDROID_front_buffer_auto_refresh EGL_ANDROID_get_native_client_buffer EGL_ANDROID_presentation_time EGL_EXT_surface_CTA861_3_metadata EGL_EXT_surface_SMPTE2086_metadata EGL_KHR_get_all_proc_addresses EGL_KHR_swap_buffers_with_damage 
+     [ext] EGL_ANDROID_get_frame_timestamps
+     [ext] EGL_ANDROID_get_frame_timestamps 
+     [ext] EGL_ANDROID_image_native_buffer EGL_ANDROID_native_fence_sync EGL_ANDROID_recordable EGL_EXT_buffer_age EGL_EXT_create_context_robustness EGL_EXT_image_gl_colorspace EGL_EXT_pixel_format_float EGL_EXT_protected_content EGL_EXT_yuv_surface EGL_IMG_context_priority EGL_KHR_config_attribs EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_lock_surface EGL_KHR_mutable_render_buffer EGL_KHR_no_config_context EGL_KHR_partial_update EGL_KHR_reusable_sync EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_KHR_stream_cross_process_fd EGL_KHR_stream_fifo EGL_KHR_stream_producer_eglsurface EGL_KHR_surfaceless_context EGL_KHR_wait_sync EGL_NV_context_priority_realtime EGL_NV_system_time 
+     [ext] EGL_BAD_ACCESS
+     [ext] EGL_BAD_ALLOC
+     [ext] EGL_BAD_ATTRIBUTE
+     [ext] EGL_BAD_CONFIG
+     [ext] EGL_BAD_CONTEXT
+     [ext] EGL_BAD_CURRENT_SURFACE
+     [ext] EGL_BAD_DISPLAY
+     [ext] EGL_BAD_MATCH
+     [ext] EGL_BAD_NATIVE_PIXMAP
+     [ext] EGL_BAD_NATIVE_WINDOW
+     [ext] EGL_BAD_PARAMETER
+     [ext] EGL_BAD_SURFACE
+     [ext] EGL_CONTEXT_LOST
+     [ext] EGL_EXT_gl_colorspace_bt2020_hlg
+     [ext] EGL_EXT_gl_colorspace_bt2020_hlg EGL_EXT_gl_colorspace_bt2020_linear EGL_EXT_gl_colorspace_bt2020_pq 
+     [ext] EGL_EXT_gl_colorspace_bt2020_linear
+     [ext] EGL_EXT_gl_colorspace_bt2020_pq
+     [ext] EGL_EXT_gl_colorspace_display_p3
+     [ext] EGL_EXT_gl_colorspace_display_p3_linear
+     [ext] EGL_EXT_gl_colorspace_display_p3_passthrough
+     [ext] EGL_EXT_gl_colorspace_scrgb
+     [ext] EGL_EXT_gl_colorspace_scrgb EGL_EXT_gl_colorspace_scrgb_linear EGL_EXT_gl_colorspace_display_p3_linear EGL_EXT_gl_colorspace_display_p3 EGL_EXT_gl_colorspace_display_p3_passthrough 
+     [ext] EGL_EXT_gl_colorspace_scrgb_linear
+     [ext] EGL_EXT_image_gl_colorspace
+     [ext] EGL_EXT_image_gl_colorspace 
+     [ext] EGL_KHR_gl_colorspace
+     [ext] EGL_KHR_image_gl_colorspace
+     [ext] EGL_NOT_INITIALIZED
+     [ext] EGL_SUCCESS
+--------------------------------------------------------------------------
+[+] Ficheiro: libEGL_mtk.so
+      Class:                             ELF64
+      Machine:                           AArch64
+  -> Funções EGL Expostas:
+     [egl] eglBindAPI
+     [egl] eglBindTexImage
+     [egl] eglChooseConfig
+     [egl] eglCopyBuffers
+     [egl] eglCreateContext
+     [egl] eglCreatePbufferFromClientBuffer
+     [egl] eglCreatePbufferSurface
+     [egl] eglCreatePixmapSurface
+     [egl] eglCreateWindowSurface
+     [egl] eglDestroyContext
+     [egl] eglDestroySurface
+     [egl] eglGetConfigAttrib
+     [egl] eglGetConfigs
+     [egl] eglGetCurrentContext
+     [egl] eglGetCurrentDisplay
+     [egl] eglGetCurrentSurface
+     [egl] eglGetDisplay
+     [egl] eglGetError
+     [egl] eglGetProcAddress
+     [egl] eglInitialize
+     [egl] eglMakeCurrent
+     [egl] eglQueryAPI
+     [egl] eglQueryContext
+     [egl] eglQueryString
+     [egl] eglQuerySurface
+     [egl] eglReleaseTexImage
+     [egl] eglReleaseThread
+     [egl] eglSurfaceAttrib
+     [egl] eglSwapBuffers
+     [egl] eglSwapInterval
+     [egl] eglTerminate
+     [egl] eglWaitClient
+     [egl] eglWaitGL
+     [egl] eglWaitNative
+  -> Extensões EGL Internas:
+--------------------------------------------------------------------------
+
+==========================================================================
+ 2. DRIVERS E INTERFACES GLES DETETADAS (OpenGL ES v1/v2/v3)              
+==========================================================================
+[+] Ficheiro: libGLES_meow.so
+      0x0000000000000001 (NEEDED)         Shared library: [libcutils.so]
+      0x0000000000000001 (NEEDED)         Shared library: [libutils.so]
+      0x0000000000000001 (NEEDED)         Shared library: [liblog.so]
+      0x0000000000000001 (NEEDED)         Shared library: [libnativewindow.so]
+      0x0000000000000001 (NEEDED)         Shared library: [libhidlbase.so]
+      0x0000000000000001 (NEEDED)         Shared library: [libc++.so]
+      0x0000000000000001 (NEEDED)         Shared library: [libc.so]
+      0x0000000000000001 (NEEDED)         Shared library: [libm.so]
+      0x0000000000000001 (NEEDED)         Shared library: [libdl.so]
+  -> Comandos de Desenho Gráfico Expostas:
+  -> Extensões de Renderização (GL_EXT/OES/NV):
+--------------------------------------------------------------------------
+[+] Ficheiro: libGLESv1_CM_mtk.so
+      0x0000000000000001 (NEEDED)       Shared library: [libIMGegl.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libsrv_um.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libusc.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libPVRMtkutils.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+      0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libgpu_aux.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libgralloc_extra.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libged.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libgpud.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libsync.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  -> Comandos de Desenho Gráfico Expostas:
+     [gl] glActiveTexture
+     [gl] glAlphaFunc
+     [gl] glAlphaFuncx
+     [gl] glBindBuffer
+     [gl] glBindTexture
+     [gl] glBlendFunc
+     [gl] glBufferData
+     [gl] glBufferSubData
+     [gl] glClear
+     [gl] glClearColor
+     [gl] glClearColorx
+     [gl] glClearDepthf
+     [gl] glClearDepthx
+     [gl] glClearStencil
+     [gl] glClientActiveTexture
+     [gl] glClipPlanef
+     [gl] glClipPlanex
+     [gl] glColor4f
+     [gl] glColor4ub
+     [gl] glColor4x
+     [gl] glColorMask
+     [gl] glColorPointer
+     [gl] glCompressedTexImage2D
+     [gl] glCompressedTexSubImage2D
+     [gl] glCopyTexImage2D
+     [gl] glCopyTexSubImage2D
+     [gl] glCullFace
+     [gl] glDeleteBuffers
+     [gl] glDeleteTextures
+     [gl] glDepthFunc
+     [gl] glDepthMask
+     [gl] glDepthRangef
+     [gl] glDepthRangex
+     [gl] glDisable
+     [gl] glDisableClientState
+     [gl] glDrawArrays
+     [gl] glDrawElements
+     [gl] glEnable
+     [gl] glEnableClientState
+     [gl] glFinish
+     [gl] glFlush
+     [gl] glFogf
+     [gl] glFogfv
+     [gl] glFogx
+     [gl] glFogxv
+     [gl] glFrontFace
+     [gl] glFrustumf
+     [gl] glFrustumx
+     [gl] glGenBuffers
+     [gl] glGenTextures
+     [gl] glGetBooleanv
+     [gl] glGetBufferParameteriv
+     [gl] glGetClipPlanef
+     [gl] glGetClipPlanex
+     [gl] glGetError
+     [gl] glGetFixedv
+     [gl] glGetFloatv
+     [gl] glGetIntegerv
+     [gl] glGetLightfv
+     [gl] glGetLightxv
+     [gl] glGetMaterialfv
+     [gl] glGetMaterialxv
+     [gl] glGetPointerv
+     [gl] glGetString
+     [gl] glGetTexEnvfv
+     [gl] glGetTexEnviv
+     [gl] glGetTexEnvxv
+     [gl] glGetTexParameterfv
+     [gl] glGetTexParameteriv
+     [gl] glGetTexParameterxv
+     [gl] glHint
+     [gl] glIsBuffer
+     [gl] glIsEnabled
+     [gl] glIsTexture
+     [gl] glLightModelf
+     [gl] glLightModelfv
+     [gl] glLightModelx
+     [gl] glLightModelxv
+     [gl] glLightf
+     [gl] glLightfv
+     [gl] glLightx
+     [gl] glLightxv
+     [gl] glLineWidth
+     [gl] glLineWidthx
+     [gl] glLoadIdentity
+     [gl] glLoadMatrixf
+     [gl] glLoadMatrixx
+     [gl] glLogicOp
+     [gl] glMaterialf
+     [gl] glMaterialfv
+     [gl] glMaterialx
+     [gl] glMaterialxv
+     [gl] glMatrixMode
+     [gl] glMultMatrixf
+     [gl] glMultMatrixx
+     [gl] glMultiTexCoord4f
+     [gl] glMultiTexCoord4x
+     [gl] glNormal3f
+     [gl] glNormal3x
+     [gl] glNormalPointer
+     [gl] glOrthof
+     [gl] glOrthox
+     [gl] glPixelStorei
+     [gl] glPointParameterf
+     [gl] glPointParameterfv
+     [gl] glPointParameterx
+     [gl] glPointParameterxv
+     [gl] glPointSize
+     [gl] glPointSizePointerOES
+     [gl] glPointSizex
+     [gl] glPolygonOffset
+     [gl] glPolygonOffsetx
+     [gl] glPopMatrix
+     [gl] glPushMatrix
+     [gl] glReadPixels
+     [gl] glRotatef
+     [gl] glRotatex
+     [gl] glSampleCoverage
+     [gl] glSampleCoveragex
+     [gl] glScalef
+     [gl] glScalex
+     [gl] glScissor
+     [gl] glShadeModel
+     [gl] glStencilFunc
+     [gl] glStencilMask
+     [gl] glStencilOp
+     [gl] glTexCoordPointer
+     [gl] glTexEnvf
+     [gl] glTexEnvfv
+     [gl] glTexEnvi
+     [gl] glTexEnviv
+     [gl] glTexEnvx
+     [gl] glTexEnvxv
+     [gl] glTexImage2D
+     [gl] glTexParameterf
+     [gl] glTexParameterfv
+     [gl] glTexParameteri
+     [gl] glTexParameteriv
+     [gl] glTexParameterx
+     [gl] glTexParameterxv
+     [gl] glTexSubImage2D
+     [gl] glTranslatef
+     [gl] glTranslatex
+     [gl] glVertexPointer
+     [gl] glViewport
+  -> Extensões de Renderização (GL_EXT/OES/NV):
+     [ext] GL_EXT_texture_filter_anisotropic 
+     [ext] GL_OES_EGL_image_external 
+     [ext] GL_OES_byte_coordinates GL_OES_fixed_point GL_OES_single_precision GL_OES_matrix_get GL_OES_read_format GL_OES_compressed_paletted_texture GL_OES_point_sprite GL_OES_point_size_array GL_OES_matrix_palette GL_OES_draw_texture GL_OES_query_matrix GL_OES_texture_env_crossbar GL_OES_texture_mirrored_repeat GL_OES_texture_cube_map GL_OES_blend_subtract GL_OES_blend_func_separate GL_OES_blend_equation_separate GL_OES_stencil_wrap GL_OES_extended_matrix_palette GL_OES_framebuffer_object GL_OES_rgb8_rgba8 GL_OES_depth24 GL_OES_stencil8 GL_OES_compressed_ETC1_RGB8_texture GL_OES_mapbuffer GL_OES_EGL_image GL_EXT_multi_draw_arrays GL_OES_required_internalformat GL_APPLE_texture_2D_limited_npot GL_OES_texture_npot GL_IMG_read_format GL_IMG_texture_compression_pvrtc GL_IMG_texture_format_BGRA8888 GL_EXT_texture_format_BGRA8888 GL_OES_egl_sync GL_IMG_vertex_array_object 
+--------------------------------------------------------------------------
+[+] Ficheiro: libGLESv2_mtk.so
+      0x0000000000000001 (NEEDED)       Shared library: [libIMGegl.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libsrv_um.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libglslcompiler.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libusc.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libPVRMtkutils.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libm.so]
+      0x0000000000000001 (NEEDED)       Shared library: [liblog.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libgpu_aux.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libgralloc_extra.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libged.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libgpud.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libsync.so]
+      0x0000000000000001 (NEEDED)       Shared library: [libc.so]
+  -> Comandos de Desenho Gráfico Expostas:
+     [gl] glActiveShaderProgram
+     [gl] glActiveTexture
+     [gl] glAttachShader
+     [gl] glBeginQuery
+     [gl] glBeginTransformFeedback
+     [gl] glBindAttribLocation
+     [gl] glBindBuffer
+     [gl] glBindBufferBase
+     [gl] glBindBufferRange
+     [gl] glBindFramebuffer
+     [gl] glBindImageTexture
+     [gl] glBindProgramPipeline
+     [gl] glBindRenderbuffer
+     [gl] glBindSampler
+     [gl] glBindTexture
+     [gl] glBindTransformFeedback
+     [gl] glBindVertexArray
+     [gl] glBindVertexBuffer
+     [gl] glBlendBarrier
+     [gl] glBlendColor
+     [gl] glBlendEquation
+     [gl] glBlendEquationSeparate
+     [gl] glBlendEquationSeparatei
+     [gl] glBlendEquationi
+     [gl] glBlendFunc
+     [gl] glBlendFuncSeparate
+     [gl] glBlendFuncSeparatei
+     [gl] glBlendFunci
+     [gl] glBlitFramebuffer
+     [gl] glBufferData
+     [gl] glBufferSubData
+     [gl] glCheckFramebufferStatus
+     [gl] glClear
+     [gl] glClearBufferfi
+     [gl] glClearBufferfv
+     [gl] glClearBufferiv
+     [gl] glClearBufferuiv
+     [gl] glClearColor
+     [gl] glClearDepthf
+     [gl] glClearStencil
+     [gl] glClientWaitSync
+     [gl] glColorMask
+     [gl] glColorMaski
+     [gl] glCompileShader
+     [gl] glCompressedTexImage2D
+     [gl] glCompressedTexImage3D
+     [gl] glCompressedTexSubImage2D
+     [gl] glCompressedTexSubImage3D
+     [gl] glCopyBufferSubData
+     [gl] glCopyImageSubData
+     [gl] glCopyTexImage2D
+     [gl] glCopyTexSubImage2D
+     [gl] glCopyTexSubImage3D
+     [gl] glCreateProgram
+     [gl] glCreateShader
+     [gl] glCreateShaderProgramv
+     [gl] glCullFace
+     [gl] glDebugMessageCallback
+     [gl] glDebugMessageControl
+     [gl] glDebugMessageInsert
+     [gl] glDeleteBuffers
+     [gl] glDeleteFramebuffers
+     [gl] glDeleteProgram
+     [gl] glDeleteProgramPipelines
+     [gl] glDeleteQueries
+     [gl] glDeleteRenderbuffers
+     [gl] glDeleteSamplers
+     [gl] glDeleteShader
+     [gl] glDeleteSync
+     [gl] glDeleteTextures
+     [gl] glDeleteTransformFeedbacks
+     [gl] glDeleteVertexArrays
+     [gl] glDepthFunc
+     [gl] glDepthMask
+     [gl] glDepthRangef
+     [gl] glDetachShader
+     [gl] glDisable
+     [gl] glDisableVertexAttribArray
+     [gl] glDisablei
+     [gl] glDispatchCompute
+     [gl] glDispatchComputeIndirect
+     [gl] glDrawArrays
+     [gl] glDrawArraysIndirect
+     [gl] glDrawArraysInstanced
+     [gl] glDrawBuffers
+     [gl] glDrawElements
+     [gl] glDrawElementsBaseVertex
+     [gl] glDrawElementsIndirect
+     [gl] glDrawElementsInstanced
+     [gl] glDrawElementsInstancedBaseVertex
+     [gl] glDrawRangeElements
+     [gl] glDrawRangeElementsBaseVertex
+     [gl] glEnable
+     [gl] glEnableVertexAttribArray
+     [gl] glEnablei
+     [gl] glEndQuery
+     [gl] glEndTransformFeedback
+     [gl] glFenceSync
+     [gl] glFinish
+     [gl] glFlush
+     [gl] glFlushMappedBufferRange
+     [gl] glFramebufferParameteri
+     [gl] glFramebufferRenderbuffer
+     [gl] glFramebufferTexture
+     [gl] glFramebufferTexture2D
+     [gl] glFramebufferTextureLayer
+     [gl] glFrontFace
+     [gl] glGenBuffers
+     [gl] glGenFramebuffers
+     [gl] glGenProgramPipelines
+     [gl] glGenQueries
+     [gl] glGenRenderbuffers
+     [gl] glGenSamplers
+     [gl] glGenTextures
+     [gl] glGenTransformFeedbacks
+     [gl] glGenVertexArrays
+     [gl] glGenerateMipmap
+     [gl] glGetActiveAttrib
+     [gl] glGetActiveUniform
+     [gl] glGetActiveUniformBlockName
+     [gl] glGetActiveUniformBlockiv
+     [gl] glGetActiveUniformsiv
+     [gl] glGetAttachedShaders
+     [gl] glGetAttribLocation
+     [gl] glGetBooleani_v
+     [gl] glGetBooleanv
+     [gl] glGetBufferParameteri64v
+     [gl] glGetBufferParameteriv
+     [gl] glGetBufferPointerv
+     [gl] glGetDebugMessageLog
+     [gl] glGetError
+     [gl] glGetFloatv
+     [gl] glGetFragDataLocation
+     [gl] glGetFramebufferAttachmentParameteriv
+     [gl] glGetFramebufferParameteriv
+     [gl] glGetGraphicsResetStatus
+     [gl] glGetInteger64i_v
+     [gl] glGetInteger64v
+     [gl] glGetIntegeri_v
+     [gl] glGetIntegerv
+     [gl] glGetInternalformativ
+     [gl] glGetMultisamplefv
+     [gl] glGetObjectLabel
+     [gl] glGetObjectPtrLabel
+     [gl] glGetPointerv
+     [gl] glGetProgramBinary
+     [gl] glGetProgramInfoLog
+     [gl] glGetProgramInterfaceiv
+     [gl] glGetProgramPipelineInfoLog
+     [gl] glGetProgramPipelineiv
+     [gl] glGetProgramResourceIndex
+     [gl] glGetProgramResourceLocation
+     [gl] glGetProgramResourceName
+     [gl] glGetProgramResourceiv
+     [gl] glGetProgramiv
+     [gl] glGetQueryObjectuiv
+     [gl] glGetQueryiv
+     [gl] glGetRenderbufferParameteriv
+     [gl] glGetSamplerParameterIiv
+     [gl] glGetSamplerParameterIuiv
+     [gl] glGetSamplerParameterfv
+     [gl] glGetSamplerParameteriv
+     [gl] glGetShaderInfoLog
+     [gl] glGetShaderPrecisionFormat
+     [gl] glGetShaderSource
+     [gl] glGetShaderiv
+     [gl] glGetString
+     [gl] glGetStringi
+     [gl] glGetSynciv
+     [gl] glGetTexLevelParameterfv
+     [gl] glGetTexLevelParameteriv
+     [gl] glGetTexParameterIiv
+     [gl] glGetTexParameterIuiv
+     [gl] glGetTexParameterfv
+     [gl] glGetTexParameteriv
+     [gl] glGetTransformFeedbackVarying
+     [gl] glGetUniformBlockIndex
+     [gl] glGetUniformIndices
+     [gl] glGetUniformLocation
+     [gl] glGetUniformfv
+     [gl] glGetUniformiv
+     [gl] glGetUniformuiv
+     [gl] glGetVertexAttribIiv
+     [gl] glGetVertexAttribIuiv
+     [gl] glGetVertexAttribPointerv
+     [gl] glGetVertexAttribfv
+     [gl] glGetVertexAttribiv
+     [gl] glGetnUniformfv
+     [gl] glGetnUniformiv
+     [gl] glGetnUniformuiv
+     [gl] glHint
+     [gl] glInvalidateFramebuffer
+     [gl] glInvalidateSubFramebuffer
+     [gl] glIsBuffer
+     [gl] glIsEnabled
+     [gl] glIsEnabledi
+     [gl] glIsFramebuffer
+     [gl] glIsProgram
+     [gl] glIsProgramPipeline
+     [gl] glIsQuery
+     [gl] glIsRenderbuffer
+     [gl] glIsSampler
+     [gl] glIsShader
+     [gl] glIsSync
+     [gl] glIsTexture
+     [gl] glIsTransformFeedback
+     [gl] glIsVertexArray
+     [gl] glLineWidth
+     [gl] glLinkProgram
+     [gl] glMapBufferRange
+     [gl] glMemoryBarrier
+     [gl] glMemoryBarrierByRegion
+     [gl] glMinSampleShading
+     [gl] glObjectLabel
+     [gl] glObjectPtrLabel
+     [gl] glPatchParameteri
+     [gl] glPauseTransformFeedback
+     [gl] glPixelStorei
+     [gl] glPolygonOffset
+     [gl] glPopDebugGroup
+     [gl] glPrimitiveBoundingBox
+     [gl] glProgramBinary
+     [gl] glProgramParameteri
+     [gl] glProgramUniform1f
+     [gl] glProgramUniform1fv
+     [gl] glProgramUniform1i
+     [gl] glProgramUniform1iv
+     [gl] glProgramUniform1ui
+     [gl] glProgramUniform1uiv
+     [gl] glProgramUniform2f
+     [gl] glProgramUniform2fv
+     [gl] glProgramUniform2i
+     [gl] glProgramUniform2iv
+     [gl] glProgramUniform2ui
+     [gl] glProgramUniform2uiv
+     [gl] glProgramUniform3f
+     [gl] glProgramUniform3fv
+     [gl] glProgramUniform3i
+     [gl] glProgramUniform3iv
+     [gl] glProgramUniform3ui
+     [gl] glProgramUniform3uiv
+     [gl] glProgramUniform4f
+     [gl] glProgramUniform4fv
+     [gl] glProgramUniform4i
+     [gl] glProgramUniform4iv
+     [gl] glProgramUniform4ui
+     [gl] glProgramUniform4uiv
+     [gl] glProgramUniformMatrix2fv
+     [gl] glProgramUniformMatrix2x3fv
+     [gl] glProgramUniformMatrix2x4fv
+     [gl] glProgramUniformMatrix3fv
+     [gl] glProgramUniformMatrix3x2fv
+     [gl] glProgramUniformMatrix3x4fv
+     [gl] glProgramUniformMatrix4fv
+     [gl] glProgramUniformMatrix4x2fv
+     [gl] glProgramUniformMatrix4x3fv
+     [gl] glPushDebugGroup
+     [gl] glReadBuffer
+     [gl] glReadPixels
+     [gl] glReadnPixels
+     [gl] glReleaseShaderCompiler
+     [gl] glRenderbufferStorage
+     [gl] glRenderbufferStorageMultisample
+     [gl] glResumeTransformFeedback
+     [gl] glSampleCoverage
+     [gl] glSampleMaski
+     [gl] glSamplerParameterIiv
+     [gl] glSamplerParameterIuiv
+     [gl] glSamplerParameterf
+     [gl] glSamplerParameterfv
+     [gl] glSamplerParameteri
+     [gl] glSamplerParameteriv
+     [gl] glScissor
+     [gl] glShaderBinary
+     [gl] glShaderSource
+     [gl] glStencilFunc
+     [gl] glStencilFuncSeparate
+     [gl] glStencilMask
+     [gl] glStencilMaskSeparate
+     [gl] glStencilOp
+     [gl] glStencilOpSeparate
+     [gl] glTexBuffer
+     [gl] glTexBufferRange
+     [gl] glTexImage2D
+     [gl] glTexImage3D
+     [gl] glTexParameterIiv
+     [gl] glTexParameterIuiv
+     [gl] glTexParameterf
+     [gl] glTexParameterfv
+     [gl] glTexParameteri
+     [gl] glTexParameteriv
+     [gl] glTexStorage2D
+     [gl] glTexStorage2DMultisample
+     [gl] glTexStorage3D
+     [gl] glTexStorage3DMultisample
+     [gl] glTexSubImage2D
+     [gl] glTexSubImage3D
+     [gl] glTransformFeedbackVaryings
+     [gl] glUniform1f
+     [gl] glUniform1fv
+     [gl] glUniform1i
+     [gl] glUniform1iv
+     [gl] glUniform1ui
+     [gl] glUniform1uiv
+     [gl] glUniform2f
+     [gl] glUniform2fv
+     [gl] glUniform2i
+     [gl] glUniform2iv
+     [gl] glUniform2ui
+     [gl] glUniform2uiv
+     [gl] glUniform3f
+     [gl] glUniform3fv
+     [gl] glUniform3i
+     [gl] glUniform3iv
+     [gl] glUniform3ui
+     [gl] glUniform3uiv
+     [gl] glUniform4f
+     [gl] glUniform4fv
+     [gl] glUniform4i
+     [gl] glUniform4iv
+     [gl] glUniform4ui
+     [gl] glUniform4uiv
+     [gl] glUniformBlockBinding
+     [gl] glUniformMatrix2fv
+     [gl] glUniformMatrix2x3fv
+     [gl] glUniformMatrix2x4fv
+     [gl] glUniformMatrix3fv
+     [gl] glUniformMatrix3x2fv
+     [gl] glUniformMatrix3x4fv
+     [gl] glUniformMatrix4fv
+     [gl] glUniformMatrix4x2fv
+     [gl] glUniformMatrix4x3fv
+     [gl] glUnmapBuffer
+     [gl] glUseProgram
+     [gl] glUseProgramStages
+     [gl] glValidateProgram
+     [gl] glValidateProgramPipeline
+     [gl] glVertexAttrib1f
+     [gl] glVertexAttrib1fv
+     [gl] glVertexAttrib2f
+     [gl] glVertexAttrib2fv
+     [gl] glVertexAttrib3f
+     [gl] glVertexAttrib3fv
+     [gl] glVertexAttrib4f
+     [gl] glVertexAttrib4fv
+     [gl] glVertexAttribBinding
+     [gl] glVertexAttribDivisor
+     [gl] glVertexAttribFormat
+     [gl] glVertexAttribI4i
+     [gl] glVertexAttribI4iv
+     [gl] glVertexAttribI4ui
+     [gl] glVertexAttribI4uiv
+     [gl] glVertexAttribIFormat
+     [gl] glVertexAttribIPointer
+     [gl] glVertexAttribPointer
+     [gl] glVertexBindingDivisor
+     [gl] glViewport
+     [gl] glWaitSync
+  -> Extensões de Renderização (GL_EXT/OES/NV):
+     [ext] #extension GL_EXT_geometry_shader : enable
+     [ext] FramebufferTexture2D: textarget is GL_TEXTURE_CUBE_MAP or GL_TEXTURE_3D or GL_TEXTURE_2D_ARRAY, and texture is non-zero
+     [ext] FramebufferTexture2D: the target type of texture is GL_TEXTURE_CUBE_MAP, but textarget is not one of the compatible values
+     [ext] FramebufferTextureLayer: the target to which this texture is bound, is neither of GL_TEXTURE_3D, GL_TEXTURE_2D_ARRAY, GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES
+     [ext] GL_ANDROID_extension_pack_es31a
+     [ext] GL_EXT_EGL_image_array
+     [ext] GL_EXT_YUV_target
+     [ext] GL_EXT_blend_minmax
+     [ext] GL_EXT_buffer_storage
+     [ext] GL_EXT_clear_texture
+     [ext] GL_EXT_clip_control
+     [ext] GL_EXT_color_buffer_float
+     [ext] GL_EXT_color_buffer_half_float
+     [ext] GL_EXT_conservative_depth
+     [ext] GL_EXT_copy_image
+     [ext] GL_EXT_discard_framebuffer
+     [ext] GL_EXT_draw_buffers
+     [ext] GL_EXT_draw_buffers_indexed
+     [ext] GL_EXT_draw_elements_base_vertex
+     [ext] GL_EXT_external_buffer
+     [ext] GL_EXT_float_blend
+     [ext] GL_EXT_geometry_point_size
+     [ext] GL_EXT_geometry_shader
+     [ext] GL_EXT_gpu_shader5
+     [ext] GL_EXT_memory_object
+     [ext] GL_EXT_memory_object_fd
+     [ext] GL_EXT_multi_draw_arrays
+     [ext] GL_EXT_multisampled_render_to_texture
+     [ext] GL_EXT_multisampled_render_to_texture2
+     [ext] GL_EXT_occlusion_query_boolean
+     [ext] GL_EXT_polygon_offset_clamp
+     [ext] GL_EXT_primitive_bounding_box
+     [ext] GL_EXT_protected_textures
+     [ext] GL_EXT_pvrtc_sRGB
+     [ext] GL_EXT_read_format_bgra
+     [ext] GL_EXT_robustness
+     [ext] GL_EXT_sRGB_write_control
+     [ext] GL_EXT_separate_shader_objects
+     [ext] GL_EXT_shader_framebuffer_fetch
+     [ext] GL_EXT_shader_group_vote
+     [ext] GL_EXT_shader_implicit_conversions
+     [ext] GL_EXT_shader_io_blocks
+     [ext] GL_EXT_shader_non_constant_global_initializers
+     [ext] GL_EXT_shader_pixel_local_storage
+     [ext] GL_EXT_shader_pixel_local_storage2
+     [ext] GL_EXT_shader_texture_lod
+     [ext] GL_EXT_shadow_samplers
+     [ext] GL_EXT_sparse_texture
+     [ext] GL_EXT_tessellation_point_size
+     [ext] GL_EXT_tessellation_shader
+     [ext] GL_EXT_texture_border_clamp
+     [ext] GL_EXT_texture_buffer
+     [ext] GL_EXT_texture_cube_map_array
+     [ext] GL_EXT_texture_filter_anisotropic
+     [ext] GL_EXT_texture_format_BGRA8888
+     [ext] GL_EXT_texture_format_sRGB_override
+     [ext] GL_EXT_texture_rg
+     [ext] GL_EXT_texture_sRGB_R8
+     [ext] GL_EXT_texture_sRGB_RG8
+     [ext] GL_EXT_texture_sRGB_decode
+     [ext] GL_EXT_texture_shadow_lod
+     [ext] GL_IMG_framebuffer_downsample
+     [ext] GL_IMG_multisampled_render_to_texture
+     [ext] GL_IMG_program_binary
+     [ext] GL_IMG_read_format
+     [ext] GL_IMG_shader_binary
+     [ext] GL_IMG_texture_compression_pvrtc
+     [ext] GL_IMG_texture_compression_pvrtc2
+     [ext] GL_IMG_texture_filter_cubic
+     [ext] GL_IMG_texture_format_BGRA8888
+     [ext] GL_IMG_texture_npot
+     [ext] GL_INVALID_ENUM
+     [ext] GL_INVALID_FRAMEBUFFER_OPERATION
+     [ext] GL_INVALID_OPERATION
+     [ext] GL_INVALID_VALUE
+     [ext] GL_KHR_blend_equation_advanced
+     [ext] GL_KHR_blend_equation_advanced_coherent
+     [ext] GL_KHR_debug
+     [ext] GL_KHR_robustness
+     [ext] GL_KHR_texture_compression_astc_ldr
+     [ext] GL_NO_ERROR
+     [ext] GL_OES_EGL_image
+     [ext] GL_OES_EGL_image_external
+     [ext] GL_OES_EGL_image_external_essl3
+     [ext] GL_OES_EGL_sync
+     [ext] GL_OES_compressed_ETC1_RGB8_texture
+     [ext] GL_OES_depth24
+     [ext] GL_OES_depth_texture
+     [ext] GL_OES_draw_buffers_indexed
+     [ext] GL_OES_draw_elements_base_vertex
+     [ext] GL_OES_element_index_uint
+     [ext] GL_OES_fragment_precision_high
+     [ext] GL_OES_geometry_point_size
+     [ext] GL_OES_geometry_shader
+     [ext] GL_OES_get_program_binary
+     [ext] GL_OES_gpu_shader5
+     [ext] GL_OES_mapbuffer
+     [ext] GL_OES_packed_depth_stencil
+     [ext] GL_OES_required_internalformat
+     [ext] GL_OES_rgb8_rgba8
+     [ext] GL_OES_sample_shading
+     [ext] GL_OES_sample_variables
+     [ext] GL_OES_shader_image_atomic
+     [ext] GL_OES_shader_io_blocks
+     [ext] GL_OES_shader_multisample_interpolation
+     [ext] GL_OES_standard_derivatives
+     [ext] GL_OES_surfaceless_context
+     [ext] GL_OES_tessellation_point_size
+     [ext] GL_OES_tessellation_shader
+     [ext] GL_OES_texture_border_clamp
+     [ext] GL_OES_texture_buffer
+     [ext] GL_OES_texture_cube_map_array
+     [ext] GL_OES_texture_float
+     [ext] GL_OES_texture_half_float
+     [ext] GL_OES_texture_npot
+     [ext] GL_OES_texture_stencil8
+     [ext] GL_OES_texture_storage_multisample_2d_array
+     [ext] GL_OES_vertex_array_object
+     [ext] GL_OES_vertex_half_float
+     [ext] GL_OES_viewport_array
+     [ext] GL_OUT_OF_MEMORY
+     [ext] GL_OVR_multiview
+     [ext] GL_OVR_multiview2
+     [ext] GL_OVR_multiview_multisampled_render_to_texture
+     [ext] Several textures with the GL_CLAMP_TO_BORDER_EXT wrapping mode are being sampled in a GLSL Program currently in use; this is hampering performance! Consider increasing the NumBorderColorTableIndices AppHint
+     [ext] The parameter GL_TEXTURE_BORDER_COLOR is queried with a type that does not match the original type with which it was specified, the result is undefined!
+     [ext] Total memory used by shared variables (%u bytes) exceeds GL_MAX_COMPUTE_SHARED_MEMORY_SIZE (%u bytes)
+     [ext] Uniform block %s's size (%u) exceeds GL_MAX_UNIFORM_BLOCK_SIZE (%d).
+     [ext] glActiveTexture: texture is not one of the GL_TEXTUREi [i=0 to GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS-1]
+     [ext] glBeginTransformFeedback: primitiveMode is not one of GL_POINTS, GL_LINES, or GL_TRIANGLES
+     [ext] glBeginTransformFeedback: transform feedback mode (GL_INTERLEAVED_ATTRIBS) does not have a buffer object bound
+     [ext] glBeginTransformFeedback: transform feedback mode (GL_SEPARATE_ATTRIBS) does not have a buffer object bound
+     [ext] glBindAttribLocation: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glBindBufferRange: target is GL_ATOMIC_COUNTER_BUFFER and offset is not a multiple of GL_ATOMIC_COUNTER_BUFFER_OFFSET_ALIGNMENT
+     [ext] glBindBufferRange: target is GL_SHADER_STORAGE_BUFFER and offset is not a multiple of GL_SHADER_STORAGE_BUFFER_OFFSET_ALIGNMENT
+     [ext] glBindBufferRange: target is GL_TEXTURE_BUFFER and offset is not a multiple of GL_TEXTURE_BUFFER_OFFSET_ALIGNMENT
+     [ext] glBindBufferRange: target is GL_TRANSFORM_FEEDBACK_BUFFER and Transform Feedback is active
+     [ext] glBindBufferRange: target is GL_TRANSFORM_FEEDBACK_BUFFER and size or offset are not multiples of 4
+     [ext] glBindBufferRange: target is GL_UNIFORM_BUFFER and offset is not a multiple of GL_UNIFORM_BUFFER_OFFSET_ALIGNMENT
+     [ext] glBindRenderbuffer: target is not an accepted token, GL_RENDERBUFFER is the only allowable target
+     [ext] glBindTransformFeedback: target is not GL_TRANSFORM_FEEDBACK
+     [ext] glBindVertexBuffer: the bindingindex is greater than or equal to GL_MAX_VERTEX_ATTRIB_BINDINGS, or the offset is negative, or the stride is negative, or the stride is greater than GL_MAX_VERTEX_ATTRIB_STRIDE
+     [ext] glBlendEquationSeparateiEXT: modeRGB or modeAlpha is not one of GL_FUNC_ADD, GL_FUNC_SUBTRACT, GL_FUNC_REVERSE_SUBTRACT, GL_MAX, or GL_MIN
+     [ext] glBlitFramebuffer: GL_SAMPLE_BUFFERS for the read buffer is greater than zero and the formats of draw and read buffers are not identical
+     [ext] glBlitFramebuffer: GL_SAMPLE_BUFFERS for the read buffer is greater than zero and the source and destination rectangles are not defined with the same (X0, Y0) and (X1, Y1) bounds
+     [ext] glBlitFramebuffer: filter is GL_LINEAR and the read buffer contains integer data
+     [ext] glBlitFramebuffer: mask contains GL_DEPTH_BUFFER_BIT or GL_STENCIL_BUFFER_BIT, and filter is not GL_NEAREST
+     [ext] glBlitFramebuffer: objects bound to GL_DRAW_FRAMEBUFFER_BINDING or GL_READ_FRAMEBUFFER_BINDING are not framebuffer complete
+     [ext] glBlitFramebuffer: the value of GL_SAMPLE_BUFFERS for the draw buffer is greater than zero
+     [ext] glBufferStorageEXT: flags has GL_MAP_COHERENT_BIT_EXT, but not GL_MAP_PERSISTENT_BIT_EXT set
+     [ext] glBufferStorageEXT: flags has GL_MAP_PERSISTENT_BIT_EXT, but not one of GL_MAP_READ_BIT or GL_MAP_WRITE_BIT set
+     [ext] glBufferSubData: buffer object is immutable and doesn't have GL_DYNAMIC_STORAGE_BIT_EXT set
+     [ext] glClearBufferfi: buffer is GL_DEPTH and drawbuffer is not zero
+     [ext] glClearBufferfi: buffer type other than GL_DEPTH_STENCIL is not accepted
+     [ext] glClearBufferfv: buffer is GL_DEPTH and drawbuffer is not zero
+     [ext] glClearBufferfv: drawbuffer parameter is negative or, is greater than or equal to GL_MAX_DRAW_BUFFERS
+     [ext] glClearBufferiv: buffer is GL_STENCIL and drawbuffer is not zero
+     [ext] glClearBufferiv: drawbuffer parameter is negative or, is greater than or equal to GL_MAX_DRAW_BUFFERS
+     [ext] glClearBufferuiv: drawbuffer parameter is negative or, is greater than or equal to GL_MAX_DRAW_BUFFERS
+     [ext] glCompressedTexSubImage2D: format: GL_ETC1_RGB8_OES violates spec, but width(%u) * height(%u) explicitly assigned as full region
+     [ext] glDebugMessageControl: count is greater than zero and, severity is not GL_DONT_CARE, or source is GL_DONT_CARE, or type is GL_DONT_CARE
+     [ext] glDebugMessageInsert: length is greater than or equal to GL_MAX_DEBUG_MESSAGE_LENGTH_KHR
+     [ext] glDebugMessageInsert: source is not GL_DEBUG_SOURCE_APPLICATION_KHR or GL_DEBUG_SOURCE_THIRD_PARTY_KHR
+     [ext] glDisableVertexAttribArray: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glDisablei:Index is greater than or equal to the value of GL_MAX_DRAW_BUFFERS
+     [ext] glDrawBuffers: for given COLOR_ATTACHMENTm, m is greater than or equal to GL_MAX_COLOR_ATTACHMENTS
+     [ext] glDrawBuffers: n is less than 0 or greater than GL_MAX_DRAW_BUFFERS
+     [ext] glDrawBuffers: reserved Framebuffer Object 0 is currently active, and n is not equal to 1 or bufs[0] is neither GL_NONE nor GL_BACK
+     [ext] glEGLImageTargetRenderbufferStorageOES: target is not an accepted token, GL_RENDERBUFFER is the only allowable target
+     [ext] glEGLImageTargetTexture2DOES: layered EGL images are only supported with GL_TEXTURE_2D_ARRAY binding point
+     [ext] glEnableVertexAttribArray: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glEnablei: Index is greater than or equal to the value of GL_MAX_DRAW_BUFFERS
+     [ext] glFlushMappedBufferRange: buffer bound to target is not mapped, or is mapped without the GL_MAP_FLUSH_EXPLICIT flag
+     [ext] glFramebufferParameteri: pname is GL_FRAMEBUFFER_DEFAULT_HEIGHT and param is less than zero or greater than GL_MAX_FRAMEBUFFER_HEIGHT
+     [ext] glFramebufferParameteri: pname is GL_FRAMEBUFFER_DEFAULT_LAYERS_EXT and param is less than zero or greater than GL_MAX_FRAMEBUFFER_LAYERS_EXT
+     [ext] glFramebufferParameteri: pname is GL_FRAMEBUFFER_DEFAULT_SAMPLES and param is less than zero or greater than GL_MAX_FRAMEBUFFER_SAMPLES
+     [ext] glFramebufferParameteri: pname is GL_FRAMEBUFFER_DEFAULT_WIDTH and param is less than zero or greater than GL_MAX_FRAMEBUFFER_WIDTH
+     [ext] glFramebufferRenderbuffer: renderbuffertarget is not an accepted token, GL_RENDERBUFFER is the only allowable renderbuffertarget
+     [ext] glFramebufferTexture2DDownsampleIMG: xscale and yscale value pair is not reported by GL_DOWNSAMPLE_SCALES_IMG
+     [ext] glFramebufferTexture2DMultisampleIMG: attachment must be GL_COLOR_ATTACHMENTi or GL_DEPTH/STENCIL_ATTACHMENT.
+     [ext] glFramebufferTextureLayerDownsampleIMG: xscale and yscale value pair is not reported by GL_DOWNSAMPLE_SCALES_IMG
+     [ext] glGenerateMipmap: target is GL_TEXTURE_CUBE_MAP and the dimensions of all of the faces of the texture bound to the GL_TEXTURE_CUBE_MAP target of the active texture unit are not identical
+     [ext] glGetActiveUniformsiv: uniformCount is greater than or equal to the value of GL_ACTIVE_UNIFORMS for program
+     [ext] glGetFramebufferAttachmentParameteriv: attachment is GL_DEPTH_STENCIL_ATTACHMENT and pname is GL_FRAMEBUFFER_ATTACHMENT_COMPONENT_TYPE
+     [ext] glGetFramebufferAttachmentParameteriv: pname is GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT and attachment is not a color-attachment
+     [ext] glGetFramebufferAttachmentParameteriv: reserved Framebuffer Object 0 is bound to target and attachment is neither of GL_BACK, GL_DEPTH or GL_STENCIL
+     [ext] glGetFramebufferAttachmentParameteriv: reserved Framebuffer Object 0 is bound to target and pname is GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME
+     [ext] glGetFramebufferAttachmentParameteriv: reserved Framebuffer Object 0 is bound to target and pname is one of GL_TEXTURE_SAMPLES_IMG or GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_SAMPLES_EXT
+     [ext] glGetFramebufferAttachmentParameteriv: the value of GL_FRAMEBUFFER_ATTACHMENT_OBJECT_TYPE is GL_NONE and pname is not GL_FRAMEBUFFER_ATTACHMENT_OBJECT_NAME
+     [ext] glGetFramebufferAttachmentParameteriv: this attachment of the Framebuffer does not refer to a Texture Object, but the pname is one of GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LEVEL, GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_LAYER or GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_CUBE_MAP_FACE
+     [ext] glGetFramebufferParameteriv: attachment is GL_DEPTH_STENCIL_ATTACHMENT, but the depth attachment and stencil attachment of the Framebuffer are not identical
+     [ext] glGetPointerv: pname is not GL_DEBUG_CALLBACK_FUNCTION_KHR or GL_DEBUG_CALLBACK_USER_PARAM_KHR
+     [ext] glGetProgramInterfaceiv: invalid pname GL_MAX_NAME_LENGTH for GL_ATOMIC_COUNTER_BUFFER interface
+     [ext] glGetRenderbufferParameteriv: target is not an accepted token, GL_RENDERBUFFER is the only allowable target
+     [ext] glImportMemoryFdEXT: handleType is not GL_HANDLE_TYPE_OPAQUE_FD_EXT
+     [ext] glMapBufferOES: access is something other than GL_WRITE_ONLY_OES
+     [ext] glMapBufferRange: access has neither the GL_MAP_READ_BIT nor the GL_MAP_WRITE_BIT set
+     [ext] glMapBufferRange: access has the GL_MAP_FLUSH_EXPLICIT_BIT set and the GL_MAP_WRITE_BIT is not set
+     [ext] glMapBufferRange: access has the GL_MAP_READ_BIT set and simultaneously the GL_MAP_INVALIDATE_RANGE_BIT, or the GL_MAP_INVALIDATE_BUFFER_BIT, or the GL_MAP_UNSYNCHRONIZED_BIT is also set
+     [ext] glMapBufferRange: offset or length is negative, or (offset + length) is greater than the value of GL_BUFFER_SIZE
+     [ext] glMemoryBarrier: barriers contains any unsupported bits, or is not the special value GL_ALL_BARRIER_BITS
+     [ext] glMemoryBarrierByRegion: barriers contains any unsupported bits, or is not the special value GL_ALL_BARRIER_BITS
+     [ext] glObjectLabel: length is greater than or equal to GL_MAX_LABEL_LENGTH_KHR
+     [ext] glObjectPtrLabel: length is greater than or equal to GL_MAX_LABEL_LENGTH_KHR
+     [ext] glPatchParameteri: pname is not GL_PATCH_VERTICES_EXT
+     [ext] glPatchParameteri: value is greater than or equal to the value of GL_MAX_PATCH_VERTICES_EXT
+     [ext] glProgramParameteri: pname is not GL_PROGRAM_BINARY_RETRIEVABLE_HINT
+     [ext] glPushDebugGroup: length is greater than or equal to GL_MAX_DEBUG_MESSAGE_LENGTH_KHR
+     [ext] glPushDebugGroup: source is neither GL_DEBUG_SOURCE_APPLICATION_KHR, nor GL_DEBUG_SOURCE_THIRD_PARTY_KHR
+     [ext] glReadBuffer: a named Framebuffer Object is the currently bound Read-Framebuffer and mode is neither GL_NONE nor GL_COLOR_ATTACHMENTi
+     [ext] glReadBuffer: for given COLOR_ATTACHMENTm, m is greater than or equal to GL_MAX_COLOR_ATTACHMENTS
+     [ext] glReadBuffer: reserved Framebuffer Object 0 is the currently bound Read-Framebuffer and mode is neither GL_NONE nor GL_BACK
+     [ext] glRenderbufferStorage/glRenderbufferStorageMultisample: target is not an accepted token, GL_RENDERBUFFER is the only allowable target
+     [ext] glRenderbufferStorage/glRenderbufferStorageMultisample: width, or height is negative, or greater than the value of GL_MAX_RENDERBUFFER_SIZE
+     [ext] glSampleMaski: maskIndex is greater than or equal to the value of GL_MAX_SAMPLE_MASK_WORDS
+     [ext] glSamplerParameter*: The GL_TEXTURE_BORDER_COLOR_EXT param can be specified only through the vector versions of glSamplerParameter API call
+     [ext] glSamplerParameter*: fParam for GL_TEXTURE_MAX_ANISOTROPY_EXT must be 1.0 or more
+     [ext] glTexParameter*: The GL_TEXTURE_BORDER_COLOR_EXT param can be specified only through the vector versions of glTexParameter API call
+     [ext] glTexParameter*: param is an illegal value to be used as GL_TEXTURE_MAX_ANISOTROPY_EXT
+     [ext] glTexParameter*: the value specified for the parameter GL_TEXTURE_BASE_LEVEL is not zero
+     [ext] glTexStorage3D*: target is GL_TEXTURE_2D_MULTISAMPLE_ARRAY_OES, which is invalid
+     [ext] glTexStorage3DMultisample*: target is GL_TEXTURE_2D_ARRAY, which is invalid
+     [ext] glTexStorage3DMultisample*: target is GL_TEXTURE_3D, which is invalid
+     [ext] glTexStorage3DMultisample*: target is GL_TEXTURE_CUBE_MAP_ARRAY_EXT, which is invalid
+     [ext] glTexStorage[2|3]DMultisample: specified value for samples is greater than GL_MAX_SAMPLES
+     [ext] glTransformFeedbackVaryings: bufferMode is GL_SEPARATE_ATTRIBS and count is greater than GL_MAX_TRANSFORM_FEEDBACK_SEPARATE_ATTRIBS
+     [ext] glUniformBlockBinding: uniformBlockBinding is greater than or equal to the value of GL_MAX_UNIFORM_BUFFER_BINDINGS
+     [ext] glVertexAttrib1f: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib1fv: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib2f: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib2fv: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib3f: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib3fv: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib4f: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib4fv: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib4i: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib4iv: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib4ui: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttrib4uiv: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttribBinding: attribindex is greater than or equal to GL_MAX_VERTEX_ATTRIBS, or bindingindex is greater than or equal to GL_MAX_VERTEX_ATTRIB_BINDINGS
+     [ext] glVertexAttribDivisor: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttribFormat: size is not one of the accepted values, or attribindex is greater than or equal to GL_MAX_VERTEX_ATTRIBS, or the relativeoffset is greater GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET
+     [ext] glVertexAttribFormat: type is either GL_INT_2_10_10_10_REV or GL_UNSIGNED_INT_2_10_10_10_REV and size is not equal to 4
+     [ext] glVertexAttribIFormat: size is not one of the accepted values, or attribindex is greater than or equal to GL_MAX_VERTEX_ATTRIBS, or the relativeoffset is greater GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET
+     [ext] glVertexAttribIFormat: type is one of GL_FLOAT, GL_HALF_FLOAT, GL_FIXED, GL_INT_2_10_10_10_REV or GL_UNSIGNED_INT_2_10_10_10_REV, which are not valid
+     [ext] glVertexAttribIPointer: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexAttribPointer: index is greater than or equal to GL_MAX_VERTEX_ATTRIBS
+     [ext] glVertexBindingDivisor: bindingindex is greater than or equal to GL_MAX_VERTEX_ATTRIB_BINDINGS
+     [ext] glWaitSync: flags is not zero, or timeout is not GL_TIMEOUT_IGNORED
+     [ext] gl_PointSize must be redeclared when GL_EXT_separate_shader_objects is used.
+     [ext] gl_Position must be redeclared when GL_EXT_separate_shader_objects is used.
+     [ext] no Buffer Object bound to target GL_DRAW_INDIRECT_BUFFER, or the data store of the bound Buffer Object is currently mapped
+     [ext] no Buffer Object bound to target GL_ELEMENT_ARRAY_BUFFER, or the data store of the bound Buffer Object is currently mapped
+--------------------------------------------------------------------------
+
+==========================================================================
+ 3. METADADOS, ASSINATURAS E COMPILADORES SHADER                          
+==========================================================================
+[+] Varredura de assinaturas em todas as libs gráficas:
+  [* ] %s failed to get valid ANGLE library filename suffix!
+  [* ] %s: CreateDebugMachine failed
+  [* ] %s: Creation of PVR_OGLES_DebugMesgLogFile failed
+  [* ] %s: Error retrieving ASTC block size info
+  [* ] %s: Error reusing query object %d
+  [* ] %s: Failed to initialise the GLSL compiler!
+  [* ] %s: Invalid Mode specified for the ForcedDebugContextMode AppHint
+  [* ] %s: PVRSRVAcquireCPUMapping() returned an error.
+  [* ] %s: PVRUniFlexCompileToHw failed with error (%d)
+  [* ] %s: RGXKickTA() failed with error %d
+  [* ] %s: Unhandled GLSLVR Type %d
+  [* ] %s: failed to init GLSL compiler
+  [* ] %s: failed with error %d
+  [* ] %s:%d error %x (%s)
+  [* ] .gnu_debugdata
+  [* ] /data/local/debug/gles
+  [* ] /sys/kernel/debug/tracing/trace_marker
+  [* ] /vendor/etc/meow.cfg
+  [* ] /vendor/etc/meow_dev.cfg
+  [* ] ANGLE Error:%s
+  [* ] ANGLE Info:%s
+  [* ] ANGLE Warn:%s
+  [* ] ANGLEGetDisplayPlatform
+  [* ] ANGLEGetDisplayPlatform call failed!
+  [* ] ANGLEResetDisplayPlatform
+  [* ] Cache error - failed to open fullPath: %s, error: %s
+  [* ] Cache error in SET - failed to open fullPath: %s, error: %s
+  [* ] Could not load binary data due to unpack program binary error: %d
+  [* ] CreateDebugMachine
+  [* ] CreateSpecialObjectPixelShader: PVRUniFlexCompileToHw failed with error (%d)
+  [* ] Debug layer list: %s
+  [* ] DoKickTA: RGXKickTA() failed with error %d
+  [* ] EGLSemaphoreMTK-Signal: error creating EGL fence: %#x
+  [* ] EGLSemaphoreMTK-Wait: error creating EGL fence: %#x
+  [* ] EGL_ANDROID_GLES_layers EGL_ANGLE_platform_angle EGL_EXT_client_extensions EGL_KHR_platform_android 
+  [* ] EGL_ANDROID_image_native_buffer EGL_ANDROID_native_fence_sync EGL_ANDROID_recordable EGL_EXT_buffer_age EGL_EXT_create_context_robustness EGL_EXT_image_gl_colorspace EGL_EXT_pixel_format_float EGL_EXT_protected_content EGL_EXT_yuv_surface EGL_IMG_context_priority EGL_KHR_config_attribs EGL_KHR_create_context EGL_KHR_create_context_no_error EGL_KHR_fence_sync EGL_KHR_gl_colorspace EGL_KHR_gl_renderbuffer_image EGL_KHR_gl_texture_2D_image EGL_KHR_gl_texture_3D_image EGL_KHR_gl_texture_cubemap_image EGL_KHR_image EGL_KHR_image_base EGL_KHR_image_pixmap EGL_KHR_lock_surface EGL_KHR_mutable_render_buffer EGL_KHR_no_config_context EGL_KHR_partial_update EGL_KHR_reusable_sync EGL_KHR_stream EGL_KHR_stream_consumer_gltexture EGL_KHR_stream_cross_process_fd EGL_KHR_stream_fifo EGL_KHR_stream_producer_eglsurface EGL_KHR_surfaceless_context EGL_KHR_wait_sync EGL_NV_context_priority_realtime EGL_NV_system_time 
+  [* ] ERROR
+  [* ] Error reading MultifileHeader from cache entry (%s): %s
+  [* ] Error removing %s: %s
+  [* ] Error when clearing multifile shader cache
+  [* ] Error writing fileSize to cache entry (%s): %s
+  [* ] Error!! should never get here
+  [* ] Error: could not load corrupt binary data.
+  [* ] Failed to load layer %s with error: %s
+  [* ] Failed to mmap cacheEntry, error: %s
+  [* ] Failed with error during assemble!
+  [* ] ForcedDebugContextMode
+  [* ] FrameCompletion: error waiting for fence: %#x
+  [* ] GLSL
+  [* ] GLSLCompileToUniflex
+  [* ] GLSLDecodeIntermediate
+  [* ] GLSLFreeCompiledUniflexProgram
+  [* ] GLSLInitCompiler
+  [* ] GLSLProgramTypeToProgramStage
+  [* ] GLSLProgramTypeToShaderType
+  [* ] GLSLReadIntermediate
+  [* ] GLSLShutDownCompiler
+  [* ] GLT meow deferred eglMakeCurrent disabled
+  [* ] GLT meow deferred eglMakeCurrent enabled
+  [* ] GLT meow eglMakeCurrent
+  [* ] GL_EXT_debug_marker 
+  [* ] GL_KHR_debug
+  [* ] GL_NO_ERROR
+  [* ] IMGeglGetError
+  [* ] In initializeAnglePlatform() platformMethods struct ptr is NULL. Not assigning tracing function ptrs!
+  [* ] InitGLSLCompiler
+  [* ] Interface mismatch between shaders, this error occurred while executing a draw call
+  [* ] LRU: Error removing %s: %s
+  [* ] Link Error: Compute shader was not successfully compiled.
+  [* ] Link Error: Fragment shader is missing.
+  [* ] Link Error: Fragment shader was not successfully compiled.
+  [* ] Link Error: Geometry shader was not successfully compiled.
+  [* ] Link Error: Program object contains both compute and vertex/fragment shader.
+  [* ] Link Error: Tessellation control shader is missing.
+  [* ] Link Error: Tessellation control shader was not successfully compiled.
+  [* ] Link Error: Tessellation evaluation shader is missing.
+  [* ] Link Error: Tessellation evaluation shader was not successfully compiled.
+  [* ] Link Error: Vertex and Fragment shaders were not compiled with the same language version.
+  [* ] Link Error: Vertex shader is missing.
+  [* ] Link Error: Vertex shader was not successfully compiled.
+  [* ] MEOW
+  [* ] MEOWTimeline
+  [* ] MEOWTimelineExt can't increment sync obj
+  [* ] MEOWTimelineExt: createFence error %d, %d, %s
+  [* ] MEOW_DATA
+  [* ] MEOW_PLUGIN_T_SYM
+  [* ] MEOW_get_ddk_hook
+  [* ] MEOW_get_egl_names
+  [* ] MEOW_get_gl1_names
+  [* ] MEOW_get_gl_names
+  [* ] MEOW_get_process_name
+  [* ] MEOW_get_raw_ddk_hook
+  [* ] MEOW_get_setting
+  [* ] MEOW_get_tls_meow_offset
+  [* ] MEOW_register_tls
+  [* ] MEOW_thread_update_callchain
+  [* ] MEOW_unregister_tls
+  [* ] Mali-G52
+  [* ] NativeLoaderFreeErrorMessage
+  [* ] No shader stages, this error occurred while executing a draw call
+  [* ] Not a validate program pipeline, this error occurred while executing a draw call
+  [* ] Not a validate program, this error occurred while executing a draw call
+  [* ] OpenGL ES GLSL ES 3.20 build 1.13@5776728
+  [* ] PVRSRVDebugPrintf
+  [* ] PVRSRVGetErrorString
+  [* ] PVR_OGLES_DebugMesgLogFile.txt
+  [* ] Pipeline failed validation : internal generic error.
+  [* ] PowerVR Rogue GE8320
+  [* ] PowerVR SGX Doma
+  [* ] Qualcomm
+  [* ] Several textures with the GL_CLAMP_TO_BORDER_EXT wrapping mode are being sampled in a GLSL Program currently in use; this is hampering performance! Consider increasing the NumBorderColorTableIndices AppHint
+  [* ] This call blocks until all the previously issued GL commands take effect. This goes against the way GL commands are handled by PowerVR, performance will be affected!
+  [* ] TimelineExt: error waiting for fence: %#x
+  [* ] Unknown GL Error
+  [* ] Unpack program binary error: could not load corrupt binary data.
+  [* ] _ZN7android11GraphicsEnv12isDebuggableEv
+  [* ] _ZN7android11GraphicsEnv14shouldUseAngleEv
+  [* ] _ZN7android11GraphicsEnv17getAngleNamespaceEv
+  [* ] _ZN7android11GraphicsEnv18getDebugLayersGLESEv
+  [* ] _ZN7android11GraphicsEnv19getAngleEglFeaturesEv
+  [* ] _ZNKSt3__120__vector_base_commonILb1EE20__throw_length_errorEv
+  [* ] _ZNKSt3__121__basic_string_commonILb1EE20__throw_length_errorEv
+  [* ] _ZNSt3__120__throw_system_errorEiPKc
+  [* ] __android_log_assert
+  [* ] _angle.so
+  [* ] _glt_glDrawArraysInstancedANGLE
+  [* ] _glt_glDrawElementsInstancedANGLE
+  [* ] attempt_to_load_angle
+  [* ] cannot open (%s):(%s), error (%s)
+  [* ] could not find meow data!!
+  [* ] debug.angle.validation
+  [* ] debug.egl.blobcache.multifile
+  [* ] debug.egl.blobcache.multifile_limit
+  [* ] debug.egl.callstack
+  [* ] debug.egl.finish
+  [* ] debug.egl.force_msaa
+  [* ] debug.egl.traceGpuCompletion
+  [* ] debug.gles.layers
+  [* ] dlerror
+  [* ] dlsym lookup of ANGLEGetDisplayPlatform in libEGL_angle failed!
+  [* ] eglGetCompositorTiming: Unexpected error.
+  [* ] eglGetDisplay(%p) failed: Unable to look up eglGetPlatformDisplay from ANGLE
+  [* ] eglGetError
+  [* ] eglGetError takes: %lf ms, %lld cycles
+  [* ] eglGetFrameTimestamps: Unexpected error.
+  [* ] eglGetNextFrameId: Unexpected error.
+  [* ] eglQueryUseAngle
+  [* ] eglSetBlobCacheFuncsANDROID resulted in an error: %#x
+  [* ] eglSetSwapRectangleANDROID
+  [* ] eglSetSwapRectangleANDROID takes: %lf ms, %lld cycles
+  [* ] error creating cache file %s: %s (%d)
+  [* ] error invalid colorspace: %d
+  [* ] error mmaping cache file: %s (%d)
+  [* ] error opening cache file %s: %s (%d)
+  [* ] error reading cache contents: %s (%d)
+  [* ] error setting native window CTS 861.3 metadata: %s (%d)
+  [* ] error setting native window pixel dataSpace: %s (%d)
+  [* ] error setting native window pixel format: %s (%d)
+  [* ] error setting native window smpte2086 metadata: %s (%d)
+  [* ] error stat'ing cache file: %s (%d)
+  [* ] error unlinking cache file %s: %s (%d)
+  [* ] error writing cache contents: %s (%d)
+  [* ] error writing cache file: %s (%d)
+  [* ] error: %s (%d)
+  [* ] glBeginTransformFeedback: primitiveMode is not one of GL_POINTS, GL_LINES, or GL_TRIANGLES
+  [* ] glBlitFramebuffer: GL_SAMPLE_BUFFERS for the read buffer is greater than zero and the source and destination rectangles are not defined with the same (X0, Y0) and (X1, Y1) bounds
+  [* ] glBlitFramebufferANGLE
+  [* ] glBlitFramebufferANGLE takes: %lf ms, %lld cycles
+  [* ] glBufferStorageExternalEXT: KEGLGetBufferSource() returned an error..
+  [* ] glClearTex(Sub)Image: Encountered an error
+  [* ] glClientWaitSync: unknown error on waiting
+  [* ] glCompressedTexImage2D: Encountered an error
+  [* ] glCompressedTexImage3D: Encountered an error
+  [* ] glCompressedTexSubImage3D: Encountered an error
+  [* ] glDebugMessageCallback
+  [* ] glDebugMessageCallback takes: %lf ms, %lld cycles
+  [* ] glDebugMessageCallbackKHR
+  [* ] glDebugMessageCallbackKHR takes: %lf ms, %lld cycles
+  [* ] glDebugMessageControl
+  [* ] glDebugMessageControl takes: %lf ms, %lld cycles
+  [* ] glDebugMessageControl: count is greater than zero and, severity is not GL_DONT_CARE, or source is GL_DONT_CARE, or type is GL_DONT_CARE
+  [* ] glDebugMessageControl: count is negative, which is not an accepted value
+  [* ] glDebugMessageControl: source or type or severity is/are not one of the accepted kind
+  [* ] glDebugMessageControlKHR
+  [* ] glDebugMessageControlKHR takes: %lf ms, %lld cycles
+  [* ] glDebugMessageInsert
+  [* ] glDebugMessageInsert takes: %lf ms, %lld cycles
+  [* ] glDebugMessageInsert: length is greater than or equal to GL_MAX_DEBUG_MESSAGE_LENGTH_KHR
+  [* ] glDebugMessageInsert: source is not GL_DEBUG_SOURCE_APPLICATION_KHR or GL_DEBUG_SOURCE_THIRD_PARTY_KHR
+  [* ] glDebugMessageInsert: source or type or severity is/are not one of the accepted kind
+  [* ] glDebugMessageInsertKHR
+  [* ] glDebugMessageInsertKHR takes: %lf ms, %lld cycles
+  [* ] glDrawArraysInstancedANGLE
+  [* ] glDrawArraysInstancedANGLE takes: %lf ms, %lld cycles
+  [* ] glDrawElementsInstancedANGLE
+  [* ] glDrawElementsInstancedANGLE takes: %lf ms, %lld cycles
+  [* ] glEGLImageTargetRenderbufferStorageOES: encountered errors while setting up a Renderbuffer from an IMGEGLImage
+  [* ] glEGLImageTargetTexture2DOES: encountered errors while creating a texture level from an IMGEGLImage
+  [* ] glGetDebugMessageLog
+  [* ] glGetDebugMessageLog takes: %lf ms, %lld cycles
+  [* ] glGetDebugMessageLog: bufsize is negative, which is an invalid value
+  [* ] glGetDebugMessageLogKHR
+  [* ] glGetDebugMessageLogKHR takes: %lf ms, %lld cycles
+  [* ] glGetError
+  [* ] glGetError takes: %lf ms, %lld cycles
+  [* ] glGetPointerv: pname is not GL_DEBUG_CALLBACK_FUNCTION_KHR or GL_DEBUG_CALLBACK_USER_PARAM_KHR
+  [* ] glGetProgramBinary: internal error %d occurred while fetching the binary info
+  [* ] glGetTranslatedShaderSourceANGLE
+  [* ] glGetTranslatedShaderSourceANGLE takes: %lf ms, %lld cycles
+  [* ] glMaxShaderCompilerThreadsKHR
+  [* ] glMaxShaderCompilerThreadsKHR takes: %lf ms, %lld cycles
+  [* ] glPopDebugGroup
+  [* ] glPopDebugGroup takes: %lf ms, %lld cycles
+  [* ] glPopDebugGroup: stack underflow error occurred while trying to pop a debug group
+  [* ] glPopDebugGroupKHR
+  [* ] glPopDebugGroupKHR takes: %lf ms, %lld cycles
+  [* ] glPushDebugGroup
+  [* ] glPushDebugGroup takes: %lf ms, %lld cycles
+  [* ] glPushDebugGroup: length is greater than or equal to GL_MAX_DEBUG_MESSAGE_LENGTH_KHR
+  [* ] glPushDebugGroup: source is neither GL_DEBUG_SOURCE_APPLICATION_KHR, nor GL_DEBUG_SOURCE_THIRD_PARTY_KHR
+  [* ] glPushDebugGroup: stack overflow error occurred while trying to push the debug group
+  [* ] glPushDebugGroupKHR
+  [* ] glPushDebugGroupKHR takes: %lf ms, %lld cycles
+  [* ] glReleaseShaderCompiler
+  [* ] glReleaseShaderCompiler takes: %lf ms, %lld cycles
+  [* ] glRenderbufferStorageMultisampleANGLE
+  [* ] glRenderbufferStorageMultisampleANGLE takes: %lf ms, %lld cycles
+  [* ] glTexImage2D: Encountered an error
+  [* ] glTexImage3D: Encountered an error
+  [* ] glTexStorage2D: Encountered an error
+  [* ] glTexStorage3D*: Encountered an error
+  [* ] glTexSubImage2D: Encountered an error
+  [* ] glTexSubImage3D: Encountered an error
+  [* ] glVertexAttribDivisorANGLE
+  [* ] glVertexAttribDivisorANGLE takes: %lf ms, %lld cycles
+  [* ] glWindowRectanglesEXT
+  [* ] glWindowRectanglesEXT takes: %lf ms, %lld cycles
+  [* ] glt error render thread unmap failed
+  [* ] glt error worker thread unmap failed
+  [* ] glt error, map buffer allocation failed
+  [* ] glt error, map buffer fail no buffer bound
+  [* ] glt error, map buffer fail, buffer already mapped
+  [* ] glt error, unmap buffer fail no buffer bound
+  [* ] glt error, unmap buffer fail, buffer not mapped: %d
+  [* ] glt error, unmapped backed range buffer
+  [* ] glt error, unmapped non null non range buffer
+  [* ] glt error, unmapped null range buffer
+  [* ] gpudGlDumpStateError
+  [* ] ini.cpp snprintf error: %d
+  [* ] initializeAnglePlatform
+  [* ] initializeAnglePlatform failed!
+  [* ] libGLES_meow.so
+  [* ] libGLESv2_angle.so
+  [* ] libMEOW
+  [* ] libMEOW_data.so
+  [* ] libMEOW_gift.so
+  [* ] libMEOW_glt20
+  [* ] libMEOW_qt.so
+  [* ] libMEOW_semaphore
+  [* ] libMEOW_trace.so
+  [* ] libglslcompiler.so
+  [* ] logError
+  [* ] mali
+  [* ] memalign
+  [* ] meow
+  [* ] meow [system] data loaded
+  [* ] meow [updated] data loaded
+  [* ] meow add trace layer
+  [* ] meow create thread key failed
+  [* ] meow delete thread key failed
+  [* ] meow delete tls: %p
+  [* ] meow load data failed!!
+  [* ] meow new tls: %p
+  [* ] meow plugin name buffer too small
+  [* ] meow reload base cfg path: %s
+  [* ] meow reload overlay cfg path: %s
+  [* ] meow thread key: %d
+  [* ] normalize
+  [* ] opengles3/debug.c
+  [* ] out of memory error, occurred while checking for Framebuffer completeness
+  [* ] strerror
+  [* ] vendor.debug.gpu.provider
+
+==========================================================================
+ FIM DO RELATÓRIO MESTRE                                                 
+==========================================================================
