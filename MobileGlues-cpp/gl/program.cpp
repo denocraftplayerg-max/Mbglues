@@ -1,4 +1,3 @@
-#include "program_binary.h"
 // MobileGlues - gl/program.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
@@ -12,11 +11,12 @@
 #include "log.h"
 #include "shader.h"
 #include "program.h"
+#include "shader_cache.h"
+#include "drawing.h"
 #include <regex>
 #include <cstring>
 #include <iostream>
 #include "../config/settings.h"
-#include "program_binary.h"\n#include "drawing.h"
 
 #define DEBUG 0
 
@@ -97,14 +97,36 @@ void GenerateDefaultFSSource() {
 }
 
 static UnorderedMap<unsigned, GLuint> DefaultFSMap; // essl version <-> shader id
-void glLinkProgram(GLuint program) {
-\
-    std::string name = "program_" + std::to_string(program);\n    if (program_binary_loaded[name]) {\n        LOG_D("Program %d already loaded from binary, skipping link", program);\n        return;\n    }
-\n    // Verifica se ja carregou do cache\n    std::string name = "program_" + std::to_string(program);\n    if (program_binary_loaded[name]) {\n        LOG_D("Program %d already loaded from binary, skipping link", program);\n        return;\n    }\n\
-    std::string name = "program_" + std::to_string(program);\n    if (program_binary_loaded[name]) {\n        LOG_D("Program %d already loaded from binary, skipping link", program);\n        return;\n    }
-    LOG()
 
+void glLinkProgram(GLuint program) {
+    LOG()
     LOG_D("glLinkProgram(%d)", program)
+
+    // Prepara dados do shader para hash
+    std::string vertex_src = shaderInfo.converted;
+    std::string fragment_src = shaderInfo.frag_data_changed ? 
+                               shaderInfo.frag_data_changed_converted : 
+                               shaderInfo.converted;
+    
+    // Gera hash único do par vertex/fragment
+    std::string shader_hash = generateShaderHash(vertex_src, fragment_src);
+    
+    // Verifica se shader já existe em cache
+    if (isShaderCached(shader_hash, ShaderSource::Minecraft)) {
+        LOG_D("Shader already cached (hash: %.8s...)", shader_hash.c_str());
+        
+        // Tenta carregar binário se disponível
+        if (loadProgramBinary(program, shader_hash, ShaderSource::Minecraft)) {
+            LOG_D("Program %d loaded from binary cache!", program);
+            shaderInfo.id = 0;
+            shaderInfo.converted = "";
+            shaderInfo.frag_data_changed_converted.clear();
+            shaderInfo.frag_data_changed = 0;
+            return;
+        }
+    }
+
+    // Compila shader normalmente
     if (!shaderInfo.converted.empty() && shaderInfo.frag_data_changed) {
         const GLchar* patched = shaderInfo.frag_data_changed_converted.c_str();
         GLES.glShaderSource(shaderInfo.id, 1, &patched, nullptr);
@@ -120,14 +142,13 @@ void glLinkProgram(GLuint program) {
         GLES.glAttachShader(program, shaderInfo.id);
         CHECK_GL_ERROR
     }
+    
     shaderInfo.id = 0;
     shaderInfo.converted = "";
     shaderInfo.frag_data_changed_converted.clear();
-\
-    if (programBinarySupported()) {\n        GLint linkStatus = 0;\n        GLES.glGetProgramiv(program, GL_LINK_STATUS, &linkStatus);\n        if (linkStatus == GL_TRUE) {\n            if (saveProgramBinary(program, name)) {\n                LOG_D("Saved program %d binary to cache", program);\n            } else {\n                LOG_W("Failed to save program %d binary to cache", program);\n            }\n        }\n    }
     shaderInfo.frag_data_changed = 0;
 
-    // Generate defaut fragment shader if needed
+    // Generate default fragment shader if needed
     if (program_map_should_generate_fs[program] == ShouldGenerateFSState::Maybe) {
         GenerateDefaultFSSource();
         GLuint& default_fs = DefaultFSMap[CurrentDefaultFSSourceVersion];
@@ -157,9 +178,28 @@ void glLinkProgram(GLuint program) {
         }
     }
 
+    // Executa link
     GLES.glLinkProgram(program);
-
     CHECK_GL_ERROR
+
+    // Verifica se link foi bem-sucedido
+    GLint linkStatus = 0;
+    GLES.glGetProgramiv(program, GL_LINK_STATUS, &linkStatus);
+    
+    if (linkStatus == GL_TRUE) {
+        // Salva source no cache
+        CompiledShaderInfo info;
+        info.vertex_source = vertex_src;
+        info.fragment_source = fragment_src;
+        info.shader_hash = shader_hash;
+        
+        saveShaderSource(info, ShaderSource::Minecraft);
+        
+        // Salva binário compilado
+        saveProgramBinary(program, shader_hash, ShaderSource::Minecraft);
+        
+        LOG_D("Program %d compiled and cached successfully", program);
+    }
 }
 
 void glGetProgramiv(GLuint program, GLenum pname, GLint* params) {
@@ -222,7 +262,6 @@ GLuint glCreateProgram() {
         }
     }
     program_map_should_generate_fs[program] = ShouldGenerateFSState::Unknown;
-\n    // Cache de binarios\n    std::string name = "program_" + std::to_string(program);\n    if (programBinarySupported() && loadProgramBinary(program, name)) {\n        program_binary_loaded[name] = true;\n        program_name_map[program] = name;\n        LOG_D("Program %d loaded from binary cache", program);\n    } else {\n        program_binary_loaded[name] = false;\n        program_name_map[program] = name;\n    }\n
     CHECK_GL_ERROR
     return program;
 }
