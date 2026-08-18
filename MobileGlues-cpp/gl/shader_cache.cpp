@@ -6,7 +6,7 @@
 #include <sstream>
 #include <iomanip>
 #include <cstring>
-#include <openssl/sha.h>
+#include "sha256_min.h"
 #include <chrono>
 
 namespace fs = std::filesystem;

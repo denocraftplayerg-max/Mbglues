@@ -28,8 +28,6 @@ set(SPIRV_CROSS_ENABLE_UTIL    OFF CACHE BOOL "Disable util" FORCE)
 add_subdirectory(3rdparty/glslang)
 add_subdirectory(3rdparty/SPIRV-Cross)
 
-# Find OpenSSL package
-find_package(OpenSSL REQUIRED)
 
 if(MACOS)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -w -fvisibility=default -funwind-tables -g -D_THREAD_SAFE -fPIC -stdlib=libc++")
@@ -100,6 +98,7 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
     gl/program.cpp
     gl/shader.cpp
     gl/shader_cache.cpp
+    gl/sha256_min.c
     gl/framebuffer.cpp
     gl/texture.cpp
     gl/drawing.cpp
@@ -135,14 +134,11 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     ./includes
     ./3rdparty/xxhash
-    ${OPENSSL_INCLUDE_DIR})
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     glslang::glslang
     spirv-cross-c
-    OpenSSL::SSL
-    OpenSSL::Crypto
 )
 
 if (NOT MSVC)
