@@ -2,7 +2,7 @@ name: Build MobileGlues for Android
 
 on:
   push:
-    branches: [main, master]
+    branches: [dev]
   workflow_dispatch:
 
 jobs:
@@ -58,3 +58,11 @@ jobs:
           name: libmobileglues-android-arm64-v8a
           path: MobileGlues-cpp/build/libmobileglues.so
           retention-days: 30
+
+      - name: Trigger APK build
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+          repository: denocraftplayerg-max/MbgluesAPK
+          event-type: new-so
+          client-payload: '{"run_id":"${{ github.run_id }}","artifact":"libmobileglues-android-arm64-v8a"}'
