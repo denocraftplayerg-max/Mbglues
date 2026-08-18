@@ -96,6 +96,7 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
     gl/log.cpp
     gl/program.cpp
     gl/shader.cpp
+    gl/shader_cache.cpp
     gl/framebuffer.cpp
     gl/texture.cpp
     gl/drawing.cpp
@@ -136,6 +137,8 @@ target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/incl
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
     glslang::glslang
     spirv-cross-c
+    ssl
+    crypto
 )
 
 if (NOT MSVC)
