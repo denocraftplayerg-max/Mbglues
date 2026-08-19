@@ -23,3 +23,4 @@ dependencyResolutionManagement {
 rootProject.name = "Quanneggaes4d-plugin"
 include(":app")
 include(":QUANNEGGAES4D")
+project(":QUANNEGGAES4D").projectDir = file("Quanneggaes4d")
