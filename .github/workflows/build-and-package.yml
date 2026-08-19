@@ -15,6 +15,8 @@ jobs:
           submodules: recursive
         with:
           submodules: recursive
+        with:
+          submodules: recursive
 
       - name: Setup Java
         uses: actions/setup-java@v5
