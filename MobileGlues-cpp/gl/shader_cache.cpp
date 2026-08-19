@@ -1,5 +1,5 @@
 #include "shader_cache.h"
-#include "log.h"
+#include "mg.h"
 #include "../includes.h"
 #include <filesystem>
 #include <fstream>
@@ -8,6 +8,8 @@
 #include <cstring>
 #include "sha256_min.h"
 #include <chrono>
+
+#define DEBUG 0
 
 namespace fs = std::filesystem;
 

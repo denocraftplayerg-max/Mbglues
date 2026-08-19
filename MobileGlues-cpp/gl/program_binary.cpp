@@ -1,7 +1,9 @@
 #include "program_binary.h"
-#include "log.h"
+#include "mg.h"
 #include "../includes.h"
 #include <filesystem>
+
+#define DEBUG 0
 
 namespace fs = std::filesystem;
 
