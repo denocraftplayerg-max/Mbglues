@@ -234,7 +234,7 @@ int hasVulkan12() {
                     VkPhysicalDeviceProperties deviceProperties;
                     vkGetPhysicalDeviceProperties(physicalDevices[i], &deviceProperties);
 
-                    if (deviceProperties.apiVersion >= VK_API_VERSION_1_2) {
+                    if (deviceProperties.apiVersion >= VK_API_VERSION_1_1) {
                         found = 1;
                         break;
                     }
