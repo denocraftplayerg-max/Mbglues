@@ -59,6 +59,11 @@
         <meta-data
             android:name="qngPlugin"
             android:value="true" />
+        <!-- ZalithLauncher/FCL renderer-plugin discovery contract. Keep qngPlugin
+             for the plugin's own consumers, but also expose the standard marker. -->
+        <meta-data
+            android:name="zalithRendererPlugin"
+            android:value="true" />
         <meta-data
             android:name="des"
             android:value="${des}" />
