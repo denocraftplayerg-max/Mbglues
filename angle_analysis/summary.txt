@@ -1,0 +1,59 @@
+
+=== RESUMO DA ANÁLISE ANGLE ===
+
+1. Funções EGL exportadas:
+115
+   (ver egl_analysis.txt para lista completa)
+
+2. Funções GLES exportadas:
+826
+   (ver gles_analysis.txt para lista completa)
+
+3. Versões detectadas:
+Command requires OpenGL ES 1.0 or 3.2.
+Command requires OpenGL ES 1.0.
+Command requires OpenGL ES 2.0.
+Command requires OpenGL ES 3.0.
+Command requires OpenGL ES 3.1.
+Command requires OpenGL ES 3.2.
+EGL_PLATFORM_ANGLE_TYPE_VULKAN_ANGLE currently only supports Vulkan 1.0.
+OpenGL ES 2.0 Required.
+OpenGL ES 3.0 Required.
+OpenGL ES 3.1 Required.
+
+4. Extensões GL suportadas:
+1103
+   Top 20 extensões:
+GL_AMD_performance_monitor
+GL_ANDROID_extension_pack_es31a
+GL_ANGLE_base_vertex_base_instance
+GL_ANGLE_base_vertex_base_instance_shader_builtin
+GL_ANGLE_blob_cache
+GL_ANGLE_client_arrays
+GL_ANGLE_clip_cull_distance
+GL_ANGLE_compressed_texture_etc
+GL_ANGLE_copy_texture_3d
+GL_ANGLE_depth_texture
+GL_ANGLE_explicit_context
+GL_ANGLE_framebuffer_blit
+GL_ANGLE_framebuffer_multisample
+GL_ANGLE_get_image
+GL_ANGLE_get_image extension not enabled.
+GL_ANGLE_get_serialized_context_string
+GL_ANGLE_get_tex_level_parameter
+GL_ANGLE_instanced_arrays
+GL_ANGLE_logic_op
+GL_ANGLE_memory_object_flags
+
+5. Backend detectado:
+../../src/libANGLE/GLES1Renderer.cpp
+../../src/libANGLE/renderer/vulkan/BufferVk.cpp
+../../src/libANGLE/renderer/vulkan/CommandQueue.cpp
+../../src/libANGLE/renderer/vulkan/ContextVk.cpp
+../../src/libANGLE/renderer/vulkan/DeviceVk.cpp
+../../src/libANGLE/renderer/vulkan/DisplayVk.cpp
+../../src/libANGLE/renderer/vulkan/FramebufferVk.cpp
+../../src/libANGLE/renderer/vulkan/ImageVk.cpp
+../../src/libANGLE/renderer/vulkan/MemoryObjectVk.cpp
+../../src/libANGLE/renderer/vulkan/MemoryTracking.cpp
+

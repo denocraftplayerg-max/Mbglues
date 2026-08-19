@@ -1,0 +1,2778 @@
+=== Análise de libGLESv2_angle.so ===
+
+--- Símbolos GLES exportados ---
+glAcquireTexturesANGLE
+glActiveShaderProgram
+glActiveShaderProgramEXT
+glActiveTexture
+glAlphaFunc
+glAlphaFuncx
+glAttachShader
+glBeginPerfMonitorAMD
+glBeginPixelLocalStorageANGLE
+glBeginQuery
+glBeginQueryEXT
+glBeginTransformFeedback
+glBindAttribLocation
+glBindBuffer
+glBindBufferBase
+glBindBufferRange
+glBindFragDataLocationEXT
+glBindFragDataLocationIndexedEXT
+glBindFramebuffer
+glBindFramebufferOES
+glBindImageTexture
+glBindProgramPipeline
+glBindProgramPipelineEXT
+glBindRenderbuffer
+glBindRenderbufferOES
+glBindSampler
+glBindTexture
+glBindTransformFeedback
+glBindUniformLocationCHROMIUM
+glBindVertexArray
+glBindVertexArrayOES
+glBindVertexBuffer
+glBlendBarrier
+glBlendBarrierKHR
+glBlendColor
+glBlendEquation
+glBlendEquationOES
+glBlendEquationSeparate
+glBlendEquationSeparatei
+glBlendEquationSeparateiEXT
+glBlendEquationSeparateiOES
+glBlendEquationi
+glBlendEquationiEXT
+glBlendEquationiOES
+glBlendFunc
+glBlendFuncSeparate
+glBlendFuncSeparatei
+glBlendFuncSeparateiEXT
+glBlendFuncSeparateiOES
+glBlendFunci
+glBlendFunciEXT
+glBlendFunciOES
+glBlitFramebuffer
+glBlitFramebufferANGLE
+glBlitFramebufferNV
+glBlobCacheCallbacksANGLE
+glBufferData
+glBufferStorageEXT
+glBufferStorageExternalEXT
+glBufferStorageMemEXT
+glBufferSubData
+glCheckFramebufferStatus
+glCheckFramebufferStatusOES
+glClear
+glClearBufferfi
+glClearBufferfv
+glClearBufferiv
+glClearBufferuiv
+glClearColor
+glClearColorx
+glClearDepthf
+glClearDepthx
+glClearStencil
+glClearTexImageEXT
+glClearTexSubImageEXT
+glClientActiveTexture
+glClientWaitSync
+glClipControlEXT
+glClipPlanef
+glClipPlanex
+glColor4f
+glColor4ub
+glColor4x
+glColorMask
+glColorMaski
+glColorMaskiEXT
+glColorMaskiOES
+glColorPointer
+glCompileShader
+glCompressedCopyTextureCHROMIUM
+glCompressedTexImage2D
+glCompressedTexImage3D
+glCompressedTexImage3DOES
+glCompressedTexSubImage2D
+glCompressedTexSubImage3D
+glCompressedTexSubImage3DOES
+glCopyBufferSubData
+glCopyImageSubData
+glCopyImageSubDataEXT
+glCopyImageSubDataOES
+glCopySubTexture3DANGLE
+glCopySubTextureCHROMIUM
+glCopyTexImage2D
+glCopyTexSubImage2D
+glCopyTexSubImage3D
+glCopyTexSubImage3DOES
+glCopyTexture3DANGLE
+glCopyTextureCHROMIUM
+glCreateMemoryObjectsEXT
+glCreateProgram
+glCreateShader
+glCreateShaderProgramv
+glCreateShaderProgramvEXT
+glCullFace
+glCurrentPaletteMatrixOES
+glDebugMessageCallback
+glDebugMessageCallbackKHR
+glDebugMessageControl
+glDebugMessageControlKHR
+glDebugMessageInsert
+glDebugMessageInsertKHR
+glDeleteBuffers
+glDeleteFencesNV
+glDeleteFramebuffers
+glDeleteFramebuffersOES
+glDeleteMemoryObjectsEXT
+glDeletePerfMonitorsAMD
+glDeleteProgram
+glDeleteProgramPipelines
+glDeleteProgramPipelinesEXT
+glDeleteQueries
+glDeleteQueriesEXT
+glDeleteRenderbuffers
+glDeleteRenderbuffersOES
+glDeleteSamplers
+glDeleteSemaphoresEXT
+glDeleteShader
+glDeleteSync
+glDeleteTextures
+glDeleteTransformFeedbacks
+glDeleteVertexArrays
+glDeleteVertexArraysOES
+glDepthFunc
+glDepthMask
+glDepthRangef
+glDepthRangex
+glDetachShader
+glDisable
+glDisableClientState
+glDisableVertexAttribArray
+glDisablei
+glDisableiEXT
+glDisableiOES
+glDiscardFramebufferEXT
+glDispatchCompute
+glDispatchComputeIndirect
+glDrawArrays
+glDrawArraysIndirect
+glDrawArraysInstanced
+glDrawArraysInstancedANGLE
+glDrawArraysInstancedBaseInstanceANGLE
+glDrawArraysInstancedBaseInstanceEXT
+glDrawArraysInstancedEXT
+glDrawBuffers
+glDrawBuffersEXT
+glDrawElements
+glDrawElementsBaseVertex
+glDrawElementsBaseVertexEXT
+glDrawElementsBaseVertexOES
+glDrawElementsIndirect
+glDrawElementsInstanced
+glDrawElementsInstancedANGLE
+glDrawElementsInstancedBaseInstanceEXT
+glDrawElementsInstancedBaseVertex
+glDrawElementsInstancedBaseVertexBaseInstanceANGLE
+glDrawElementsInstancedBaseVertexBaseInstanceEXT
+glDrawElementsInstancedBaseVertexEXT
+glDrawElementsInstancedBaseVertexOES
+glDrawElementsInstancedEXT
+glDrawRangeElements
+glDrawRangeElementsBaseVertex
+glDrawRangeElementsBaseVertexEXT
+glDrawRangeElementsBaseVertexOES
+glDrawTexfOES
+glDrawTexfvOES
+glDrawTexiOES
+glDrawTexivOES
+glDrawTexsOES
+glDrawTexsvOES
+glDrawTexxOES
+glDrawTexxvOES
+glEGLImageTargetRenderbufferStorageOES
+glEGLImageTargetTexStorageEXT
+glEGLImageTargetTexture2DOES
+glEnable
+glEnableClientState
+glEnableVertexAttribArray
+glEnablei
+glEnableiEXT
+glEnableiOES
+glEndPerfMonitorAMD
+glEndPixelLocalStorageANGLE
+glEndPixelLocalStorageImplicitANGLE
+glEndQuery
+glEndQueryEXT
+glEndTilingQCOM
+glEndTransformFeedback
+glFenceSync
+glFinish
+glFinishFenceNV
+glFlush
+glFlushMappedBufferRange
+glFlushMappedBufferRangeEXT
+glFogf
+glFogfv
+glFogx
+glFogxv
+glFramebufferFetchBarrierEXT
+glFramebufferFoveationConfigQCOM
+glFramebufferFoveationParametersQCOM
+glFramebufferMemorylessPixelLocalStorageANGLE
+glFramebufferParameteri
+glFramebufferParameteriMESA
+glFramebufferPixelLocalClearValuefvANGLE
+glFramebufferPixelLocalClearValueivANGLE
+glFramebufferPixelLocalClearValueuivANGLE
+glFramebufferPixelLocalStorageInterruptANGLE
+glFramebufferPixelLocalStorageRestoreANGLE
+glFramebufferRenderbuffer
+glFramebufferRenderbufferOES
+glFramebufferShadingRateEXT
+glFramebufferTexture
+glFramebufferTexture2D
+glFramebufferTexture2DMultisampleEXT
+glFramebufferTexture2DOES
+glFramebufferTexture3DOES
+glFramebufferTextureEXT
+glFramebufferTextureLayer
+glFramebufferTextureMultisampleMultiviewOVR
+glFramebufferTextureMultiviewOVR
+glFramebufferTextureOES
+glFramebufferTexturePixelLocalStorageANGLE
+glFrontFace
+glFrustumf
+glFrustumx
+glGenBuffers
+glGenFencesNV
+glGenFramebuffers
+glGenFramebuffersOES
+glGenPerfMonitorsAMD
+glGenProgramPipelines
+glGenProgramPipelinesEXT
+glGenQueries
+glGenQueriesEXT
+glGenRenderbuffers
+glGenRenderbuffersOES
+glGenSamplers
+glGenSemaphoresEXT
+glGenTextures
+glGenTransformFeedbacks
+glGenVertexArrays
+glGenVertexArraysOES
+glGenerateMipmap
+glGenerateMipmapOES
+glGetActiveAttrib
+glGetActiveUniform
+glGetActiveUniformBlockName
+glGetActiveUniformBlockiv
+glGetActiveUniformBlockivRobustANGLE
+glGetActiveUniformsiv
+glGetAttachedShaders
+glGetAttribLocation
+glGetBooleani_v
+glGetBooleanv
+glGetBooleanvRobustANGLE
+glGetBufferParameteri64v
+glGetBufferParameteri64vRobustANGLE
+glGetBufferParameteriv
+glGetBufferParameterivRobustANGLE
+glGetBufferPointerv
+glGetBufferPointervOES
+glGetBufferPointervRobustANGLE
+glGetClipPlanef
+glGetClipPlanex
+glGetCompressedTexImageANGLE
+glGetDebugMessageLog
+glGetDebugMessageLogKHR
+glGetError
+glGetFenceivNV
+glGetFixedv
+glGetFloatv
+glGetFloatvRobustANGLE
+glGetFragDataIndexEXT
+glGetFragDataLocation
+glGetFragmentShadingRatesEXT
+glGetFramebufferAttachmentParameteriv
+glGetFramebufferAttachmentParameterivOES
+glGetFramebufferAttachmentParameterivRobustANGLE
+glGetFramebufferParameteriv
+glGetFramebufferParameterivMESA
+glGetFramebufferPixelLocalStorageParameterfvANGLE
+glGetFramebufferPixelLocalStorageParameterfvRobustANGLE
+glGetFramebufferPixelLocalStorageParameterivANGLE
+glGetFramebufferPixelLocalStorageParameterivRobustANGLE
+glGetFramebufferPixelLocalStorageParameteruivANGLE
+glGetFramebufferPixelLocalStorageParameteruivRobustANGLE
+glGetGraphicsResetStatus
+glGetGraphicsResetStatusEXT
+glGetGraphicsResetStatusKHR
+glGetInteger64i_v
+glGetInteger64i_vRobustANGLE
+glGetInteger64v
+glGetInteger64vEXT
+glGetInteger64vRobustANGLE
+glGetIntegeri_v
+glGetIntegeri_vRobustANGLE
+glGetIntegerv
+glGetIntegervRobustANGLE
+glGetInternalformativ
+glGetInternalformativRobustANGLE
+glGetLightfv
+glGetLightxv
+glGetMaterialfv
+glGetMaterialxv
+glGetMemoryObjectParameterivEXT
+glGetMultisamplefv
+glGetMultisamplefvANGLE
+glGetMultisamplefvRobustANGLE
+glGetObjectLabel
+glGetObjectLabelEXT
+glGetObjectLabelKHR
+glGetObjectPtrLabel
+glGetObjectPtrLabelKHR
+glGetPerfMonitorCounterDataAMD
+glGetPerfMonitorCounterInfoAMD
+glGetPerfMonitorCounterStringAMD
+glGetPerfMonitorCountersAMD
+glGetPerfMonitorGroupStringAMD
+glGetPerfMonitorGroupsAMD
+glGetPointerv
+glGetPointervANGLE
+glGetPointervKHR
+glGetProgramBinary
+glGetProgramBinaryOES
+glGetProgramInfoLog
+glGetProgramInterfaceiv
+glGetProgramPipelineInfoLog
+glGetProgramPipelineInfoLogEXT
+glGetProgramPipelineiv
+glGetProgramPipelineivEXT
+glGetProgramResourceIndex
+glGetProgramResourceLocation
+glGetProgramResourceLocationIndexEXT
+glGetProgramResourceName
+glGetProgramResourceiv
+glGetProgramiv
+glGetProgramivRobustANGLE
+glGetQueryObjecti64vEXT
+glGetQueryObjecti64vRobustANGLE
+glGetQueryObjectivEXT
+glGetQueryObjectivRobustANGLE
+glGetQueryObjectui64vEXT
+glGetQueryObjectui64vRobustANGLE
+glGetQueryObjectuiv
+glGetQueryObjectuivEXT
+glGetQueryObjectuivRobustANGLE
+glGetQueryiv
+glGetQueryivEXT
+glGetQueryivRobustANGLE
+glGetRenderbufferImageANGLE
+glGetRenderbufferParameteriv
+glGetRenderbufferParameterivOES
+glGetRenderbufferParameterivRobustANGLE
+glGetSamplerParameterIiv
+glGetSamplerParameterIivEXT
+glGetSamplerParameterIivOES
+glGetSamplerParameterIuiv
+glGetSamplerParameterIuivEXT
+glGetSamplerParameterIuivOES
+glGetSamplerParameterfv
+glGetSamplerParameterfvRobustANGLE
+glGetSamplerParameteriv
+glGetSamplerParameterivRobustANGLE
+glGetSemaphoreParameterui64vEXT
+glGetShaderInfoLog
+glGetShaderPrecisionFormat
+glGetShaderSource
+glGetShaderiv
+glGetShaderivRobustANGLE
+glGetString
+glGetStringi
+glGetSynciv
+glGetTexEnvfv
+glGetTexEnviv
+glGetTexEnvxv
+glGetTexGenfvOES
+glGetTexGenivOES
+glGetTexGenxvOES
+glGetTexImageANGLE
+glGetTexLevelParameterfv
+glGetTexLevelParameterfvANGLE
+glGetTexLevelParameterfvRobustANGLE
+glGetTexLevelParameteriv
+glGetTexLevelParameterivANGLE
+glGetTexLevelParameterivRobustANGLE
+glGetTexParameterIiv
+glGetTexParameterIivEXT
+glGetTexParameterIivOES
+glGetTexParameterIuiv
+glGetTexParameterIuivEXT
+glGetTexParameterIuivOES
+glGetTexParameterfv
+glGetTexParameterfvRobustANGLE
+glGetTexParameteriv
+glGetTexParameterivRobustANGLE
+glGetTexParameterxv
+glGetTransformFeedbackVarying
+glGetTranslatedShaderSourceANGLE
+glGetUniformBlockIndex
+glGetUniformIndices
+glGetUniformLocation
+glGetUniformfv
+glGetUniformfvRobustANGLE
+glGetUniformiv
+glGetUniformivRobustANGLE
+glGetUniformuiv
+glGetUniformuivRobustANGLE
+glGetUnsignedBytei_vEXT
+glGetUnsignedBytevEXT
+glGetVertexAttribIiv
+glGetVertexAttribIivRobustANGLE
+glGetVertexAttribIuiv
+glGetVertexAttribIuivRobustANGLE
+glGetVertexAttribPointerv
+glGetVertexAttribPointervRobustANGLE
+glGetVertexAttribfv
+glGetVertexAttribfvRobustANGLE
+glGetVertexAttribiv
+glGetVertexAttribivRobustANGLE
+glGetnUniformfv
+glGetnUniformfvEXT
+glGetnUniformfvKHR
+glGetnUniformiv
+glGetnUniformivEXT
+glGetnUniformivKHR
+glGetnUniformuiv
+glGetnUniformuivKHR
+glHint
+glImportMemoryFdEXT
+glImportMemoryZirconHandleANGLE
+glImportSemaphoreFdEXT
+glImportSemaphoreZirconHandleANGLE
+glInsertEventMarkerEXT
+glInvalidateFramebuffer
+glInvalidateSubFramebuffer
+glIsBuffer
+glIsEnabled
+glIsEnabledi
+glIsEnablediEXT
+glIsEnablediOES
+glIsFenceNV
+glIsFramebuffer
+glIsFramebufferOES
+glIsMemoryObjectEXT
+glIsProgram
+glIsProgramPipeline
+glIsProgramPipelineEXT
+glIsQuery
+glIsQueryEXT
+glIsRenderbuffer
+glIsRenderbufferOES
+glIsSampler
+glIsSemaphoreEXT
+glIsShader
+glIsSync
+glIsTexture
+glIsTransformFeedback
+glIsVertexArray
+glIsVertexArrayOES
+glLabelObjectEXT
+glLightModelf
+glLightModelfv
+glLightModelx
+glLightModelxv
+glLightf
+glLightfv
+glLightx
+glLightxv
+glLineWidth
+glLineWidthx
+glLinkProgram
+glLoadIdentity
+glLoadMatrixf
+glLoadMatrixx
+glLoadPaletteFromModelViewMatrixOES
+glLogicOp
+glLogicOpANGLE
+glLoseContextCHROMIUM
+glMapBufferOES
+glMapBufferRange
+glMapBufferRangeEXT
+glMaterialf
+glMaterialfv
+glMaterialx
+glMaterialxv
+glMatrixIndexPointerOES
+glMatrixMode
+glMaxShaderCompilerThreadsKHR
+glMemoryBarrier
+glMemoryBarrierByRegion
+glMemoryObjectParameterivEXT
+glMinSampleShading
+glMinSampleShadingOES
+glMultMatrixf
+glMultMatrixx
+glMultiDrawArraysANGLE
+glMultiDrawArraysEXT
+glMultiDrawArraysIndirectEXT
+glMultiDrawArraysInstancedANGLE
+glMultiDrawArraysInstancedBaseInstanceANGLE
+glMultiDrawElementsANGLE
+glMultiDrawElementsBaseVertexEXT
+glMultiDrawElementsEXT
+glMultiDrawElementsIndirectEXT
+glMultiDrawElementsInstancedANGLE
+glMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE
+glMultiTexCoord4f
+glMultiTexCoord4x
+glNormal3f
+glNormal3x
+glNormalPointer
+glObjectLabel
+glObjectLabelKHR
+glObjectPtrLabel
+glObjectPtrLabelKHR
+glOrthof
+glOrthox
+glPatchParameteri
+glPatchParameteriEXT
+glPatchParameteriOES
+glPauseTransformFeedback
+glPixelLocalStorageBarrierANGLE
+glPixelStorei
+glPointParameterf
+glPointParameterfv
+glPointParameterx
+glPointParameterxv
+glPointSize
+glPointSizePointerOES
+glPointSizex
+glPolygonModeANGLE
+glPolygonModeNV
+glPolygonOffset
+glPolygonOffsetClampEXT
+glPolygonOffsetx
+glPopDebugGroup
+glPopDebugGroupKHR
+glPopGroupMarkerEXT
+glPopMatrix
+glPrimitiveBoundingBox
+glPrimitiveBoundingBoxEXT
+glPrimitiveBoundingBoxOES
+glProgramBinary
+glProgramBinaryOES
+glProgramParameteri
+glProgramParameteriEXT
+glProgramUniform1f
+glProgramUniform1fEXT
+glProgramUniform1fv
+glProgramUniform1fvEXT
+glProgramUniform1i
+glProgramUniform1iEXT
+glProgramUniform1iv
+glProgramUniform1ivEXT
+glProgramUniform1ui
+glProgramUniform1uiEXT
+glProgramUniform1uiv
+glProgramUniform1uivEXT
+glProgramUniform2f
+glProgramUniform2fEXT
+glProgramUniform2fv
+glProgramUniform2fvEXT
+glProgramUniform2i
+glProgramUniform2iEXT
+glProgramUniform2iv
+glProgramUniform2ivEXT
+glProgramUniform2ui
+glProgramUniform2uiEXT
+glProgramUniform2uiv
+glProgramUniform2uivEXT
+glProgramUniform3f
+glProgramUniform3fEXT
+glProgramUniform3fv
+glProgramUniform3fvEXT
+glProgramUniform3i
+glProgramUniform3iEXT
+glProgramUniform3iv
+glProgramUniform3ivEXT
+glProgramUniform3ui
+glProgramUniform3uiEXT
+glProgramUniform3uiv
+glProgramUniform3uivEXT
+glProgramUniform4f
+glProgramUniform4fEXT
+glProgramUniform4fv
+glProgramUniform4fvEXT
+glProgramUniform4i
+glProgramUniform4iEXT
+glProgramUniform4iv
+glProgramUniform4ivEXT
+glProgramUniform4ui
+glProgramUniform4uiEXT
+glProgramUniform4uiv
+glProgramUniform4uivEXT
+glProgramUniformMatrix2fv
+glProgramUniformMatrix2fvEXT
+glProgramUniformMatrix2x3fv
+glProgramUniformMatrix2x3fvEXT
+glProgramUniformMatrix2x4fv
+glProgramUniformMatrix2x4fvEXT
+glProgramUniformMatrix3fv
+glProgramUniformMatrix3fvEXT
+glProgramUniformMatrix3x2fv
+glProgramUniformMatrix3x2fvEXT
+glProgramUniformMatrix3x4fv
+glProgramUniformMatrix3x4fvEXT
+glProgramUniformMatrix4fv
+glProgramUniformMatrix4fvEXT
+glProgramUniformMatrix4x2fv
+glProgramUniformMatrix4x2fvEXT
+glProgramUniformMatrix4x3fv
+glProgramUniformMatrix4x3fvEXT
+glProvokingVertexANGLE
+glPushDebugGroup
+glPushDebugGroupKHR
+glPushGroupMarkerEXT
+glPushMatrix
+glQueryCounterEXT
+glQueryMatrixxOES
+glReadBuffer
+glReadPixels
+glReadPixelsRobustANGLE
+glReadnPixels
+glReadnPixelsEXT
+glReadnPixelsKHR
+glReleaseShaderCompiler
+glReleaseTexturesANGLE
+glRenderbufferStorage
+glRenderbufferStorageMultisample
+glRenderbufferStorageMultisampleANGLE
+glRenderbufferStorageMultisampleEXT
+glRenderbufferStorageOES
+glRequestExtensionANGLE
+glResumeTransformFeedback
+glRotatef
+glRotatex
+glSampleCoverage
+glSampleCoveragex
+glSampleMaski
+glSampleMaskiANGLE
+glSamplerParameterIiv
+glSamplerParameterIivEXT
+glSamplerParameterIivOES
+glSamplerParameterIuiv
+glSamplerParameterIuivEXT
+glSamplerParameterIuivOES
+glSamplerParameterf
+glSamplerParameterfv
+glSamplerParameterfvRobustANGLE
+glSamplerParameteri
+glSamplerParameteriv
+glSamplerParameterivRobustANGLE
+glScalef
+glScalex
+glScissor
+glSelectPerfMonitorCountersAMD
+glSemaphoreParameterui64vEXT
+glSetFenceNV
+glShadeModel
+glShaderBinary
+glShaderSource
+glShadingRateCombinerOpsEXT
+glShadingRateEXT
+glShadingRateQCOM
+glSignalSemaphoreEXT
+glStartTilingQCOM
+glStencilFunc
+glStencilFuncSeparate
+glStencilMask
+glStencilMaskSeparate
+glStencilOp
+glStencilOpSeparate
+glTestFenceNV
+glTexBuffer
+glTexBufferEXT
+glTexBufferOES
+glTexBufferRange
+glTexBufferRangeEXT
+glTexBufferRangeOES
+glTexCoordPointer
+glTexEnvf
+glTexEnvfv
+glTexEnvi
+glTexEnviv
+glTexEnvx
+glTexEnvxv
+glTexGenfOES
+glTexGenfvOES
+glTexGeniOES
+glTexGenivOES
+glTexGenxOES
+glTexGenxvOES
+glTexImage2D
+glTexImage2DRobustANGLE
+glTexImage3D
+glTexImage3DOES
+glTexImage3DRobustANGLE
+glTexParameterIiv
+glTexParameterIivEXT
+glTexParameterIivOES
+glTexParameterIuiv
+glTexParameterIuivEXT
+glTexParameterIuivOES
+glTexParameterf
+glTexParameterfv
+glTexParameterfvRobustANGLE
+glTexParameteri
+glTexParameteriv
+glTexParameterivRobustANGLE
+glTexParameterx
+glTexParameterxv
+glTexStorage2D
+glTexStorage2DEXT
+glTexStorage2DMultisample
+glTexStorage2DMultisampleANGLE
+glTexStorage3D
+glTexStorage3DEXT
+glTexStorage3DMultisample
+glTexStorage3DMultisampleOES
+glTexStorageAttribs2DEXT
+glTexStorageAttribs3DEXT
+glTexStorageMem2DEXT
+glTexStorageMem2DMultisampleEXT
+glTexStorageMem3DEXT
+glTexStorageMem3DMultisampleEXT
+glTexStorageMemFlags2DANGLE
+glTexStorageMemFlags2DMultisampleANGLE
+glTexStorageMemFlags3DANGLE
+glTexStorageMemFlags3DMultisampleANGLE
+glTexSubImage2D
+glTexSubImage2DRobustANGLE
+glTexSubImage3D
+glTexSubImage3DOES
+glTexSubImage3DRobustANGLE
+glTextureFoveationParametersQCOM
+glTransformFeedbackVaryings
+glTranslatef
+glTranslatex
+glUniform1f
+glUniform1fv
+glUniform1i
+glUniform1iv
+glUniform1ui
+glUniform1uiv
+glUniform2f
+glUniform2fv
+glUniform2i
+glUniform2iv
+glUniform2ui
+glUniform2uiv
+glUniform3f
+glUniform3fv
+glUniform3i
+glUniform3iv
+glUniform3ui
+glUniform3uiv
+glUniform4f
+glUniform4fv
+glUniform4i
+glUniform4iv
+glUniform4ui
+glUniform4uiv
+glUniformBlockBinding
+glUniformMatrix2fv
+glUniformMatrix2x3fv
+glUniformMatrix2x4fv
+glUniformMatrix3fv
+glUniformMatrix3x2fv
+glUniformMatrix3x4fv
+glUniformMatrix4fv
+glUniformMatrix4x2fv
+glUniformMatrix4x3fv
+glUnmapBuffer
+glUnmapBufferOES
+glUseProgram
+glUseProgramStages
+glUseProgramStagesEXT
+glValidateProgram
+glValidateProgramPipeline
+glValidateProgramPipelineEXT
+glVertexAttrib1f
+glVertexAttrib1fv
+glVertexAttrib2f
+glVertexAttrib2fv
+glVertexAttrib3f
+glVertexAttrib3fv
+glVertexAttrib4f
+glVertexAttrib4fv
+glVertexAttribBinding
+glVertexAttribDivisor
+glVertexAttribDivisorANGLE
+glVertexAttribDivisorEXT
+glVertexAttribFormat
+glVertexAttribI4i
+glVertexAttribI4iv
+glVertexAttribI4ui
+glVertexAttribI4uiv
+glVertexAttribIFormat
+glVertexAttribIPointer
+glVertexAttribPointer
+glVertexBindingDivisor
+glVertexPointer
+glViewport
+glWaitSemaphoreEXT
+glWaitSync
+glWeightPointerOES
+
+--- Strings de versão e backend ---
+            if (spotDot < spotAngleCos)
+        float spotAngle    = light_spotlight_cutoff_angles[i];
+        if (spotAngle == 180.0 || lightPos.w == 0.0)
+        mediump float spotAngleCos = cos(radians(spotAngle));
+ (ANGLE 
+ (or there is no acceptable conversion)
+ shader version does not match other shader versions.
+ supported in GLSL ES 1.00 only
+#version 300 es
+#version directive must occur before anything else, except for comments and white space
+#version directive must occur on the first line of the shader
+' (or there is no acceptable conversion)
+, cacheVersion = 
+, existingVersion = 
+../../src/common/vulkan/vulkan_icd.cpp
+../../src/libANGLE/BlobCache.cpp
+../../src/libANGLE/Context.cpp
+../../src/libANGLE/Debug.cpp
+../../src/libANGLE/Display.cpp
+../../src/libANGLE/GLES1Renderer.cpp
+../../src/libANGLE/HandleAllocator.cpp
+../../src/libANGLE/Platform.cpp
+../../src/libANGLE/Program.cpp
+../../src/libANGLE/ProgramPipeline.h
+../../src/libANGLE/Shader.cpp
+../../src/libANGLE/State.cpp
+../../src/libANGLE/Texture.cpp
+../../src/libANGLE/angletypes.cpp
+../../src/libANGLE/queryconversions.cpp
+../../src/libANGLE/renderer/load_functions_table_autogen.cpp
+../../src/libANGLE/renderer/null/BufferNULL.cpp
+../../src/libANGLE/renderer/null/FramebufferNULL.cpp
+../../src/libANGLE/renderer/renderer_utils.cpp
+../../src/libANGLE/renderer/vulkan/BufferVk.cpp
+../../src/libANGLE/renderer/vulkan/CommandQueue.cpp
+../../src/libANGLE/renderer/vulkan/ContextVk.cpp
+../../src/libANGLE/renderer/vulkan/DeviceVk.cpp
+../../src/libANGLE/renderer/vulkan/DisplayVk.cpp
+../../src/libANGLE/renderer/vulkan/FramebufferVk.cpp
+../../src/libANGLE/renderer/vulkan/ImageVk.cpp
+../../src/libANGLE/renderer/vulkan/MemoryObjectVk.cpp
+../../src/libANGLE/renderer/vulkan/MemoryTracking.cpp
+../../src/libANGLE/renderer/vulkan/PersistentCommandPool.cpp
+../../src/libANGLE/renderer/vulkan/ProgramExecutableVk.cpp
+../../src/libANGLE/renderer/vulkan/SemaphoreVk.cpp
+../../src/libANGLE/renderer/vulkan/SurfaceVk.cpp
+../../src/libANGLE/renderer/vulkan/SyncVk.cpp
+../../src/libANGLE/renderer/vulkan/TextureVk.cpp
+../../src/libANGLE/renderer/vulkan/UtilsVk.cpp
+../../src/libANGLE/renderer/vulkan/VertexArrayVk.cpp
+../../src/libANGLE/renderer/vulkan/VkImageImageSiblingVk.cpp
+../../src/libANGLE/renderer/vulkan/android/HardwareBufferImageSiblingVkAndroid.cpp
+../../src/libANGLE/renderer/vulkan/android/WindowSurfaceVkAndroid.cpp
+../../src/libANGLE/renderer/vulkan/android/vk_android_utils.cpp
+../../src/libANGLE/renderer/vulkan/vk_cache_utils.cpp
+../../src/libANGLE/renderer/vulkan/vk_format_utils.cpp
+../../src/libANGLE/renderer/vulkan/vk_helpers.cpp
+../../src/libANGLE/renderer/vulkan/vk_internal_shaders_autogen.cpp
+../../src/libANGLE/renderer/vulkan/vk_ref_counted_event.cpp
+../../src/libANGLE/renderer/vulkan/vk_renderer.cpp
+../../src/libANGLE/renderer/vulkan/vk_utils.cpp
+../../src/libANGLE/renderer/vulkan/vk_utils.h
+../../src/libANGLE/validationES.cpp
+../../src/libANGLE/validationES2.cpp
+.gnu.version
+.gnu.version_r
+/data/local/tmp/angle_dumps/
+0 (ANGLE 
+1.5 (ANGLE 2.1.1 git hash: 444e86f45f44)
+: no conversion
+:ANGLE_base_vertex_base_instance_shader_builtin:
+:ANGLE_clip_cull_distance:
+:ANGLE_multi_draw:
+:ARB_texture_rectangle:
+;ANGLE_ENABLE_DEBUG_MARKERS
+<buftype> EGL_IOSURFACE_ANGLE requires the EGL_ANGLE_iosurface_client_buffer extension.
+<buftype> doesn't support rectangle texture targets
+<n> != ACTIVE_PIXEL_LOCAL_STORAGE_PLANES_ANGLE.
+ANGLE
+ANGLE (
+ANGLE Display::initialize error 
+ANGLE Pipeline Cache: 
+ANGLE Requires a minimum Vulkan device version of 1.1
+ANGLE Requires a minimum Vulkan instance version of 1.1
+ANGLE only suports maximum 
+ANGLE-GC
+ANGLE-Worker
+ANGLEAtomicCounters
+ANGLEBoundingBox
+ANGLECaptureXfb
+ANGLEClipDistance
+ANGLECullDistance
+ANGLEDepthInputAttachment
+ANGLEDepthRangeParams
+ANGLEFragmentInput
+ANGLEGetDisplayPlatform
+ANGLEGetXfbOffsets
+ANGLEInputAttachment
+ANGLELastFragData
+ANGLEResetDisplayPlatform
+ANGLERotateInterpolateOffset
+ANGLEStencilInputAttachment
+ANGLETransformPosition
+ANGLEUniformBlock
+ANGLEUniforms
+ANGLEXfb
+ANGLEXfbBuffer
+ANGLEXfbPosition
+ANGLE_DEFAULT_PLATFORM
+ANGLE_DUMP_PIPELINE_CACHE_GRAPH
+ANGLE_ENABLE_VULKAN_API_PERF_COUNTERS
+ANGLE_FEATURE_OVERRIDES_DISABLED
+ANGLE_FEATURE_OVERRIDES_ENABLED
+ANGLE_GL_RENDERER
+ANGLE_GL_VENDOR
+ANGLE_GL_VERSION
+ANGLE_PIPELINE_CACHE_GRAPH_DUMP_PATH
+ANGLE_PREFERRED_DEVICE
+ANGLE_SHADER_DUMP_PATH
+ANGLE_angleUniforms
+ANGLE_base_vertex_base_instance_shader_builtin
+ANGLE_blend_burn
+ANGLE_blend_darken
+ANGLE_blend_difference
+ANGLE_blend_dodge
+ANGLE_blend_dst
+ANGLE_blend_exclusion
+ANGLE_blend_hardlight
+ANGLE_blend_hsl_color
+ANGLE_blend_hsl_hue
+ANGLE_blend_hsl_luminosity
+ANGLE_blend_hsl_saturation
+ANGLE_blend_lighten
+ANGLE_blend_multiply
+ANGLE_blend_overlay
+ANGLE_blend_p0
+ANGLE_blend_p1
+ANGLE_blend_p2
+ANGLE_blend_screen
+ANGLE_blend_softlight
+ANGLE_blend_src
+ANGLE_clip_color
+ANGLE_clip_cull_distance
+ANGLE_f
+ANGLE_lumv3
+ANGLE_maxv3
+ANGLE_minv3
+ANGLE_multi_draw
+ANGLE_rgb_2_yuv
+ANGLE_rgb_2_yuv_highp
+ANGLE_rgb_2_yuv_lowp
+ANGLE_rgb_2_yuv_mediump
+ANGLE_satv3
+ANGLE_set_lum
+ANGLE_set_lum_sat
+ANGLE_shader_pixel_local_storage
+ANGLE_texture_multisample
+ANGLE_yuv_2_rgb
+ANGLE_yuv_2_rgb_highp
+ANGLE_yuv_2_rgb_lowp
+ANGLE_yuv_2_rgb_mediump
+ARB_texture_rectangle
+All contexts within a share group must be created with the same value of EGL_DISPLAY_SEMAPHORE_SHARE_GROUP_ANGLE.
+All contexts within a share group must be created with the same value of EGL_DISPLAY_TEXTURE_SHARE_GROUP_ANGLE.
+Attribute EGL_CONTEXT_CLIENT_ARRAYS_ENABLED_ANGLE requires EGL_ANGLE_create_context_client_arrays.
+Attribute EGL_CONTEXT_HARDENED_ANGLE requires EGL_ANGLE_create_context_webgl_compatibility.
+Attribute EGL_CONTEXT_MEMORY_USAGE_ANGLE requires EGL_ANGLE_memory_usage_report.
+Attribute EGL_CONTEXT_METAL_OWNERSHIP_IDENTITY_ANGLE requires EGL_ANGLE_metal_create_context_ownership_identity.
+Attribute EGL_CONTEXT_OPENGL_BACKWARDS_COMPATIBLE_ANGLE requires EGL_ANGLE_create_context_backwards_compatible.
+Attribute EGL_CONTEXT_PASSTHROUGH_SHADERS_ANGLE requires EGL_ANGLE_create_context_passthrough_shaders.
+Attribute EGL_CONTEXT_PROGRAM_BINARY_CACHE_ENABLED_ANGLE requires EGL_ANGLE_program_cache_control.
+Attribute EGL_CONTEXT_VIRTUALIZATION_GROUP_ANGLE requires extension EGL_ANGLE_context_virtualization.
+Attribute EGL_CONTEXT_WEBGL_COMPATIBILITY_ANGLE requires EGL_ANGLE_create_context_webgl_compatibility.
+Attribute EGL_DISPLAY_SEMAPHORE_SHARE_GROUP_ANGLE requires EGL_ANGLE_display_semaphore_share_group.
+Attribute EGL_DISPLAY_TEXTURE_SHARE_GROUP_ANGLE requires EGL_ANGLE_display_texture_share_group.
+Attribute EGL_EXTENSIONS_ENABLED_ANGLE requires EGL_ANGLE_create_context_extensions_enabled.
+Attribute EGL_EXTERNAL_CONTEXT_ANGLE requires EGL_ANGLE_external_context_and_surface.
+Attribute EGL_EXTERNAL_SURFACE_ANGLE requires EGL_ANGLE_external_context_and_surface.
+Attribute EGL_POWER_PREFERENCE_ANGLE requires EGL_ANGLE_display_power_preference.
+Attribute EGL_POWER_PREFERENCE_ANGLE requires EGL_ANGLE_power_preference.
+Attribute EGL_ROBUST_RESOURCE_INITIALIZATION_ANGLE requires EGL_ANGLE_robust_resource_initialization.
+Attribute EGL_SWAP_INTERVAL_ANGLE requires extension EGL_ANGLE_create_surface_swap_interval.
+Attribute EGL_VULKAN_IMAGE_CREATE_INFO_{HI,LO}_ANGLE require extension EGL_ANGLE_vulkan_image.
+CIE version is not 1 or 3
+Cannot load program binaries across different ES context versions.
+Change in cache header version detected: 
+Command requires OpenGL ES 1.0 or 3.2.
+Command requires OpenGL ES 1.0.
+Command requires OpenGL ES 2.0.
+Command requires OpenGL ES 3.0.
+Command requires OpenGL ES 3.1.
+Command requires OpenGL ES 3.2.
+Compute shader is not supported in this shader version.
+Context does not support GL_ANGLE_texture_rectangle.
+Create flags must only include bits defined by GL_ANGLE_external_objects_flags.
+Desktop GL is not supported by ANGLE
+Display type EGL_PLATFORM_ANGLE_TYPE_NULL_ANGLE requires EGL_ANGLE_platform_angle_null.
+EGL_ANGLE_colorspace_attribute_passthrough
+EGL_ANGLE_context_virtualization
+EGL_ANGLE_create_context_backwards_compatible
+EGL_ANGLE_create_context_client_arrays
+EGL_ANGLE_create_context_extensions_enabled
+EGL_ANGLE_create_context_passthrough_shaders
+EGL_ANGLE_create_context_webgl_compatibility
+EGL_ANGLE_create_surface_swap_interval
+EGL_ANGLE_d3d_share_handle_client_buffer
+EGL_ANGLE_d3d_share_handle_client_buffer is not available
+EGL_ANGLE_d3d_texture_client_buffer
+EGL_ANGLE_d3d_texture_client_buffer is not available
+EGL_ANGLE_device_cgl
+EGL_ANGLE_device_cgl is not available
+EGL_ANGLE_device_creation
+EGL_ANGLE_device_creation_d3d11
+EGL_ANGLE_device_d3d
+EGL_ANGLE_device_d3d11
+EGL_ANGLE_device_d3d11 is not available
+EGL_ANGLE_device_metal
+EGL_ANGLE_device_metal is not available
+EGL_ANGLE_device_vulkan
+EGL_ANGLE_device_vulkan is not available
+EGL_ANGLE_device_vulkan not supported
+EGL_ANGLE_device_webgpu
+EGL_ANGLE_device_webgpu is not available
+EGL_ANGLE_direct_composition
+EGL_ANGLE_direct_composition is not available
+EGL_ANGLE_display_power_preference
+EGL_ANGLE_display_semaphore_share_group
+EGL_ANGLE_display_texture_share_group
+EGL_ANGLE_experimental_present_path
+EGL_ANGLE_experimental_present_path extension not active
+EGL_ANGLE_external_context_and_surface
+EGL_ANGLE_external_context_and_surface is not available
+EGL_ANGLE_feature_control
+EGL_ANGLE_feature_control extension is not available.
+EGL_ANGLE_feature_control is not supported
+EGL_ANGLE_global_fence_sync
+EGL_ANGLE_global_fence_sync extension is not available
+EGL_ANGLE_image_d3d11_texture
+EGL_ANGLE_image_d3d11_texture not supported.
+EGL_ANGLE_iosurface_client_buffer
+EGL_ANGLE_iosurface_client_buffer is not available.
+EGL_ANGLE_keyed_mutex
+EGL_ANGLE_keyed_mutex is not available
+EGL_ANGLE_memory_usage_report
+EGL_ANGLE_metal_commands_scheduled_sync
+EGL_ANGLE_metal_create_context_ownership_identity
+EGL_ANGLE_metal_shared_event_sync
+EGL_ANGLE_metal_shared_event_sync is not available
+EGL_ANGLE_metal_shared_event_sync is not available.
+EGL_ANGLE_metal_texture_client_buffer
+EGL_ANGLE_metal_texture_client_buffer not supported.
+EGL_ANGLE_no_error
+EGL_ANGLE_no_error is not available.
+EGL_ANGLE_platform_angle
+EGL_ANGLE_platform_angle extension not active
+EGL_ANGLE_platform_angle_d3d
+EGL_ANGLE_platform_angle_d3d is not supported
+EGL_ANGLE_platform_angle_d3d11on12
+EGL_ANGLE_platform_angle_d3d_luid
+EGL_ANGLE_platform_angle_device_id
+EGL_ANGLE_platform_angle_device_id is not supported
+EGL_ANGLE_platform_angle_device_type_egl_angle
+EGL_ANGLE_platform_angle_device_type_egl_angle is not supported
+EGL_ANGLE_platform_angle_device_type_swiftshader
+EGL_ANGLE_platform_angle_device_type_swiftshader is not supported
+EGL_ANGLE_platform_angle_display_key
+EGL_ANGLE_platform_angle_metal
+EGL_ANGLE_platform_angle_null
+EGL_ANGLE_platform_angle_opengl
+EGL_ANGLE_platform_angle_vulkan
+EGL_ANGLE_platform_angle_vulkan_device_uuid
+EGL_ANGLE_platform_angle_webgpu
+EGL_ANGLE_platform_angle_webgpu is not supported
+EGL_ANGLE_platform_device_context_volatile_cgl
+EGL_ANGLE_power_preference
+EGL_ANGLE_program_cache_control
+EGL_ANGLE_query_surface_pointer
+EGL_ANGLE_query_surface_pointer is not available
+EGL_ANGLE_robust_resource_initialization
+EGL_ANGLE_robust_resource_initialization not enabled.
+EGL_ANGLE_stream_producer_d3d_texture
+EGL_ANGLE_surface_d3d_texture_2d_share_handle
+EGL_ANGLE_surface_d3d_texture_2d_share_handle is not available
+EGL_ANGLE_surface_orientation
+EGL_ANGLE_surface_orientation is not available.
+EGL_ANGLE_sync_control_rate
+EGL_ANGLE_timestamp_surface_attribute
+EGL_ANGLE_vulkan_image
+EGL_ANGLE_vulkan_image is not available
+EGL_ANGLE_vulkan_image not supported.
+EGL_ANGLE_wait_until_work_scheduled
+EGL_ANGLE_webgpu_texture_client_buffer
+EGL_ANGLE_webgpu_texture_client_buffer is not available
+EGL_ANGLE_webgpu_texture_client_buffer not supported.
+EGL_ANGLE_window_fixed_size
+EGL_ANGLE_window_fixed_size is not available
+EGL_ANGLE_windows_ui_composition
+EGL_ANGLE_x11_visual
+EGL_AcquireExternalContextANGLE
+EGL_CONTEXT_CLIENT_ARRAYS_ENABLED_ANGLE must be EGL_TRUE or EGL_FALSE.
+EGL_CONTEXT_HARDENED_ANGLE must be EGL_TRUE or EGL_FALSE.
+EGL_CONTEXT_METAL_OWNERSHIP_IDENTITY_ANGLE mustbe non-zero.
+EGL_CONTEXT_OPENGL_BACKWARDS_COMPATIBLE_ANGLE must be either EGL_TRUE or EGL_FALSE.
+EGL_CONTEXT_PASSTHROUGH_SHADERS_ANGLE must be either EGL_TRUE or EGL_FALSE.
+EGL_CONTEXT_PROGRAM_BINARY_CACHE_ENABLED_ANGLE must be EGL_TRUE or EGL_FALSE.
+EGL_CONTEXT_WEBGL_COMPATIBILITY_ANGLE must be EGL_TRUE or EGL_FALSE.
+EGL_CopyMetalSharedEventANGLE
+EGL_CreateDeviceANGLE
+EGL_CreateStreamProducerD3DTextureANGLE
+EGL_D3D11_TEXTURE_ARRAY_SLICE_ANGLE cannot be used without EGL_ANGLE_image_d3d11_texture support.
+EGL_D3D11_TEXTURE_PLANE_ANGLE cannot be used without EGL_ANGLE_image_d3d11_texture support.
+EGL_DIRECT_COMPOSITION_ANGLE cannot be used without EGL_ANGLE_direct_composition support.
+EGL_DISPLAY_SEMAPHORE_SHARE_GROUP_ANGLE must be EGL_TRUE or EGL_FALSE.
+EGL_DISPLAY_TEXTURE_SHARE_GROUP_ANGLE must be EGL_TRUE or EGL_FALSE.
+EGL_EXPERIMENTAL_PRESENT_PATH_ANGLE requires a device type of EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE.
+EGL_EXTENSIONS_ENABLED_ANGLE must be either EGL_TRUE or EGL_FALSE.
+EGL_EXTERNAL_CONTEXT_ANGLE doesn't allow creating with sharedContext.
+EGL_EXTERNAL_CONTEXT_ANGLE must be either EGL_TRUE or EGL_FALSE.
+EGL_ExportVkImageANGLE
+EGL_FEATURE_OVERRIDES_DISABLED_ANGLE must be a valid pointer
+EGL_FEATURE_OVERRIDES_ENABLED_ANGLE must be a valid pointer
+EGL_FIXED_SIZE_ANGLE cannot be used without EGL_ANGLE_window_fixed_size support.
+EGL_ForceGPUSwitchANGLE
+EGL_GetMscRateANGLE
+EGL_HandleGPUSwitchANGLE
+EGL_LockVulkanQueueANGLE
+EGL_METAL_TEXTURE_ARRAY_SLICE_ANGLE cannot be used without EGL_ANGLE_metal_texture_client_buffer support.
+EGL_PLATFORM_ANGLE_D3D11ON12_ANGLE extension not active.
+EGL_PLATFORM_ANGLE_D3D11ON12_ANGLE requires a device type of EGL_PLATFORM_ANGLE_DEVICE_TYPE_HARDWARE_ANGLE or EGL_PLATFORM_ANGLE_DEVICE_TYPE_D3D_WARP_ANGLE
+EGL_PLATFORM_ANGLE_D3D11ON12_ANGLE requires a platform type of EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE.
+EGL_PLATFORM_ANGLE_D3D_LUID_HIGH_ANGLE and EGL_PLATFORM_ANGLE_D3D_LUID_LOW_ANGLE require a platform type of EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE.
+EGL_PLATFORM_ANGLE_DAWN_PROC_TABLE_ANGLE requires a platform type of EGL_PLATFORM_ANGLE_TYPE_WEBGPU_ANGLE.
+EGL_PLATFORM_ANGLE_DEBUG_LAYERS_ENABLED_ANGLE must be EGL_TRUE, EGL_FALSE, or EGL_DONT_CARE.
+EGL_PLATFORM_ANGLE_DEVICE_TYPE_WARP_ANGLE requires a device type of EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE.
+EGL_PLATFORM_ANGLE_EGL_HANDLE_ANGLE requires a device type of EGL_PLATFORM_ANGLE_TYPE_OPENGLES_ANGLE.
+EGL_PLATFORM_ANGLE_ENABLE_AUTOMATIC_TRIM_ANGLE requires a device type of EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE.
+EGL_PLATFORM_ANGLE_TYPE_VULKAN_ANGLE currently only supports Vulkan 1.0.
+EGL_PLATFORM_ANGLE_VULKAN_DEVICE_UUID, EGL_PLATFORM_ANGLE_VULKAN_DRIVER_UUID and EGL_PLATFORM_ANGLE_VULKAN_DRIVER_ID require a platform type of EGL_PLATFORM_ANGLE_TYPE_VULKAN_ANGLE.
+EGL_PLATFORM_ANGLE_WEBGPU_DEVICE_ANGLE requires a platform type of EGL_PLATFORM_ANGLE_TYPE_WEBGPU_ANGLE.
+EGL_PLATFORM_ANGLE_WEBGPU_INSTANCE_ANGLE requires a platform type of EGL_PLATFORM_ANGLE_TYPE_WEBGPU_ANGLE.
+EGL_POST_SUB_BUFFER_SUPPORTED_NV cannot be used without EGL_ANGLE_surface_orientation support.
+EGL_POWER_PREFERENCE_ANGLE must be either EGL_LOW_POWER_ANGLE or EGL_HIGH_POWER_ANGLE.
+EGL_PrepareSwapBuffersANGLE
+EGL_ProgramCacheGetAttribANGLE
+EGL_ProgramCachePopulateANGLE
+EGL_ProgramCacheQueryANGLE
+EGL_ProgramCacheResizeANGLE
+EGL_QueryDisplayAttribANGLE
+EGL_QueryStringiANGLE
+EGL_QuerySurfacePointerANGLE
+EGL_ROBUST_RESOURCE_INITIALIZATION_ANGLE cannot be used without EGL_ANGLE_robust_resource_initialization support.
+EGL_ROBUST_RESOURCE_INITIALIZATION_ANGLE must be either EGL_TRUE or EGL_FALSE.
+EGL_ReacquireHighPowerGPUANGLE
+EGL_ReleaseDeviceANGLE
+EGL_ReleaseExternalContextANGLE
+EGL_ReleaseHighPowerGPUANGLE
+EGL_SURFACE_ORIENTATION_ANGLE cannot be queried without EGL_ANGLE_surface_orientation support.
+EGL_SWAP_INTERVAL_ANGLE must be within the EGLConfig min and max swap intervals.
+EGL_SYNC_METAL_SHARED_EVENT_ANGLE can't be NULL
+EGL_SetValidationEnabledANGLE
+EGL_StreamPostD3DTextureANGLE
+EGL_TEXTURE_INTERNAL_FORMAT_ANGLE cannot be used without EGL_ANGLE_image_d3d11_texture, EGL_ANGLE_vulkan_image, EGL_ANGLE_metal_texture_client_buffer, or EGL_ANGLE_webgpu_texture_client_buffer support.
+EGL_UnlockVulkanQueueANGLE
+EGL_VULKAN_IMAGE_CREATE_INFO_HI_ANGLE and EGL_VULKAN_IMAGE_CREATE_INFO_LO_ANGLE are not pointing to a valid VkImageCreateInfo structure.
+EGL_WIDTH or EGL_HEIGHT cannot be set without EGL_ANGLE_window_fixed_size support.
+EGL_WIDTH or EGL_HEIGHT cannot be set without EGL_FIXED_SIZE_ANGLE being enabled on the surface.
+EGL_WaitUntilWorkScheduledANGLE
+Enabling validation to prevent invalid calls from being captured. This effectively disables GL_KHR_no_error and enables GL_ANGLE_robust_client_memory.
+Enum requires GLES 3.0.
+Enum requires GLES 3.1.
+Floating-point suffix unsupported prior to GLSL ES 3.00
+Framebuffer cannot have images attached to color attachment points on or after COLOR_ATTACHMENT0 + MAX_COMBINED_DRAW_BUFFERS_AND_PIXEL_LOCAL_STORAGE_PLANES_ANGLE - <n>.
+GL_ANGLE_base_vertex_base_instance
+GL_ANGLE_base_vertex_base_instance_shader_builtin
+GL_ANGLE_blob_cache
+GL_ANGLE_client_arrays
+GL_ANGLE_clip_cull_distance
+GL_ANGLE_compressed_texture_etc
+GL_ANGLE_copy_texture_3d
+GL_ANGLE_depth_texture
+GL_ANGLE_explicit_context
+GL_ANGLE_framebuffer_blit
+GL_ANGLE_framebuffer_multisample
+GL_ANGLE_get_image
+GL_ANGLE_get_image extension not enabled.
+GL_ANGLE_get_serialized_context_string
+GL_ANGLE_get_tex_level_parameter
+GL_ANGLE_instanced_arrays
+GL_ANGLE_logic_op
+GL_ANGLE_memory_object_flags
+GL_ANGLE_memory_object_fuchsia
+GL_ANGLE_memory_size
+GL_ANGLE_multi_draw
+GL_ANGLE_multiview_multisample
+GL_ANGLE_pack_reverse_row_order
+GL_ANGLE_polygon_mode
+GL_ANGLE_program_binary
+GL_ANGLE_program_binary_readiness_query
+GL_ANGLE_program_cache_control
+GL_ANGLE_provoking_vertex
+GL_ANGLE_read_only_depth_stencil_feedback_loops
+GL_ANGLE_relaxed_vertex_attribute_type
+GL_ANGLE_renderability_validation
+GL_ANGLE_request_extension
+GL_ANGLE_rgbx_internal_format
+GL_ANGLE_robust_client_memory
+GL_ANGLE_robust_fragment_shader_output
+GL_ANGLE_robust_resource_initialization
+GL_ANGLE_semaphore_fuchsia
+GL_ANGLE_shader_binary
+GL_ANGLE_shader_pixel_local_storage
+GL_ANGLE_shader_pixel_local_storage_coherent
+GL_ANGLE_stencil_texturing
+GL_ANGLE_texture_compression_dxt3
+GL_ANGLE_texture_compression_dxt5
+GL_ANGLE_texture_multisample
+GL_ANGLE_texture_multisample or GLES 3.1 required.
+GL_ANGLE_texture_rectangle
+GL_ANGLE_texture_usage
+GL_ANGLE_translated_shader_source
+GL_ANGLE_vulkan_image
+GL_ANGLE_webgl_compatibility
+GL_ANGLE_yuv_internal_format
+GL_ARB_texture_rectangle
+GL_AcquireTexturesANGLE
+GL_BeginPixelLocalStorageANGLE
+GL_BlitFramebufferANGLE
+GL_BlobCacheCallbacksANGLE
+GL_CopySubTexture3DANGLE
+GL_CopyTexture3DANGLE
+GL_DrawArraysInstancedANGLE
+GL_DrawArraysInstancedBaseInstanceANGLE
+GL_DrawElementsInstancedANGLE
+GL_DrawElementsInstancedBaseVertexBaseInstanceANGLE
+GL_EndPixelLocalStorageANGLE
+GL_EndPixelLocalStorageImplicitANGLE
+GL_FramebufferMemorylessPixelLocalStorageANGLE
+GL_FramebufferPixelLocalClearValuefvANGLE
+GL_FramebufferPixelLocalClearValueivANGLE
+GL_FramebufferPixelLocalClearValueuivANGLE
+GL_FramebufferPixelLocalStorageInterruptANGLE
+GL_FramebufferPixelLocalStorageRestoreANGLE
+GL_FramebufferTexturePixelLocalStorageANGLE
+GL_GetActiveUniformBlockivRobustANGLE
+GL_GetBooleanvRobustANGLE
+GL_GetBufferParameteri64vRobustANGLE
+GL_GetBufferParameterivRobustANGLE
+GL_GetBufferPointervRobustANGLE
+GL_GetCompressedTexImageANGLE
+GL_GetFloatvRobustANGLE
+GL_GetFramebufferAttachmentParameterivRobustANGLE
+GL_GetFramebufferPixelLocalStorageParameterfvANGLE
+GL_GetFramebufferPixelLocalStorageParameterfvRobustANGLE
+GL_GetFramebufferPixelLocalStorageParameterivANGLE
+GL_GetFramebufferPixelLocalStorageParameterivRobustANGLE
+GL_GetFramebufferPixelLocalStorageParameteruivANGLE
+GL_GetFramebufferPixelLocalStorageParameteruivRobustANGLE
+GL_GetInteger64i_vRobustANGLE
+GL_GetInteger64vRobustANGLE
+GL_GetIntegeri_vRobustANGLE
+GL_GetIntegervRobustANGLE
+GL_GetInternalformativRobustANGLE
+GL_GetMultisamplefvANGLE
+GL_GetMultisamplefvRobustANGLE
+GL_GetPointervANGLE
+GL_GetProgramivRobustANGLE
+GL_GetQueryObjecti64vRobustANGLE
+GL_GetQueryObjectivRobustANGLE
+GL_GetQueryObjectui64vRobustANGLE
+GL_GetQueryObjectuivRobustANGLE
+GL_GetQueryivRobustANGLE
+GL_GetRenderbufferImageANGLE
+GL_GetRenderbufferParameterivRobustANGLE
+GL_GetSamplerParameterfvRobustANGLE
+GL_GetSamplerParameterivRobustANGLE
+GL_GetShaderivRobustANGLE
+GL_GetTexImageANGLE
+GL_GetTexLevelParameterfvANGLE
+GL_GetTexLevelParameterfvRobustANGLE
+GL_GetTexLevelParameterivANGLE
+GL_GetTexLevelParameterivRobustANGLE
+GL_GetTexParameterfvRobustANGLE
+GL_GetTexParameterivRobustANGLE
+GL_GetTranslatedShaderSourceANGLE
+GL_GetUniformfvRobustANGLE
+GL_GetUniformivRobustANGLE
+GL_GetUniformuivRobustANGLE
+GL_GetVertexAttribIivRobustANGLE
+GL_GetVertexAttribIuivRobustANGLE
+GL_GetVertexAttribPointervRobustANGLE
+GL_GetVertexAttribfvRobustANGLE
+GL_GetVertexAttribivRobustANGLE
+GL_ImportMemoryZirconHandleANGLE
+GL_ImportSemaphoreZirconHandleANGLE
+GL_LogicOpANGLE
+GL_MultiDrawArraysANGLE
+GL_MultiDrawArraysInstancedANGLE
+GL_MultiDrawArraysInstancedBaseInstanceANGLE
+GL_MultiDrawElementsANGLE
+GL_MultiDrawElementsInstancedANGLE
+GL_MultiDrawElementsInstancedBaseVertexBaseInstanceANGLE
+GL_OES_texture_storage_multisample_2d_array or GLES 3.2 required.
+GL_PixelLocalStorageBarrierANGLE
+GL_PolygonModeANGLE
+GL_ProvokingVertexANGLE
+GL_ReadPixelsRobustANGLE
+GL_ReleaseTexturesANGLE
+GL_RenderbufferStorageMultisampleANGLE
+GL_RequestExtensionANGLE
+GL_SampleMaskiANGLE
+GL_SamplerParameterfvRobustANGLE
+GL_SamplerParameterivRobustANGLE
+GL_TexImage2DRobustANGLE
+GL_TexImage3DRobustANGLE
+GL_TexParameterfvRobustANGLE
+GL_TexParameterivRobustANGLE
+GL_TexStorage2DMultisampleANGLE
+GL_TexStorageMemFlags2DANGLE
+GL_TexStorageMemFlags2DMultisampleANGLE
+GL_TexStorageMemFlags3DANGLE
+GL_TexStorageMemFlags3DMultisampleANGLE
+GL_TexSubImage2DRobustANGLE
+GL_TexSubImage3DRobustANGLE
+GL_VertexAttribDivisorANGLE
+GPU stall due to staged texture format conversion
+GPU stall due to vertex format conversion of unaligned data
+GPU.ANGLE.ProgramCache.ProgramCacheHitTimeUS
+Geometry shader is not supported in this shader version.
+If either EGL_PLATFORM_ANGLE_D3D_LUID_HIGH_ANGLE and/or EGL_PLATFORM_ANGLE_D3D_LUID_LOW_ANGLE are specified, at least one must non-zero.
+If either EGL_PLATFORM_ANGLE_DEVICE_ID_HIGH_ANGLE and/or EGL_PLATFORM_ANGLE_DEVICE_ID_LOW_ANGLE are specified, at least one must non-zero.
+Index must be within [0, NUM_REQUESTABLE_EXTENSIONS_ANGLE).
+Internal GLES 1 shader compile failed. Info log: 
+Internal GLES 1 shader link failed. Info log: 
+Internal Vulkan error (
+Invalid Vulkan shader was generated
+Invalid client version
+Invalid config, need EGL_OPENGL_ES2_BIT
+Invalid config, need EGL_OPENGL_ES3_BIT
+Invalid config, need EGL_OPENGL_ES_BIT
+Invalid program binary version.
+Invalid value for EGL_CONTEXT_OPENGL_RESET_NOTIFICATION_STRATEGY
+Invalid value for EGL_CONTEXT_OPENGL_ROBUST_ACCESS
+Invalid value for EGL_EXPERIMENTAL_PRESENT_PATH_ANGLE
+Invalid value for EGL_PLATFORM_ANGLE_DEVICE_CONTEXT_VOLATILE_CGL_ANGLE attrib
+Invalid value for EGL_PLATFORM_ANGLE_DEVICE_TYPE_ANGLE attrib
+Load Operation GL_LOAD_OP_LOAD_ANGLE is invalid for memoryless planes.
+Missing required parameter 0x%X for image target EGL_VULKAN_IMAGE_ANGLE.
+Must specify major version if you specify a minor version.
+No defined conversion between clear value and attachment format.
+NonSemantic.ANGLE
+OpenGL ES 
+OpenGL ES 2.0 Required.
+OpenGL ES 3.0 Required.
+OpenGL ES 3.1 Required.
+OpenGL ES Commands
+OpenGL ES GLSL ES 
+OpenGL features
+OpenGL platform is unsupported.
+OpenGL workarounds
+OpenGL_ES
+Pixel local storage planes with GL_PIXEL_LOCAL_USAGE_ALWAYS_NONCOHERENT_BIT_ANGLE do not have noncoherent bindings in the draw program.
+Plane must be less than GL_MAX_PIXEL_LOCAL_STORAGE_PLANES_ANGLE.
+Planes must be less than or equal to GL_MAX_PIXEL_LOCAL_STORAGE_PLANES_ANGLE.
+Platform ANGLE extension is not active
+Rectangle texture cannot have a compressed format.
+Requested GLES version (%lx.%lx) is greater than max supported (%d.%d).
+Requested GLES version (%lx.%lx) is greater than max supported 3.0 for WebGL.
+Requested version is not supported
+Sampler YCbCr Conversion
+Scaling and flipping in BlitFramebufferANGLE not supported by this implementation.
+Setting the environment variable ANGLE_FEATURE_OVERRIDES_ENABLED=retainSPIRVDebugInfo will retain debug info
+Stencil reference and mask values must be the same for front facing and back facing triangles.
+Surface not compatible with OpenGL ES 1.x.
+Surface not compatible with OpenGL ES 2.x.
+Surface not compatible with OpenGL ES 3.x.
+Tessellation shaders are not supported in this shader version.
+The Vulkan driver does not support texture format 0x%04X, emulating with 0x%04X
+The Vulkan driver does not support vertex attribute format 0x%04X, emulating with 0x%04X
+The Vulkan driver has to copy from tile memory to regular memory. Consider calling glInvalidateFramebuffer
+The base command requires an extension or a higher context version.
+The requested version of Vulkan is not supported by the driver or is otherwise incompatible for implementation-specific reasons
+The requested window is already connected to a VkSurfaceKHR, or to some other non-Vulkan API
+This ANGLE implementation does not support separate front/back stencil writemasks, reference values, or stencil mask values.
+This device type requires a platform type of EGL_PLATFORM_ANGLE_TYPE_D3D11_ANGLE.
+This device type requires a platform type of EGL_PLATFORM_ANGLE_TYPE_VULKAN_ANGLE.
+Unable to retrieve VK_ERROR_DEVICE_LOST details due to Vulkan error (
+Unknown vulkan error code
+Unsigned integers are unsupported prior to GLSL ES 3.00
+Usage flags must only include bits defined by GL_ANGLE_external_objects_flags.
+Version (
+Vulkan 
+Vulkan app workarounds
+Vulkan features
+Vulkan platform is unsupported.
+Vulkan validation layers are missing.
+Vulkan workarounds
+__VERSION__
+__ipixelLocalANGLE
+__pixelLocalANGLE
+__upixelLocalANGLE
+angle.dump_pipeline_cache_graph
+angle.pipeline_cache_graph_dump_path
+angle_BaseInstance
+angle_BaseVertex
+angle_DrawID
+array constructor supported in GLSL ES 3.00 and above only
+arrays of arrays supported in GLSL ES 3.10 and above only
+bit-wise operator supported in GLSL ES 3.00 and above only
+bottomLeftOriginPresentRegionRectangles
+cacheVersion = 
+cannot load program binaries across different angle sh version.
+checkCacheVersion = 
+client/version number not supported
+debug.angle.enable_vulkan_api_perf_counters
+debug.angle.feature_overrides_disabled
+debug.angle.feature_overrides_enabled
+debug.angle.gl_renderer
+debug.angle.gl_vendor
+debug.angle.gl_version
+debug.angle.markers
+debug.angle.shader_dump_path
+driverVersion: 
+eglAcquireExternalContextANGLE
+eglCopyMetalSharedEventANGLE
+eglCreateDeviceANGLE
+eglCreateStreamProducerD3DTextureANGLE
+eglExportVkImageANGLE
+eglForceGPUSwitchANGLE
+eglGetMscRateANGLE
+eglHandleGPUSwitchANGLE
+eglLockVulkanQueueANGLE
+eglPrepareSwapBuffersANGLE
+eglProgramCacheGetAttribANGLE
+eglProgramCachePopulateANGLE
+eglProgramCacheQueryANGLE
+eglProgramCacheResizeANGLE
+eglQueryDisplayAttribANGLE
+eglQueryStringiANGLE
+eglQuerySurfacePointerANGLE
+eglReacquireHighPowerGPUANGLE
+eglReleaseDeviceANGLE
+eglReleaseExternalContextANGLE
+eglReleaseHighPowerGPUANGLE
+eglSetValidationEnabledANGLE
+eglStreamPostD3DTextureANGLE
+eglUnlockVulkanQueueANGLE
+eglWaitUntilWorkScheduledANGLE
+exposeNonConformantExtensionsAndVersions
+first-class arrays (array initializer) supported in GLSL ES 3.00 and above only
+glAcquireTexturesANGLE
+glBeginPixelLocalStorageANGLE
+glBlitFramebufferANGLE
+glBlobCacheCallbacksANGLE
+glCopySubTexture3DANGLE
+glCopyTexture3DANGLE
+glDrawArraysInstancedANGLE
+glDrawArraysInstancedBaseInstanceANGLE
+glDrawElementsInstancedANGLE
+glDrawElementsInstancedBaseVertexBaseInstanceANGLE
+glEndPixelLocalStorageANGLE
+glEndPixelLocalStorageImplicitANGLE
+glFramebufferMemorylessPixelLocalStorageANGLE
+glFramebufferPixelLocalClearValuefvANGLE
+glFramebufferPixelLocalClearValueivANGLE
+glFramebufferPixelLocalClearValueuivANGLE
+glFramebufferPixelLocalStorageInterruptANGLE
+glFramebufferPixelLocalStorageRestoreANGLE
+glFramebufferTexturePixelLocalStorageANGLE
+glGetActiveUniformBlockivRobustANGLE
+glGetBooleanvRobustANGLE
+glGetBufferParameteri64vRobustANGLE
+glGetBufferParameterivRobustANGLE
+glGetBufferPointervRobustANGLE
+glGetCompressedTexImageANGLE
+glGetFloatvRobustANGLE
+glGetFramebufferAttachmentParameterivRobustANGLE
+glGetFramebufferPixelLocalStorageParameterfvANGLE
+glGetFramebufferPixelLocalStorageParameterfvRobustANGLE
+glGetFramebufferPixelLocalStorageParameterivANGLE
+glGetFramebufferPixelLocalStorageParameterivRobustANGLE
+glGetFramebufferPixelLocalStorageParameteruivANGLE
+glGetFramebufferPixelLocalStorageParameteruivRobustANGLE
+glGetInteger64i_vRobustANGLE
+glGetInteger64vRobustANGLE
+glGetIntegeri_vRobustANGLE
+glGetIntegervRobustANGLE
+glGetInternalformativRobustANGLE
+glGetMultisamplefvANGLE
+glGetMultisamplefvRobustANGLE
+glGetPointervANGLE
+glGetProgramivRobustANGLE
+glGetQueryObjecti64vRobustANGLE
+glGetQueryObjectivRobustANGLE
+glGetQueryObjectui64vRobustANGLE
+glGetQueryObjectuivRobustANGLE
+glGetQueryivRobustANGLE
+glGetRenderbufferImageANGLE
+glGetRenderbufferParameterivRobustANGLE
+glGetSamplerParameterfvRobustANGLE
+glGetSamplerParameterivRobustANGLE
+glGetShaderivRobustANGLE
+glGetTexImageANGLE
+glGetTexLevelParameterfvANGLE
+glGetTexLevelParameterfvRobustANGLE
+glGetTexLevelParameterivANGLE
+glGetTexLevelParameterivRobustANGLE
+glGetTexParameterfvRobustANGLE
+glGetTexParameterivRobustANGLE
+glGetTranslatedShaderSourceANGLE
+glGetUniformfvRobustANGLE
+glGetUniformivRobustANGLE
+glGetUniformuivRobustANGLE
+glGetVertexAttribIivRobustANGLE
+glGetVertexAttribIuivRobustANGLE
+glGetVertexAttribPointervRobustANGLE
+glGetVertexAttribfvRobustANGLE
+glGetVertexAttribivRobustANGLE
+glImportMemoryZirconHandleANGLE
+glImportSemaphoreZirconHandleANGLE
+glLogicOpANGLE
+glMultiDrawArraysANGLE
+glMultiDrawArraysInstancedANGLE
+glMultiDrawArraysInstancedBaseInstanceANGLE
+glMultiDrawElementsANGLE
+glMultiDrawElementsInstancedANGLE
+glMultiDrawElementsInstancedBaseVertexBaseInstanceANGLE
+glPixelLocalStorageBarrierANGLE
+glPolygonModeANGLE
+glProvokingVertexANGLE
+glReadPixelsRobustANGLE
+glReleaseTexturesANGLE
+glRenderbufferStorageMultisampleANGLE
+glRequestExtensionANGLE
+glSampleMaskiANGLE
+glSamplerParameterfvRobustANGLE
+glSamplerParameterivRobustANGLE
+glTexImage2DRobustANGLE
+glTexImage3DRobustANGLE
+glTexParameterfvRobustANGLE
+glTexParameterivRobustANGLE
+glTexStorage2DMultisampleANGLE
+glTexStorageMemFlags2DANGLE
+glTexStorageMemFlags2DMultisampleANGLE
+glTexStorageMemFlags3DANGLE
+glTexStorageMemFlags3DMultisampleANGLE
+glTexSubImage2DRobustANGLE
+glTexSubImage3DRobustANGLE
+glVertexAttribDivisorANGLE
+gpu.angle
+gpu.angle.gpu
+gpu.angle.texture_metrics
+implicitly sized array supported in GLSL ES 3.00 and above only
+in type qualifier supported in GLSL ES 3.10 and after
+in type qualifier supported in GLSL ES 3.10 only
+in type qualifier without variable declaration supported in GLSL ES 3.10 and after
+incompatible version
+integer modulus operator supported in GLSL ES 3.00 and above only
+interface blocks supported in GLSL ES 3.00 and above only
+invalid layout qualifier: not supported before GLSL ES 3.10
+invalid layout qualifier: not supported before GLSL ES 3.10, except pixel local storage
+invalid layout qualifier: only valid when used with a fragment shader output in ESSL version >= 3.00 and EXT_blend_func_extended is enabled
+invalid qualifier: interface blocks must be uniform in version lower than GLSL ES 3.10
+invalid version directive
+invalid version number
+ipixelLocalANGLE
+layout qualifiers supported in GLSL ES 3.00 and after
+libGLESv2_angle.so
+libunwind: unsupported .eh_frame_hdr version: %u at %lx
+libvulkan.so
+libvulkan.so.1
+light_spotlight_cutoff_angles
+loseHardenedContextOnBackendError
+methods supported in GLSL ES 3.00 and above only
+newVersion = 
+numViews cannot be greater than GL_MAX_VIEWS_ANGLE.
+out type qualifier supported in GLSL ES 3.10 and after
+out type qualifier supported in GLSL ES 3.10 only
+out type qualifier without variable declaration is supported in GLSL ES 3.20, or if GL_KHR_blend_equation_advanced is enabled
+pixel local storage format requires ipixelLocalANGLE
+pixel local storage format requires pixelLocalANGLE
+pixel local storage format requires upixelLocalANGLE
+pixelLocalANGLE
+pixelLocalLoadANGLE
+pixelLocalLoadANGLE(01G
+pixelLocalLoadANGLE(01H
+pixelLocalLoadANGLE(01I
+pixelLocalStoreANGLE
+pixelLocalStoreANGLE(01G30B
+pixelLocalStoreANGLE(01H30C
+pixelLocalStoreANGLE(01I30D
+qualifier supported in GLSL ES 3.00 and above only
+querySurfacePointerANGLE implementation missing.
+ro.build.version.release
+ro.build.version.sdk
+storage qualifier supported in GLSL ES 3.00 and above only
+storage qualifier supported in GLSL ES 3.10 and above only
+supportShaderPixelLocalStorageAngle
+supportsAngleRgbxInternalFormat
+supportsYUVSamplerConversion
+syncControlRateANGLE extension not active
+triangle_strip
+triangles
+triangles_adjacency
+uniform float light_spotlight_cutoff_angles[kMaxLights];
+unknown color space conversion standard
+unsupported shader version 
+unwind info has unsupported version
+upixelLocalANGLE
+version
+vkCmdSetDiscardRectangleEXT
+vkCmdSetDiscardRectangleEnableEXT
+vkCmdSetDiscardRectangleModeEXT
+vkCreateSamplerYcbcrConversion
+vkCreateSamplerYcbcrConversionKHR
+vkDestroySamplerYcbcrConversion
+vkDestroySamplerYcbcrConversionKHR
+vkEnumerateInstanceVersion
+vkGetPhysicalDevicePresentRectanglesKHR
+
+--- Extensões OpenGL/GLSL ---
+GL_AMD_performance_monitor
+GL_ANDROID_extension_pack_es31a
+GL_ANGLE_base_vertex_base_instance
+GL_ANGLE_base_vertex_base_instance_shader_builtin
+GL_ANGLE_blob_cache
+GL_ANGLE_client_arrays
+GL_ANGLE_clip_cull_distance
+GL_ANGLE_compressed_texture_etc
+GL_ANGLE_copy_texture_3d
+GL_ANGLE_depth_texture
+GL_ANGLE_explicit_context
+GL_ANGLE_framebuffer_blit
+GL_ANGLE_framebuffer_multisample
+GL_ANGLE_get_image
+GL_ANGLE_get_image extension not enabled.
+GL_ANGLE_get_serialized_context_string
+GL_ANGLE_get_tex_level_parameter
+GL_ANGLE_instanced_arrays
+GL_ANGLE_logic_op
+GL_ANGLE_memory_object_flags
+GL_ANGLE_memory_object_fuchsia
+GL_ANGLE_memory_size
+GL_ANGLE_multi_draw
+GL_ANGLE_multiview_multisample
+GL_ANGLE_pack_reverse_row_order
+GL_ANGLE_polygon_mode
+GL_ANGLE_program_binary
+GL_ANGLE_program_binary_readiness_query
+GL_ANGLE_program_cache_control
+GL_ANGLE_provoking_vertex
+GL_ANGLE_read_only_depth_stencil_feedback_loops
+GL_ANGLE_relaxed_vertex_attribute_type
+GL_ANGLE_renderability_validation
+GL_ANGLE_request_extension
+GL_ANGLE_rgbx_internal_format
+GL_ANGLE_robust_client_memory
+GL_ANGLE_robust_fragment_shader_output
+GL_ANGLE_robust_resource_initialization
+GL_ANGLE_semaphore_fuchsia
+GL_ANGLE_shader_binary
+GL_ANGLE_shader_pixel_local_storage
+GL_ANGLE_shader_pixel_local_storage_coherent
+GL_ANGLE_stencil_texturing
+GL_ANGLE_texture_compression_dxt3
+GL_ANGLE_texture_compression_dxt5
+GL_ANGLE_texture_multisample
+GL_ANGLE_texture_multisample or GLES 3.1 required.
+GL_ANGLE_texture_rectangle
+GL_ANGLE_texture_usage
+GL_ANGLE_translated_shader_source
+GL_ANGLE_vulkan_image
+GL_ANGLE_webgl_compatibility
+GL_ANGLE_yuv_internal_format
+GL_APPLE_clip_distance
+GL_ARB_fragment_shader_interlock
+GL_ARB_texture_rectangle
+GL_ARM_rgba8
+GL_ARM_shader_framebuffer_fetch
+GL_ARM_shader_framebuffer_fetch_depth_stencil
+GL_ARM_texture_unnormalized_coordinates
+GL_AcquireTexturesANGLE
+GL_ActiveShaderProgram
+GL_ActiveShaderProgramEXT
+GL_ActiveTexture
+GL_AlphaFunc
+GL_AlphaFuncx
+GL_AttachShader
+GL_BLEND with floating-point color attachments requires the EXT_float_blend extension.
+GL_BeginPerfMonitorAMD
+GL_BeginPixelLocalStorageANGLE
+GL_BeginQuery
+GL_BeginQueryEXT
+GL_BeginTransformFeedback
+GL_BindAttribLocation
+GL_BindBuffer
+GL_BindBufferBase
+GL_BindBufferRange
+GL_BindFragDataLocationEXT
+GL_BindFragDataLocationIndexedEXT
+GL_BindFramebuffer
+GL_BindFramebufferOES
+GL_BindImageTexture
+GL_BindProgramPipeline
+GL_BindProgramPipelineEXT
+GL_BindRenderbuffer
+GL_BindRenderbufferOES
+GL_BindSampler
+GL_BindTexture
+GL_BindTransformFeedback
+GL_BindUniformLocationCHROMIUM
+GL_BindVertexArray
+GL_BindVertexArrayOES
+GL_BindVertexBuffer
+GL_BlendBarrier
+GL_BlendBarrierKHR
+GL_BlendColor
+GL_BlendEquation
+GL_BlendEquationOES
+GL_BlendEquationSeparate
+GL_BlendEquationSeparatei
+GL_BlendEquationSeparateiEXT
+GL_BlendEquationSeparateiOES
+GL_BlendEquationi
+GL_BlendEquationiEXT
+GL_BlendEquationiOES
+GL_BlendFunc
+GL_BlendFuncSeparate
+GL_BlendFuncSeparatei
+GL_BlendFuncSeparateiEXT
+GL_BlendFuncSeparateiOES
+GL_BlendFunci
+GL_BlendFunciEXT
+GL_BlendFunciOES
+GL_BlitFramebuffer
+GL_BlitFramebufferANGLE
+GL_BlitFramebufferNV
+GL_BlobCacheCallbacksANGLE
+GL_BufferData
+GL_BufferStorageEXT
+GL_BufferStorageExternalEXT
+GL_BufferStorageMemEXT
+GL_BufferSubData
+GL_CHROMIUM_bind_generates_resource
+GL_CHROMIUM_bind_uniform_location
+GL_CHROMIUM_color_buffer_float_rgb
+GL_CHROMIUM_color_buffer_float_rgba
+GL_CHROMIUM_copy_compressed_texture
+GL_CHROMIUM_copy_texture
+GL_CHROMIUM_lose_context
+GL_COMPUTE_SHADER
+GL_CheckFramebufferStatus
+GL_CheckFramebufferStatusOES
+GL_Clear
+GL_ClearBufferfi
+GL_ClearBufferfv
+GL_ClearBufferiv
+GL_ClearBufferuiv
+GL_ClearColor
+GL_ClearColorx
+GL_ClearDepthf
+GL_ClearDepthx
+GL_ClearStencil
+GL_ClearTexImageEXT
+GL_ClearTexSubImageEXT
+GL_ClientActiveTexture
+GL_ClientWaitSync
+GL_ClipControlEXT
+GL_ClipPlanef
+GL_ClipPlanex
+GL_Color4f
+GL_Color4ub
+GL_Color4x
+GL_ColorMask
+GL_ColorMaski
+GL_ColorMaskiEXT
+GL_ColorMaskiOES
+GL_ColorPointer
+GL_CompileShader
+GL_CompressedCopyTextureCHROMIUM
+GL_CompressedTexImage2D
+GL_CompressedTexImage3D
+GL_CompressedTexImage3DOES
+GL_CompressedTexSubImage2D
+GL_CompressedTexSubImage3D
+GL_CompressedTexSubImage3DOES
+GL_CopyBufferSubData
+GL_CopyImageSubData
+GL_CopyImageSubDataEXT
+GL_CopyImageSubDataOES
+GL_CopySubTexture3DANGLE
+GL_CopySubTextureCHROMIUM
+GL_CopyTexImage2D
+GL_CopyTexSubImage2D
+GL_CopyTexSubImage3D
+GL_CopyTexSubImage3DOES
+GL_CopyTexture3DANGLE
+GL_CopyTextureCHROMIUM
+GL_CreateMemoryObjectsEXT
+GL_CreateProgram
+GL_CreateShader
+GL_CreateShaderProgramv
+GL_CreateShaderProgramvEXT
+GL_CullFace
+GL_CurrentPaletteMatrixOES
+GL_DebugMessageCallback
+GL_DebugMessageCallbackKHR
+GL_DebugMessageControl
+GL_DebugMessageControlKHR
+GL_DebugMessageInsert
+GL_DebugMessageInsertKHR
+GL_DeleteBuffers
+GL_DeleteFencesNV
+GL_DeleteFramebuffers
+GL_DeleteFramebuffersOES
+GL_DeleteMemoryObjectsEXT
+GL_DeletePerfMonitorsAMD
+GL_DeleteProgram
+GL_DeleteProgramPipelines
+GL_DeleteProgramPipelinesEXT
+GL_DeleteQueries
+GL_DeleteQueriesEXT
+GL_DeleteRenderbuffers
+GL_DeleteRenderbuffersOES
+GL_DeleteSamplers
+GL_DeleteSemaphoresEXT
+GL_DeleteShader
+GL_DeleteSync
+GL_DeleteTextures
+GL_DeleteTransformFeedbacks
+GL_DeleteVertexArrays
+GL_DeleteVertexArraysOES
+GL_DepthFunc
+GL_DepthMask
+GL_DepthRangef
+GL_DepthRangex
+GL_DetachShader
+GL_Disable
+GL_DisableClientState
+GL_DisableVertexAttribArray
+GL_Disablei
+GL_DisableiEXT
+GL_DisableiOES
+GL_DiscardFramebufferEXT
+GL_DispatchCompute
+GL_DispatchComputeIndirect
+GL_DrawArrays
+GL_DrawArraysIndirect
+GL_DrawArraysInstanced
+GL_DrawArraysInstancedANGLE
+GL_DrawArraysInstancedBaseInstanceANGLE
+GL_DrawArraysInstancedBaseInstanceEXT
+GL_DrawArraysInstancedEXT
+GL_DrawBuffers
+GL_DrawBuffersEXT
+GL_DrawElements
+GL_DrawElementsBaseVertex
+GL_DrawElementsBaseVertexEXT
+GL_DrawElementsBaseVertexOES
+GL_DrawElementsIndirect
+GL_DrawElementsInstanced
+GL_DrawElementsInstancedANGLE
+GL_DrawElementsInstancedBaseInstanceEXT
+GL_DrawElementsInstancedBaseVertex
+GL_DrawElementsInstancedBaseVertexBaseInstanceANGLE
+GL_DrawElementsInstancedBaseVertexBaseInstanceEXT
+GL_DrawElementsInstancedBaseVertexEXT
+GL_DrawElementsInstancedBaseVertexOES
+GL_DrawElementsInstancedEXT
+GL_DrawRangeElements
+GL_DrawRangeElementsBaseVertex
+GL_DrawRangeElementsBaseVertexEXT
+GL_DrawRangeElementsBaseVertexOES
+GL_DrawTexfOES
+GL_DrawTexfvOES
+GL_DrawTexiOES
+GL_DrawTexivOES
+GL_DrawTexsOES
+GL_DrawTexsvOES
+GL_DrawTexxOES
+GL_DrawTexxvOES
+GL_EGLImageTargetRenderbufferStorageOES
+GL_EGLImageTargetTexStorageEXT
+GL_EGLImageTargetTexture2DOES
+GL_ES
+GL_EXT_EGL_image_array
+GL_EXT_EGL_image_external_wrap_modes
+GL_EXT_EGL_image_storage
+GL_EXT_EGL_image_storage_compression
+GL_EXT_YUV_target
+GL_EXT_YUV_target not enabled.
+GL_EXT_base_instance
+GL_EXT_blend_func_extended
+GL_EXT_blend_minmax
+GL_EXT_buffer_storage
+GL_EXT_clear_texture
+GL_EXT_clip_control
+GL_EXT_clip_cull_distance
+GL_EXT_color_buffer_float
+GL_EXT_color_buffer_half_float
+GL_EXT_compressed_ETC1_RGB8_sub_texture
+GL_EXT_conservative_depth
+GL_EXT_copy_image
+GL_EXT_debug_label
+GL_EXT_debug_marker
+GL_EXT_demote_to_helper_invocation
+GL_EXT_depth_clamp
+GL_EXT_discard_framebuffer
+GL_EXT_disjoint_timer_query
+GL_EXT_draw_buffers
+GL_EXT_draw_buffers_indexed
+GL_EXT_draw_elements_base_vertex
+GL_EXT_draw_instanced
+GL_EXT_external_buffer
+GL_EXT_float_blend
+GL_EXT_frag_depth
+GL_EXT_fragment_shading_rate
+GL_EXT_fragment_shading_rate_attachment
+GL_EXT_fragment_shading_rate_primitive
+GL_EXT_geometry_point_size
+GL_EXT_geometry_shader
+GL_EXT_geometry_shader or GL_OES_geometry_shader extension not enabled.
+GL_EXT_gpu_shader5
+GL_EXT_instanced_arrays
+GL_EXT_map_buffer_range
+GL_EXT_memory_object
+GL_EXT_memory_object_fd
+GL_EXT_multi_draw_arrays
+GL_EXT_multi_draw_indirect
+GL_EXT_multisample_compatibility
+GL_EXT_multisampled_render_to_texture
+GL_EXT_multisampled_render_to_texture2
+GL_EXT_occlusion_query_boolean
+GL_EXT_polygon_offset_clamp
+GL_EXT_primitive_bounding_box
+GL_EXT_protected_textures
+GL_EXT_protected_textures not enabled.
+GL_EXT_pvrtc_sRGB
+GL_EXT_read_format_bgra
+GL_EXT_render_snorm
+GL_EXT_robustness
+GL_EXT_sRGB
+GL_EXT_sRGB_write_control
+GL_EXT_semaphore
+GL_EXT_semaphore_fd
+GL_EXT_separate_depth_stencil
+GL_EXT_separate_shader_objects
+GL_EXT_shader_framebuffer_fetch
+GL_EXT_shader_framebuffer_fetch_non_coherent
+GL_EXT_shader_io_blocks
+GL_EXT_shader_non_constant_global_initializers
+GL_EXT_shader_texture_lod
+GL_EXT_shader_texture_samples
+GL_EXT_shadow_samplers
+GL_EXT_tessellation_point_size
+GL_EXT_tessellation_shader
+GL_EXT_tessellation_shader extension not enabled.
+GL_EXT_texture_border_clamp
+GL_EXT_texture_buffer
+GL_EXT_texture_compression_astc_decode_mode
+GL_EXT_texture_compression_astc_decode_mode not enabled.
+GL_EXT_texture_compression_astc_decode_mode_rgb9e5
+GL_EXT_texture_compression_astc_decode_mode_rgb9e5 not enabled.
+GL_EXT_texture_compression_bptc
+GL_EXT_texture_compression_dxt1
+GL_EXT_texture_compression_rgtc
+GL_EXT_texture_compression_s3tc
+GL_EXT_texture_compression_s3tc_srgb
+GL_EXT_texture_cube_map_array
+GL_EXT_texture_filter_anisotropic
+GL_EXT_texture_filter_minmax
+GL_EXT_texture_format_BGRA8888
+GL_EXT_texture_format_sRGB_override
+GL_EXT_texture_lod_bias
+GL_EXT_texture_mirror_clamp_to_edge
+GL_EXT_texture_norm16
+GL_EXT_texture_query_lod
+GL_EXT_texture_rg
+GL_EXT_texture_sRGB_R8
+GL_EXT_texture_sRGB_RG8
+GL_EXT_texture_sRGB_decode
+GL_EXT_texture_shadow_lod
+GL_EXT_texture_storage
+GL_EXT_texture_storage_compression
+GL_EXT_texture_storage_compression not enabled.
+GL_EXT_texture_type_2_10_10_10_REV
+GL_EXT_unpack_subimage
+GL_Enable
+GL_EnableClientState
+GL_EnableVertexAttribArray
+GL_Enablei
+GL_EnableiEXT
+GL_EnableiOES
+GL_EndPerfMonitorAMD
+GL_EndPixelLocalStorageANGLE
+GL_EndPixelLocalStorageImplicitANGLE
+GL_EndQuery
+GL_EndQueryEXT
+GL_EndTilingQCOM
+GL_EndTransformFeedback
+GL_FIXED is not supported in WebGL.
+GL_FRAGMENT_PRECISION_HIGH
+GL_FRAGMENT_SHADER
+GL_FenceSync
+GL_Finish
+GL_FinishFenceNV
+GL_Flush
+GL_FlushMappedBufferRange
+GL_FlushMappedBufferRangeEXT
+GL_Fogf
+GL_Fogfv
+GL_Fogx
+GL_Fogxv
+GL_FramebufferFetchBarrierEXT
+GL_FramebufferFoveationConfigQCOM
+GL_FramebufferFoveationParametersQCOM
+GL_FramebufferMemorylessPixelLocalStorageANGLE
+GL_FramebufferParameteri
+GL_FramebufferParameteriMESA
+GL_FramebufferPixelLocalClearValuefvANGLE
+GL_FramebufferPixelLocalClearValueivANGLE
+GL_FramebufferPixelLocalClearValueuivANGLE
+GL_FramebufferPixelLocalStorageInterruptANGLE
+GL_FramebufferPixelLocalStorageRestoreANGLE
+GL_FramebufferRenderbuffer
+GL_FramebufferRenderbufferOES
+GL_FramebufferShadingRateEXT
+GL_FramebufferTexture
+GL_FramebufferTexture2D
+GL_FramebufferTexture2DMultisampleEXT
+GL_FramebufferTexture2DOES
+GL_FramebufferTexture3DOES
+GL_FramebufferTextureEXT
+GL_FramebufferTextureLayer
+GL_FramebufferTextureMultisampleMultiviewOVR
+GL_FramebufferTextureMultiviewOVR
+GL_FramebufferTextureOES
+GL_FramebufferTexturePixelLocalStorageANGLE
+GL_FrontFace
+GL_Frustumf
+GL_Frustumx
+GL_GEOMETRY_SHADER_EXT
+GL_GenBuffers
+GL_GenFencesNV
+GL_GenFramebuffers
+GL_GenFramebuffersOES
+GL_GenPerfMonitorsAMD
+GL_GenProgramPipelines
+GL_GenProgramPipelinesEXT
+GL_GenQueries
+GL_GenQueriesEXT
+GL_GenRenderbuffers
+GL_GenRenderbuffersOES
+GL_GenSamplers
+GL_GenSemaphoresEXT
+GL_GenTextures
+GL_GenTransformFeedbacks
+GL_GenVertexArrays
+GL_GenVertexArraysOES
+GL_GenerateMipmap
+GL_GenerateMipmapOES
+GL_GetActiveAttrib
+GL_GetActiveUniform
+GL_GetActiveUniformBlockName
+GL_GetActiveUniformBlockiv
+GL_GetActiveUniformBlockivRobustANGLE
+GL_GetActiveUniformsiv
+GL_GetAttachedShaders
+GL_GetAttribLocation
+GL_GetBooleani_v
+GL_GetBooleanv
+GL_GetBooleanvRobustANGLE
+GL_GetBufferParameteri64v
+GL_GetBufferParameteri64vRobustANGLE
+GL_GetBufferParameteriv
+GL_GetBufferParameterivRobustANGLE
+GL_GetBufferPointerv
+GL_GetBufferPointervOES
+GL_GetBufferPointervRobustANGLE
+GL_GetClipPlanef
+GL_GetClipPlanex
+GL_GetCompressedTexImageANGLE
+GL_GetDebugMessageLog
+GL_GetDebugMessageLogKHR
+GL_GetError
+GL_GetFenceivNV
+GL_GetFixedv
+GL_GetFloatv
+GL_GetFloatvRobustANGLE
+GL_GetFragDataIndexEXT
+GL_GetFragDataLocation
+GL_GetFragmentShadingRatesEXT
+GL_GetFramebufferAttachmentParameteriv
+GL_GetFramebufferAttachmentParameterivOES
+GL_GetFramebufferAttachmentParameterivRobustANGLE
+GL_GetFramebufferParameteriv
+GL_GetFramebufferParameterivMESA
+GL_GetFramebufferPixelLocalStorageParameterfvANGLE
+GL_GetFramebufferPixelLocalStorageParameterfvRobustANGLE
+GL_GetFramebufferPixelLocalStorageParameterivANGLE
+GL_GetFramebufferPixelLocalStorageParameterivRobustANGLE
+GL_GetFramebufferPixelLocalStorageParameteruivANGLE
+GL_GetFramebufferPixelLocalStorageParameteruivRobustANGLE
+GL_GetGraphicsResetStatus
+GL_GetGraphicsResetStatusEXT
+GL_GetGraphicsResetStatusKHR
+GL_GetInteger64i_v
+GL_GetInteger64i_vRobustANGLE
+GL_GetInteger64v
+GL_GetInteger64vEXT
+GL_GetInteger64vRobustANGLE
+GL_GetIntegeri_v
+GL_GetIntegeri_vRobustANGLE
+GL_GetIntegerv
+GL_GetIntegervRobustANGLE
+GL_GetInternalformativ
+GL_GetInternalformativRobustANGLE
+GL_GetLightfv
+GL_GetLightxv
+GL_GetMaterialfv
+GL_GetMaterialxv
+GL_GetMemoryObjectParameterivEXT
+GL_GetMultisamplefv
+GL_GetMultisamplefvANGLE
+GL_GetMultisamplefvRobustANGLE
+GL_GetObjectLabel
+GL_GetObjectLabelEXT
+GL_GetObjectLabelKHR
+GL_GetObjectPtrLabel
+GL_GetObjectPtrLabelKHR
+GL_GetPerfMonitorCounterDataAMD
+GL_GetPerfMonitorCounterInfoAMD
+GL_GetPerfMonitorCounterStringAMD
+GL_GetPerfMonitorCountersAMD
+GL_GetPerfMonitorGroupStringAMD
+GL_GetPerfMonitorGroupsAMD
+GL_GetPointerv
+GL_GetPointervANGLE
+GL_GetPointervKHR
+GL_GetProgramBinary
+GL_GetProgramBinaryOES
+GL_GetProgramInfoLog
+GL_GetProgramInterfaceiv
+GL_GetProgramPipelineInfoLog
+GL_GetProgramPipelineInfoLogEXT
+GL_GetProgramPipelineiv
+GL_GetProgramPipelineivEXT
+GL_GetProgramResourceIndex
+GL_GetProgramResourceLocation
+GL_GetProgramResourceLocationIndexEXT
+GL_GetProgramResourceName
+GL_GetProgramResourceiv
+GL_GetProgramiv
+GL_GetProgramivRobustANGLE
+GL_GetQueryObjecti64vEXT
+GL_GetQueryObjecti64vRobustANGLE
+GL_GetQueryObjectivEXT
+GL_GetQueryObjectivRobustANGLE
+GL_GetQueryObjectui64vEXT
+GL_GetQueryObjectui64vRobustANGLE
+GL_GetQueryObjectuiv
+GL_GetQueryObjectuivEXT
+GL_GetQueryObjectuivRobustANGLE
+GL_GetQueryiv
+GL_GetQueryivEXT
+GL_GetQueryivRobustANGLE
+GL_GetRenderbufferImageANGLE
+GL_GetRenderbufferParameteriv
+GL_GetRenderbufferParameterivOES
+GL_GetRenderbufferParameterivRobustANGLE
+GL_GetSamplerParameterIiv
+GL_GetSamplerParameterIivEXT
+GL_GetSamplerParameterIivOES
+GL_GetSamplerParameterIuiv
+GL_GetSamplerParameterIuivEXT
+GL_GetSamplerParameterIuivOES
+GL_GetSamplerParameterfv
+GL_GetSamplerParameterfvRobustANGLE
+GL_GetSamplerParameteriv
+GL_GetSamplerParameterivRobustANGLE
+GL_GetSemaphoreParameterui64vEXT
+GL_GetShaderInfoLog
+GL_GetShaderPrecisionFormat
+GL_GetShaderSource
+GL_GetShaderiv
+GL_GetShaderivRobustANGLE
+GL_GetString
+GL_GetStringi
+GL_GetSynciv
+GL_GetTexEnvfv
+GL_GetTexEnviv
+GL_GetTexEnvxv
+GL_GetTexGenfvOES
+GL_GetTexGenivOES
+GL_GetTexGenxvOES
+GL_GetTexImageANGLE
+GL_GetTexLevelParameterfv
+GL_GetTexLevelParameterfvANGLE
+GL_GetTexLevelParameterfvRobustANGLE
+GL_GetTexLevelParameteriv
+GL_GetTexLevelParameterivANGLE
+GL_GetTexLevelParameterivRobustANGLE
+GL_GetTexParameterIiv
+GL_GetTexParameterIivEXT
+GL_GetTexParameterIivOES
+GL_GetTexParameterIuiv
+GL_GetTexParameterIuivEXT
+GL_GetTexParameterIuivOES
+GL_GetTexParameterfv
+GL_GetTexParameterfvRobustANGLE
+GL_GetTexParameteriv
+GL_GetTexParameterivRobustANGLE
+GL_GetTexParameterxv
+GL_GetTransformFeedbackVarying
+GL_GetTranslatedShaderSourceANGLE
+GL_GetUniformBlockIndex
+GL_GetUniformIndices
+GL_GetUniformLocation
+GL_GetUniformfv
+GL_GetUniformfvRobustANGLE
+GL_GetUniformiv
+GL_GetUniformivRobustANGLE
+GL_GetUniformuiv
+GL_GetUniformuivRobustANGLE
+GL_GetUnsignedBytei_vEXT
+GL_GetUnsignedBytevEXT
+GL_GetVertexAttribIiv
+GL_GetVertexAttribIivRobustANGLE
+GL_GetVertexAttribIuiv
+GL_GetVertexAttribIuivRobustANGLE
+GL_GetVertexAttribPointerv
+GL_GetVertexAttribPointervRobustANGLE
+GL_GetVertexAttribfv
+GL_GetVertexAttribfvRobustANGLE
+GL_GetVertexAttribiv
+GL_GetVertexAttribivRobustANGLE
+GL_GetnUniformfv
+GL_GetnUniformfvEXT
+GL_GetnUniformfvKHR
+GL_GetnUniformiv
+GL_GetnUniformivEXT
+GL_GetnUniformivKHR
+GL_GetnUniformuiv
+GL_GetnUniformuivKHR
+GL_Hint
+GL_IMG_texture_compression_pvrtc
+GL_IMG_texture_compression_pvrtc2
+GL_INVALID_ENUM
+GL_ImportMemoryFdEXT
+GL_ImportMemoryZirconHandleANGLE
+GL_ImportSemaphoreFdEXT
+GL_ImportSemaphoreZirconHandleANGLE
+GL_InsertEventMarkerEXT
+GL_InvalidateFramebuffer
+GL_InvalidateSubFramebuffer
+GL_IsBuffer
+GL_IsEnabled
+GL_IsEnabledi
+GL_IsEnablediEXT
+GL_IsEnablediOES
+GL_IsFenceNV
+GL_IsFramebuffer
+GL_IsFramebufferOES
+GL_IsMemoryObjectEXT
+GL_IsProgram
+GL_IsProgramPipeline
+GL_IsProgramPipelineEXT
+GL_IsQuery
+GL_IsQueryEXT
+GL_IsRenderbuffer
+GL_IsRenderbufferOES
+GL_IsSampler
+GL_IsSemaphoreEXT
+GL_IsShader
+GL_IsSync
+GL_IsTexture
+GL_IsTransformFeedback
+GL_IsVertexArray
+GL_IsVertexArrayOES
+GL_KHR_blend_equation_advanced
+GL_KHR_blend_equation_advanced_coherent
+GL_KHR_debug
+GL_KHR_no_error
+GL_KHR_parallel_shader_compile
+GL_KHR_robust_buffer_access_behavior
+GL_KHR_robustness
+GL_KHR_texture_compression_astc_hdr
+GL_KHR_texture_compression_astc_ldr
+GL_KHR_texture_compression_astc_sliced_3d
+GL_LabelObjectEXT
+GL_LightModelf
+GL_LightModelfv
+GL_LightModelx
+GL_LightModelxv
+GL_Lightf
+GL_Lightfv
+GL_Lightx
+GL_Lightxv
+GL_LineWidth
+GL_LineWidthx
+GL_LinkProgram
+GL_LoadIdentity
+GL_LoadMatrixf
+GL_LoadMatrixx
+GL_LoadPaletteFromModelViewMatrixOES
+GL_LogicOp
+GL_LogicOpANGLE
+GL_LoseContextCHROMIUM
+GL_MAX_
+GL_MAX_SHADER_STORAGE_BLOCK_SIZE
+GL_MAX_UNIFORM_BLOCK_SIZE
+GL_MESA_framebuffer_flip_y
+GL_MapBufferOES
+GL_MapBufferRange
+GL_MapBufferRangeEXT
+GL_Materialf
+GL_Materialfv
+GL_Materialx
+GL_Materialxv
+GL_MatrixIndexPointerOES
+GL_MatrixMode
+GL_MaxShaderCompilerThreadsKHR
+GL_MemoryBarrier
+GL_MemoryBarrierByRegion
+GL_MemoryObjectParameterivEXT
+GL_MinSampleShading
+GL_MinSampleShadingOES
+GL_MultMatrixf
+GL_MultMatrixx
+GL_MultiDrawArraysANGLE
+GL_MultiDrawArraysEXT
+GL_MultiDrawArraysIndirectEXT
+GL_MultiDrawArraysInstancedANGLE
+GL_MultiDrawArraysInstancedBaseInstanceANGLE
+GL_MultiDrawElementsANGLE
+GL_MultiDrawElementsBaseVertexEXT
+GL_MultiDrawElementsEXT
+GL_MultiDrawElementsIndirectEXT
+GL_MultiDrawElementsInstancedANGLE
+GL_MultiDrawElementsInstancedBaseVertexBaseInstanceANGLE
+GL_MultiTexCoord4f
+GL_MultiTexCoord4x
+GL_NV_EGL_stream_consumer_external
+GL_NV_fence
+GL_NV_framebuffer_blit
+GL_NV_pack_subimage
+GL_NV_pixel_buffer_object
+GL_NV_polygon_mode
+GL_NV_read_depth
+GL_NV_read_depth_stencil
+GL_NV_read_stencil
+GL_NV_robustness_video_memory_purge
+GL_NV_shader_noperspective_interpolation
+GL_Normal3f
+GL_Normal3x
+GL_NormalPointer
+GL_OES_EGL_image
+GL_OES_EGL_image_external
+GL_OES_EGL_image_external_essl3
+GL_OES_EGL_sync
+GL_OES_blend_subtract
+GL_OES_compressed_ETC1_RGB8_texture
+GL_OES_compressed_paletted_texture
+GL_OES_copy_image
+GL_OES_depth24
+GL_OES_depth32
+GL_OES_depth_texture
+GL_OES_depth_texture_cube_map
+GL_OES_draw_buffers_indexed
+GL_OES_draw_elements_base_vertex
+GL_OES_draw_texture
+GL_OES_element_index_uint
+GL_OES_fbo_render_mipmap
+GL_OES_framebuffer_object
+GL_OES_geometry_point_size
+GL_OES_geometry_shader
+GL_OES_get_program_binary
+GL_OES_gpu_shader5
+GL_OES_mapbuffer
+GL_OES_matrix_palette
+GL_OES_packed_depth_stencil
+GL_OES_point_size_array
+GL_OES_point_size_array not enabled.
+GL_OES_point_sprite
+GL_OES_primitive_bounding_box
+GL_OES_query_matrix
+GL_OES_required_internalformat
+GL_OES_rgb8_rgba8
+GL_OES_sample_shading
+GL_OES_sample_variables
+GL_OES_shader_image_atomic
+GL_OES_shader_io_blocks
+GL_OES_shader_multisample_interpolation
+GL_OES_standard_derivatives
+GL_OES_stencil8
+GL_OES_surfaceless_context
+GL_OES_tessellation_point_size
+GL_OES_tessellation_shader
+GL_OES_texture_3D
+GL_OES_texture_border_clamp
+GL_OES_texture_buffer
+GL_OES_texture_compression_astc
+GL_OES_texture_cube_map
+GL_OES_texture_cube_map_array
+GL_OES_texture_float
+GL_OES_texture_float_linear
+GL_OES_texture_half_float
+GL_OES_texture_half_float_linear
+GL_OES_texture_mirrored_repeat
+GL_OES_texture_npot
+GL_OES_texture_stencil8
+GL_OES_texture_storage_multisample_2d_array
+GL_OES_texture_storage_multisample_2d_array or GLES 3.2 required.
+GL_OES_vertex_array_object
+GL_OES_vertex_half_float
+GL_OES_vertex_type_10_10_10_2
+GL_OVR_multiview
+GL_OVR_multiview2
+GL_OVR_multiview_multisampled_render_to_texture
+GL_ObjectLabel
+GL_ObjectLabelKHR
+GL_ObjectPtrLabel
+GL_ObjectPtrLabelKHR
+GL_Orthof
+GL_Orthox
+GL_PatchParameteri
+GL_PatchParameteriEXT
+GL_PatchParameteriOES
+GL_PauseTransformFeedback
+GL_PixelLocalStorageBarrierANGLE
+GL_PixelStorei
+GL_PointParameterf
+GL_PointParameterfv
+GL_PointParameterx
+GL_PointParameterxv
+GL_PointSize
+GL_PointSizePointerOES
+GL_PointSizex
+GL_PolygonModeANGLE
+GL_PolygonModeNV
+GL_PolygonOffset
+GL_PolygonOffsetClampEXT
+GL_PolygonOffsetx
+GL_PopDebugGroup
+GL_PopDebugGroupKHR
+GL_PopGroupMarkerEXT
+GL_PopMatrix
+GL_PrimitiveBoundingBox
+GL_PrimitiveBoundingBoxEXT
+GL_PrimitiveBoundingBoxOES
+GL_ProgramBinary
+GL_ProgramBinaryOES
+GL_ProgramParameteri
+GL_ProgramParameteriEXT
+GL_ProgramUniform1f
+GL_ProgramUniform1fEXT
+GL_ProgramUniform1fv
+GL_ProgramUniform1fvEXT
+GL_ProgramUniform1i
+GL_ProgramUniform1iEXT
+GL_ProgramUniform1iv
+GL_ProgramUniform1ivEXT
+GL_ProgramUniform1ui
+GL_ProgramUniform1uiEXT
+GL_ProgramUniform1uiv
+GL_ProgramUniform1uivEXT
+GL_ProgramUniform2f
+GL_ProgramUniform2fEXT
+GL_ProgramUniform2fv
+GL_ProgramUniform2fvEXT
+GL_ProgramUniform2i
+GL_ProgramUniform2iEXT
+GL_ProgramUniform2iv
+GL_ProgramUniform2ivEXT
+GL_ProgramUniform2ui
+GL_ProgramUniform2uiEXT
+GL_ProgramUniform2uiv
+GL_ProgramUniform2uivEXT
+GL_ProgramUniform3f
+GL_ProgramUniform3fEXT
+GL_ProgramUniform3fv
+GL_ProgramUniform3fvEXT
+GL_ProgramUniform3i
+GL_ProgramUniform3iEXT
+GL_ProgramUniform3iv
+GL_ProgramUniform3ivEXT
+GL_ProgramUniform3ui
+GL_ProgramUniform3uiEXT
+GL_ProgramUniform3uiv
+GL_ProgramUniform3uivEXT
+GL_ProgramUniform4f
+GL_ProgramUniform4fEXT
+GL_ProgramUniform4fv
+GL_ProgramUniform4fvEXT
+GL_ProgramUniform4i
+GL_ProgramUniform4iEXT
+GL_ProgramUniform4iv
+GL_ProgramUniform4ivEXT
+GL_ProgramUniform4ui
+GL_ProgramUniform4uiEXT
+GL_ProgramUniform4uiv
+GL_ProgramUniform4uivEXT
+GL_ProgramUniformMatrix2fv
+GL_ProgramUniformMatrix2fvEXT
+GL_ProgramUniformMatrix2x3fv
+GL_ProgramUniformMatrix2x3fvEXT
+GL_ProgramUniformMatrix2x4fv
+GL_ProgramUniformMatrix2x4fvEXT
+GL_ProgramUniformMatrix3fv
+GL_ProgramUniformMatrix3fvEXT
+GL_ProgramUniformMatrix3x2fv
+GL_ProgramUniformMatrix3x2fvEXT
+GL_ProgramUniformMatrix3x4fv
+GL_ProgramUniformMatrix3x4fvEXT
+GL_ProgramUniformMatrix4fv
+GL_ProgramUniformMatrix4fvEXT
+GL_ProgramUniformMatrix4x2fv
+GL_ProgramUniformMatrix4x2fvEXT
+GL_ProgramUniformMatrix4x3fv
+GL_ProgramUniformMatrix4x3fvEXT
+GL_ProvokingVertexANGLE
+GL_PushDebugGroup
+GL_PushDebugGroupKHR
+GL_PushGroupMarkerEXT
+GL_PushMatrix
+GL_QCOM_framebuffer_foveated
+GL_QCOM_render_shared_exponent
+GL_QCOM_shading_rate
+GL_QCOM_texture_foveated
+GL_QCOM_texture_foveated not enabled.
+GL_QCOM_texture_lod_bias
+GL_QCOM_tiled_rendering
+GL_QueryCounterEXT
+GL_QueryMatrixxOES
+GL_ReadBuffer
+GL_ReadPixels
+GL_ReadPixelsRobustANGLE
+GL_ReadnPixels
+GL_ReadnPixelsEXT
+GL_ReadnPixelsKHR
+GL_ReleaseShaderCompiler
+GL_ReleaseTexturesANGLE
+GL_RenderbufferStorage
+GL_RenderbufferStorageMultisample
+GL_RenderbufferStorageMultisampleANGLE
+GL_RenderbufferStorageMultisampleEXT
+GL_RenderbufferStorageOES
+GL_RequestExtensionANGLE
+GL_ResumeTransformFeedback
+GL_Rotatef
+GL_Rotatex
+GL_SampleCoverage
+GL_SampleCoveragex
+GL_SampleMaski
+GL_SampleMaskiANGLE
+GL_SamplerParameterIiv
+GL_SamplerParameterIivEXT
+GL_SamplerParameterIivOES
+GL_SamplerParameterIuiv
+GL_SamplerParameterIuivEXT
+GL_SamplerParameterIuivOES
+GL_SamplerParameterf
+GL_SamplerParameterfv
+GL_SamplerParameterfvRobustANGLE
+GL_SamplerParameteri
+GL_SamplerParameteriv
+GL_SamplerParameterivRobustANGLE
+GL_Scalef
+GL_Scalex
+GL_Scissor
+GL_SelectPerfMonitorCountersAMD
+GL_SemaphoreParameterui64vEXT
+GL_SetFenceNV
+GL_ShadeModel
+GL_ShaderBinary
+GL_ShaderSource
+GL_ShadingRateCombinerOpsEXT
+GL_ShadingRateEXT
+GL_ShadingRateQCOM
+GL_SignalSemaphoreEXT
+GL_StartTilingQCOM
+GL_StencilFunc
+GL_StencilFuncSeparate
+GL_StencilMask
+GL_StencilMaskSeparate
+GL_StencilOp
+GL_StencilOpSeparate
+GL_TESS_CONTROL_SHADER_EXT
+GL_TESS_EVALUATION_SHADER_EXT
+GL_TestFenceNV
+GL_TexBuffer
+GL_TexBufferEXT
+GL_TexBufferOES
+GL_TexBufferRange
+GL_TexBufferRangeEXT
+GL_TexBufferRangeOES
+GL_TexCoordPointer
+GL_TexEnvf
+GL_TexEnvfv
+GL_TexEnvi
+GL_TexEnviv
+GL_TexEnvx
+GL_TexEnvxv
+GL_TexGenfOES
+GL_TexGenfvOES
+GL_TexGeniOES
+GL_TexGenivOES
+GL_TexGenxOES
+GL_TexGenxvOES
+GL_TexImage2D
+GL_TexImage2DRobustANGLE
+GL_TexImage3D
+GL_TexImage3DOES
+GL_TexImage3DRobustANGLE
+GL_TexParameterIiv
+GL_TexParameterIivEXT
+GL_TexParameterIivOES
+GL_TexParameterIuiv
+GL_TexParameterIuivEXT
+GL_TexParameterIuivOES
+GL_TexParameterf
+GL_TexParameterfv
+GL_TexParameterfvRobustANGLE
+GL_TexParameteri
+GL_TexParameteriv
+GL_TexParameterivRobustANGLE
+GL_TexParameterx
+GL_TexParameterxv
+GL_TexStorage2D
+GL_TexStorage2DEXT
+GL_TexStorage2DMultisample
+GL_TexStorage2DMultisampleANGLE
+GL_TexStorage3D
+GL_TexStorage3DEXT
+GL_TexStorage3DMultisample
+GL_TexStorage3DMultisampleOES
+GL_TexStorageAttribs2DEXT
+GL_TexStorageAttribs3DEXT
+GL_TexStorageMem2DEXT
+GL_TexStorageMem2DMultisampleEXT
+GL_TexStorageMem3DEXT
+GL_TexStorageMem3DMultisampleEXT
+GL_TexStorageMemFlags2DANGLE
+GL_TexStorageMemFlags2DMultisampleANGLE
+GL_TexStorageMemFlags3DANGLE
+GL_TexStorageMemFlags3DMultisampleANGLE
+GL_TexSubImage2D
+GL_TexSubImage2DRobustANGLE
+GL_TexSubImage3D
+GL_TexSubImage3DOES
+GL_TexSubImage3DRobustANGLE
+GL_TextureFoveationParametersQCOM
+GL_TransformFeedbackVaryings
+GL_Translatef
+GL_Translatex
+GL_Uniform1f
+GL_Uniform1fv
+GL_Uniform1i
+GL_Uniform1iv
+GL_Uniform1ui
+GL_Uniform1uiv
+GL_Uniform2f
+GL_Uniform2fv
+GL_Uniform2i
+GL_Uniform2iv
+GL_Uniform2ui
+GL_Uniform2uiv
+GL_Uniform3f
+GL_Uniform3fv
+GL_Uniform3i
+GL_Uniform3iv
+GL_Uniform3ui
+GL_Uniform3uiv
+GL_Uniform4f
+GL_Uniform4fv
+GL_Uniform4i
+GL_Uniform4iv
+GL_Uniform4ui
+GL_Uniform4uiv
+GL_UniformBlockBinding
+GL_UniformMatrix2fv
+GL_UniformMatrix2x3fv
+GL_UniformMatrix2x4fv
+GL_UniformMatrix3fv
+GL_UniformMatrix3x2fv
+GL_UniformMatrix3x4fv
+GL_UniformMatrix4fv
+GL_UniformMatrix4x2fv
+GL_UniformMatrix4x3fv
+GL_UnmapBuffer
+GL_UnmapBufferOES
+GL_UseProgram
+GL_UseProgramStages
+GL_UseProgramStagesEXT
+GL_VERTEX_SHADER
+GL_ValidateProgram
+GL_ValidateProgramPipeline
+GL_ValidateProgramPipelineEXT
+GL_VertexAttrib1f
+GL_VertexAttrib1fv
+GL_VertexAttrib2f
+GL_VertexAttrib2fv
+GL_VertexAttrib3f
+GL_VertexAttrib3fv
+GL_VertexAttrib4f
+GL_VertexAttrib4fv
+GL_VertexAttribBinding
+GL_VertexAttribDivisor
+GL_VertexAttribDivisorANGLE
+GL_VertexAttribDivisorEXT
+GL_VertexAttribFormat
+GL_VertexAttribI4i
+GL_VertexAttribI4iv
+GL_VertexAttribI4ui
+GL_VertexAttribI4uiv
+GL_VertexAttribIFormat
+GL_VertexAttribIPointer
+GL_VertexAttribPointer
+GL_VertexBindingDivisor
+GL_VertexPointer
+GL_Viewport
+GL_WaitSemaphoreEXT
+GL_WaitSync
+GL_WeightPointerOES
+
+--- Extensões GLSL ---
+
+--- Informações de compilação ---
+GL_EGLImageTargetRenderbufferStorageOES
+GL_EGLImageTargetTexStorageEXT
+GL_EGLImageTargetTexture2DOES
+glEGLImageTargetTexStorageEXT
+glEGLImageTargetRenderbufferStorageOES
+glEGLImageTargetTexture2DOES
+Missing EGL_TEXTURE_FORMAT or EGL_TEXTURE_TARGET
+target 3D texture does not have enough layers for the specified Z offset at the specified level.
+EGL_ANDROID_framebuffer_target
+target is not a 2D texture.
+Textarget must match the texture target type. Requested: %d Texture's: %d label: %s.
+vkCmdBuildAccelerationStructuresKHR
+vkGetPartitionedAccelerationStructuresBuildSizesNV
+GL_EXT_YUV_target not enabled.
+target is not a renderbuffer.
+Invalid query target.
+vkCmdBuildMicromapsEXT
+GL_EXT_YUV_target
+invalid target: 0x%X
+No Texture is bound to the specified target.
