@@ -28,11 +28,6 @@ jobs:
           echo "y" | sdkmanager "ndk;27.3.13750724"
           echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/27.3.13750724" >> $GITHUB_ENV
 
-      - name: Install CMake and Ninja
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y cmake ninja-build
-
       - name: Build MobileGlues Library (arm64-v8a)
         working-directory: MobileGlues-cpp
         run: |
