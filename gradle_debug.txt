@@ -1,0 +1,253 @@
+
+===== build.gradle.kts =====
+     1	plugins {
+     2	    id("com.android.library")
+     3	}
+     4	
+     5	android {
+     6	    namespace = "top.mobilegl.mobileglues"
+     7	    compileSdk = 36
+     8	
+     9	    defaultConfig {
+    10	        minSdk = 21
+    11	
+    12	        ndkVersion = "27.3.13750724"
+    13	    }
+    14	
+    15	    buildTypes {
+    16	        getByName("release") {
+    17	            isMinifyEnabled = false
+    18	        }
+    19	        create("proguard") {
+    20	            isMinifyEnabled = true
+    21	            initWith(getByName("debug"))
+    22	        }
+    23	        create("fordebug") {
+    24	        }
+    25	    }
+    26	
+    27	    externalNativeBuild {
+    28	        cmake {
+    29	            path = file("MobileGlues-cpp/CMakeLists.txt")
+    30	            version = "3.22.1"
+    31	        }
+    32	    }
+    33	
+    34	    compileOptions {
+    35	        sourceCompatibility = JavaVersion.VERSION_1_8
+    36	        targetCompatibility = JavaVersion.VERSION_1_8
+    37	    }
+    38	}
+
+===== MobileGlues-plugin/build.gradle.kts =====
+     1	// Top-level build file where you can add configuration options common to all sub-projects/modules.
+     2	plugins {
+     3	    alias(libs.plugins.android.application) apply false
+     4	    alias(libs.plugins.kotlin.android) apply false
+     5	}
+
+===== MobileGlues-plugin/settings.gradle.kts =====
+     1	pluginManagement {
+     2	    repositories {
+     3	        google {
+     4	            content {
+     5	                includeGroupByRegex("com\\.android.*")
+     6	                includeGroupByRegex("com\\.google.*")
+     7	                includeGroupByRegex("androidx.*")
+     8	            }
+     9	        }
+    10	        mavenCentral()
+    11	        gradlePluginPortal()
+    12	    }
+    13	}
+    14	
+    15	dependencyResolutionManagement {
+    16	    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    17	    repositories {
+    18	        google()
+    19	        mavenCentral()
+    20	    }
+    21	}
+    22	
+    23	rootProject.name = "MobileGlues-plugin"
+    24	include(":app")
+    25	include(":MobileGlues")
+
+===== MobileGlues-plugin/gradle.properties =====
+     1	org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+     2	android.useAndroidX=true
+     3	kotlin.code.style=official
+     4	android.nonTransitiveRClass=true
+     5	android.suppressUnsupportedCompileOptionsWarning=true
+
+===== MobileGlues-plugin/gradle/libs.versions.toml =====
+     1	[versions]
+     2	agp = "8.12.3"
+     3	gson = "2.13.2"
+     4	kotlin = "2.3.20"
+     5	compose-bom = "2026.06.01"
+     6	# 1.13 起 ComponentActivity 才提供 LocalNavigationEventDispatcherOwner，
+     7	# Miuix 的弹窗宿主（MiuixPopupHost）依赖它，版本低了会在弹窗出现的瞬间崩。
+     8	activity = "1.13.0"
+     9	lifecycle = "2.9.4"
+    10	# 0.9.0 起要求 compileSdk 37，AGP 8.12.3 支持不到那一档，所以停在 0.8.8（API 与 0.9.0 一致）。
+    11	miuix = "0.8.8"
+    12	documentfile = "1.0.1"
+    13	coroutines = "1.10.2"
+    14	junit = "4.13.2"
+    15	
+    16	[libraries]
+    17	gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
+    18	androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose-bom" }
+    19	androidx-compose-ui = { group = "androidx.compose.ui", name = "ui" }
+    20	androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+    21	androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+    22	androidx-compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+    23	androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity" }
+    24	androidx-lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+    25	androidx-documentfile = { group = "androidx.documentfile", name = "documentfile", version.ref = "documentfile" }
+    26	miuix-ui = { group = "top.yukonga.miuix.kmp", name = "miuix", version.ref = "miuix" }
+    27	coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+    28	lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycle" }
+    29	coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
+    30	junit = { module = "junit:junit", version.ref = "junit" }
+    31	
+    32	[plugins]
+    33	android-application = { id = "com.android.application", version.ref = "agp" }
+    34	kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+    35	kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+
+===== MobileGlues-plugin/MobileGlues/build.gradle.kts =====
+     1	configurations.maybeCreate("default")
+     2	artifacts.add("default", file("src/main/jniLibs/arm64-v8a/libmobileglues.so"))
+
+===== MobileGlues-plugin/app/build.gradle.kts =====
+     1	plugins {
+     2	    alias(libs.plugins.android.application)
+     3	    alias(libs.plugins.kotlin.android)
+     4	    alias(libs.plugins.kotlin.compose)
+     5	}
+     6	
+     7	android {
+     8	    sourceSets {
+     9	        main {
+    10	            jniLibs.srcDirs = listOf("src\/main\/jniLibs")
+    11	        }
+    12	    }
+    13	    namespace = "com.fcl.plugin.mobileglues"
+    14	    compileSdk = 36
+    15	
+    16	    ndkVersion = "27.3.13750724"
+    17	
+    18	    defaultConfig {
+    19	        applicationId = "com.fcl.plugin.mobileglues"
+    20	        minSdk = 26
+    21	        targetSdk = 36
+    22	        versionCode = 2000
+    23	        versionName = "2.0.0"
+    24	
+    25	        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    26	    }
+    27	
+    28	    signingConfigs {
+    29	        create("release") {
+    30	            storeFile = file("../keystore.jks")
+    31	            storePassword = System.getenv("SIGNING_STORE_PASSWORD") ?: project.findProperty("SIGNING_STORE_PASSWORD") as String?
+    32	            keyAlias = System.getenv("SIGNING_KEY_ALIAS") ?: project.findProperty("SIGNING_KEY_ALIAS") as String?
+    33	            keyPassword = System.getenv("SIGNING_KEY_PASSWORD") ?: project.findProperty("SIGNING_KEY_PASSWORD") as String?
+    34	        }
+    35	    }
+    36	
+    37	    buildTypes {
+    38	        release {
+    39	            signingConfig = signingConfigs.getByName("release")
+    40	            isMinifyEnabled = true
+    41	            proguardFiles(
+    42	                getDefaultProguardFile("proguard-android-optimize.txt"),
+    43	                "proguard-rules.pro"
+    44	            )
+    45	        }
+    46	
+    47	        configureEach {
+    48	            resValue("string","app_name","MobileGlues")
+    49	
+    50	            manifestPlaceholders["des"] = "MobileGlues (OpenGL 4.0, 1.17+)"
+    51	            manifestPlaceholders["renderer"] = "MobileGlues:libmobileglues.so:libmobileglues.so"
+    52	
+    53	            manifestPlaceholders["minMCVer"] = "1.17"
+    54	            manifestPlaceholders["maxMCVer"] = "" //为空则不限制 No restriction if empty
+    55	
+    56	            // MG_COUNT_LAUNCH：只有经启动器起来的这一次才算「一次启动」。
+    57	            // 基准测试、各种工具、以及本插件自己 dlopen 一次去读 GL 信息，都不该计数。
+    58	            manifestPlaceholders["boatEnv"] = mutableMapOf<String,String>().apply {
+    59	                put("LIBGL_ES", "3")
+    60	                put("MG_COUNT_LAUNCH", "1")
+    61	            }.run {
+    62	                var env = ""
+    63	                forEach { (key, value) ->
+    64	                    env += "$key=$value:"
+    65	                }
+    66	                env.dropLast(1)
+    67	            }
+    68	            manifestPlaceholders["pojavEnv"] = mutableMapOf<String,String>().apply {
+    69	                put("LIBGL_ES", "3")
+    70	                put("POJAV_RENDERER", "opengles3")
+    71					put("POJAVEXEC_EGL", "libmobileglues.so")
+    72					put("LIBGL_EGL", "libmobileglues.so")
+    73	                put("MG_COUNT_LAUNCH", "1")
+    74	            }.run {
+    75	                var env = ""
+    76	                forEach { (key, value) ->
+    77	                    env += "$key=$value:"
+    78	                }
+    79	                env.dropLast(1)
+    80	            }
+    81	        }
+    82	    }
+    83	
+    84	    externalNativeBuild {
+    85	        cmake {
+    86	            path = file("src/main/cpp/CMakeLists.txt")
+    87	        }
+    88	    }
+    89	
+    90	    compileOptions {
+    91	        sourceCompatibility = JavaVersion.VERSION_11
+    92	        targetCompatibility = JavaVersion.VERSION_11
+    93	    }
+    94	    kotlin {
+    95	        compilerOptions {
+    96	            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
+    97	        }
+    98	    }
+    99	    buildFeatures {
+   100	        buildConfig = true
+   101	        aidl = true
+   102	        compose = true
+   103	    }
+   104	    packaging {
+   105	        jniLibs {
+   106	            useLegacyPackaging = true
+   107	        }
+   108	    }
+   109	}
+   110	
+   111	dependencies {
+   112	    implementation(libs.gson)
+   113	    implementation(platform(libs.androidx.compose.bom))
+   114	    implementation(libs.androidx.compose.ui)
+   115	    implementation(libs.androidx.compose.ui.graphics)
+   116	    implementation(libs.androidx.compose.ui.tooling.preview)
+   117	    implementation(libs.androidx.compose.material3)
+   118	    implementation(libs.androidx.activity.compose)
+   119	    implementation(libs.androidx.lifecycle.runtime.compose)
+   120	    implementation(libs.androidx.documentfile)
+   121	    implementation(libs.miuix.ui)
+   122	    // 协程和 lifecycleScope 以前是从 appcompat 传递依赖里蹭来的，这里显式声明。
+   123	    implementation(libs.coroutines.android)
+   124	    implementation(libs.lifecycle.runtime.ktx)
+   125	    implementation(project(":MobileGlues"))
+   126	
+   127	    testImplementation(libs.junit)
+   128	    testImplementation(libs.coroutines.test)
+   129	}

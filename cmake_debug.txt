@@ -1,0 +1,367 @@
+
+===== ./MobileGlues-cpp/CMakeLists.txt =====
+     1	cmake_minimum_required(VERSION 3.22.1)
+     2	project("mobileglues")
+     3	enable_language(CXX)
+     4	set(CMAKE_CXX_STANDARD 20)
+     5	set(CMAKE_CXX_STANDARD_REQUIRED ON)
+     6	set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+     7	set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+     8	
+     9	
+    10	# glslang & SPIRV-Cross
+    11	set(ENABLE_RTTI                ON  CACHE BOOL "Enables RTTI (will be took by glslang)" FORCE)
+    12	set(ENABLE_HLSL                OFF CACHE BOOL "Disable HLSL input for glslang" FORCE)
+    13	set(BUILD_EXTERNAL             OFF CACHE BOOL "Disable build external dependencies for glslang" FORCE)
+    14	set(ENABLE_GLSLANG_BINARIES    OFF CACHE BOOL "Disable glslangValidator/spirv-remap" FORCE)
+    15	set(ENABLE_OPT                 OFF CACHE BOOL "Disable SPIRV-Tools opt usage in glslang" FORCE)
+    16	set(BUILD_EXTERNAL             OFF CACHE BOOL "Don't build external deps in External/" FORCE)
+    17	
+    18	set(SPIRV_CROSS_ENABLE_C_API   ON  CACHE BOOL "Enable C API" FORCE)
+    19	set(SPIRV_CROSS_ENABLE_GLSL    ON  CACHE BOOL "Enable GLSL backend" FORCE)
+    20	set(SPIRV_CROSS_ENABLE_REFLECT OFF CACHE BOOL "Disable reflect" FORCE)
+    21	set(SPIRV_CROSS_ENABLE_HLSL    OFF CACHE BOOL "Disable HLSL backend" FORCE)
+    22	set(SPIRV_CROSS_ENABLE_MSL     OFF CACHE BOOL "Disable MSL backend" FORCE)
+    23	set(SPIRV_CROSS_ENABLE_CPP     OFF CACHE BOOL "Disable C++ API target" FORCE)
+    24	set(SPIRV_CROSS_CLI            OFF CACHE BOOL "Disable CLI binary" FORCE)
+    25	set(SPIRV_CROSS_STATIC         ON  CACHE BOOL "Prefer static libs" FORCE)
+    26	set(SPIRV_CROSS_ENABLE_UTIL    OFF CACHE BOOL "Disable util" FORCE)
+    27	
+    28	add_subdirectory(3rdparty/glslang)
+    29	add_subdirectory(3rdparty/SPIRV-Cross)
+    30	
+    31	
+    32	if(MACOS)
+    33	    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -w -fvisibility=default -funwind-tables -g -D_THREAD_SAFE -fPIC -stdlib=libc++")
+    34	    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -w -g -std=gnu99 -funwind-tables -fvisibility=hidden")
+    35	    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libstdc++")
+    36	else()
+    37	    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -w -fvisibility=hidden -funwind-tables -g -D_THREAD_SAFE -fPIC")
+    38	    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -w -g -std=gnu99 -funwind-tables -fvisibility=hidden")
+    39	    set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static-libstdc++")
+    40	    set(CMAKE_ANDROID_STL_TYPE c++_static)
+    41	endif()
+    42	
+    43	if (NOT CMAKE_BUILD_TYPE STREQUAL "Debug")
+    44	    # Check if ThinLTO or LTO is suppported
+    45	    include(CheckIPOSupported)
+    46	    include(CheckCCompilerFlag)
+    47	    include(CheckCXXCompilerFlag)
+    48	
+    49	    check_ipo_supported(RESULT LTOSupported OUTPUT LTOError)
+    50	
+    51	    check_c_compiler_flag("-flto" HAS_LTO_C)
+    52	    check_cxx_compiler_flag("-flto" HAS_LTO_CXX)
+    53	
+    54	    if (LTOSupported OR (HAS_LTO_C AND HAS_LTO_CXX))
+    55	    # Check ThinLTO
+    56	    check_c_compiler_flag("-flto=thin" HAS_THINLTO_C)
+    57	    check_cxx_compiler_flag("-flto=thin" HAS_THINLTO_CXX)
+    58	    if (HAS_THINLTO_C AND HAS_THINLTO_CXX)
+    59	        message(STATUS "ThinLTO supported, using -flto=thin")
+    60	
+    61	        add_compile_options(-flto=thin)
+    62	        add_link_options(-flto=thin)
+    63	    else()
+    64	        # ThinLTO is not supported
+    65	        message(STATUS "ThinLTO not available, fallback to CMAKE IPO")
+    66	        set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+    67	    endif()
+    68	    else()
+    69	    message(STATUS "IPO not supported: ${LTOError}")
+    70	    endif()
+    71	endif()
+    72	
+    73	
+    74	if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang" AND NOT MATCHES "AppleClang")
+    75	    add_compile_options(-O3 -ffunction-sections -fdata-sections)
+    76	    add_link_options(-Wl,--gc-sections)
+    77	elseif (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    78	#    add_compile_options(/O2)
+    79	else ()
+    80	    add_compile_options(-O2)
+    81	endif()
+    82	
+    83	if (CMAKE_CXX_COMPILER_ID MATCHES "MSVC")
+    84	    add_compile_options(/Zc:preprocessor)
+    85	    add_compile_options(/Zc:__cplusplus)
+    86	endif()
+    87	
+    88	set(PROFILING OFF)
+    89	
+    90	add_library(${CMAKE_PROJECT_NAME} SHARED
+    91	    init.cpp
+    92	    main.cpp
+    93	    gl/gl_stub.cpp
+    94	    gl/gl_native.cpp
+    95	    gl/gl.cpp
+    96	    gl/envvars.cpp
+    97	    gl/log.cpp
+    98	    gl/program.cpp
+    99	    gl/shader.cpp
+   100	    gl/shader_cache.cpp
+   101	    gl/sha256_min.c
+   102	    gl/framebuffer.cpp
+   103	    gl/texture.cpp
+   104	    gl/drawing.cpp
+   105	    gl/multidraw.cpp
+   106	    bench/multidraw_bench.cpp
+   107	    gl/mg.cpp
+   108	    gl/buffer.cpp
+   109	    gl/getter.cpp
+   110	    gl/enable.cpp
+   111	    gl/restart.cpp
+   112	    egl/context.cpp
+   113	    gl/pixel.cpp
+   114	    gl/transfer.cpp
+   115	    gl/random_string_gen.cpp
+   116	    gl/ExtWrappers/DSAWrapper.cpp
+   117	    gl/ExtWrappers/MultiBindWrapper.cpp
+   118	    gl/glsl/glsl_for_es.cpp
+   119	    gl/glsl/cache.cpp
+   120	    gl/FSR1/FSR1.cpp
+   121	
+   122	    gl/vertexattrib.cpp
+   123	    glx/lookup.cpp
+   124	    egl/egl.cpp
+   125	    egl/loader.cpp
+   126	    gles/loader.cpp
+   127	    config/cJSON.c
+   128	    config/config.cpp
+   129	    config/gpu_utils.cpp
+   130	    config/settings.cpp
+   131	    config/stats.cpp
+   132	)
+   133	
+   134	target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
+   135	    ./includes
+   136	    ./3rdparty/xxhash
+   137	target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC ${CMAKE_SOURCE_DIR}/include)
+   138	
+   139	target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE
+   140	    glslang::glslang
+   141	    spirv-cross-c
+   142	)
+   143	
+   144	if (NOT MSVC)
+   145	    # Calls between this library's own translation units must land in this
+   146	    # library. Without this, an internal call to an exported gl* symbol goes
+   147	    # through a preemptible PLT slot, and in an Android app process the system
+   148	    # libGLESv2 -- always in the global symbol scope -- can win the lookup: the
+   149	    # DSA wrappers and the benchmark would then be calling the real driver where
+   150	    # they meant the frontend, silently bypassing all state tracking. The
+   151	    # symbols stay exported for dlsym and eglGetProcAddress; only who internal
+   152	    # calls bind to changes. On the target, not in the AppleClang-guarded block
+   153	    # above -- that block's condition has never been true (dangling NOT MATCHES),
+   154	    # which is also why --gc-sections never made it into the link.
+   155	    target_link_options(${CMAKE_PROJECT_NAME} PRIVATE -Wl,-Bsymbolic-functions)
+   156	endif()
+   157	
+   158	if(MACOS)
+   159	    # iOS
+   160	    target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC
+   161	        "-F${CMAKE_SOURCE_DIR}/external"
+   162	        "-framework libEGL"
+   163	        "-framework libGLESv2"
+   164	        "-framework Metal"
+   165	        "-framework Foundation"
+   166	        "-framework QuartzCore"
+   167	    )
+   168	elseif(ANDROID)
+   169	    # Android
+   170	    target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC
+   171	        android
+   172	        log
+   173	    )
+   174	    else()
+   175	    # Linux — EGL/GLES are loaded dynamically via dlopen
+   176	    target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC
+   177	        ${CMAKE_DL_LIBS}
+   178	    )
+   179	endif()
+   180	
+   181	if (PROFILING)
+   182	    find_package(Threads)
+   183	    include_directories(${CMAKE_SOURCE_DIR}/3rdparty/perfetto/sdk)
+   184	    add_library(perfetto STATIC ${CMAKE_SOURCE_DIR}/3rdparty/perfetto/sdk/perfetto.cc)
+   185	    target_link_libraries(${CMAKE_PROJECT_NAME} perfetto ${CMAKE_THREAD_LIBS_INIT})
+   186	    target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC PROFILING=1)
+   187	endif()
+
+===== ./MobileGlues-cpp/include/SPIRV/CMakeLists.txt =====
+     1	# Copyright (C) 2020 The Khronos Group Inc.
+     2	#
+     3	# All rights reserved.
+     4	#
+     5	# Redistribution and use in source and binary forms, with or without
+     6	# modification, are permitted provided that the following conditions
+     7	# are met:
+     8	#
+     9	#    Redistributions of source code must retain the above copyright
+    10	#    notice, this list of conditions and the following disclaimer.
+    11	#
+    12	#    Redistributions in binary form must reproduce the above
+    13	#    copyright notice, this list of conditions and the following
+    14	#    disclaimer in the documentation and/or other materials provided
+    15	#    with the distribution.
+    16	#
+    17	#    Neither the name of The Khronos Group Inc. nor the names of its
+    18	#    contributors may be used to endorse or promote products derived
+    19	#    from this software without specific prior written permission.
+    20	#
+    21	# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+    22	# "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+    23	# LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+    24	# FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+    25	# COPYRIGHT HOLDERS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+    26	# INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+    27	# BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+    28	# LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+    29	# CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+    30	# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+    31	# ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+    32	# POSSIBILITY OF SUCH DAMAGE.
+    33	
+    34	set(SPIRV_SOURCES
+    35	    ${CMAKE_CURRENT_SOURCE_DIR}/GlslangToSpv.cpp
+    36	    ${CMAKE_CURRENT_SOURCE_DIR}/InReadableOrder.cpp
+    37	    ${CMAKE_CURRENT_SOURCE_DIR}/Logger.cpp
+    38	    ${CMAKE_CURRENT_SOURCE_DIR}/SpvBuilder.cpp
+    39	    ${CMAKE_CURRENT_SOURCE_DIR}/SpvPostProcess.cpp
+    40	    ${CMAKE_CURRENT_SOURCE_DIR}/doc.cpp
+    41	    ${CMAKE_CURRENT_SOURCE_DIR}/SpvTools.cpp
+    42	    ${CMAKE_CURRENT_SOURCE_DIR}/disassemble.cpp
+    43	    ${CMAKE_CURRENT_SOURCE_DIR}/CInterface/spirv_c_interface.cpp
+    44	    PARENT_SCOPE)
+    45	
+    46	set(SPVREMAP_SOURCES
+    47	    SPVRemapper.cpp
+    48	    doc.cpp)
+    49	
+    50	set(SPIRV_HEADERS
+    51	    ${CMAKE_CURRENT_SOURCE_DIR}/bitutils.h
+    52	    ${CMAKE_CURRENT_SOURCE_DIR}/spirv.hpp
+    53	    ${CMAKE_CURRENT_SOURCE_DIR}/GLSL.std.450.h
+    54	    ${CMAKE_CURRENT_SOURCE_DIR}/GLSL.ext.EXT.h
+    55	    ${CMAKE_CURRENT_SOURCE_DIR}/GLSL.ext.KHR.h
+    56	    ${CMAKE_CURRENT_SOURCE_DIR}/GlslangToSpv.h
+    57	    ${CMAKE_CURRENT_SOURCE_DIR}/hex_float.h
+    58	    ${CMAKE_CURRENT_SOURCE_DIR}/Logger.h
+    59	    ${CMAKE_CURRENT_SOURCE_DIR}/SpvBuilder.h
+    60	    ${CMAKE_CURRENT_SOURCE_DIR}/spvIR.h
+    61	    ${CMAKE_CURRENT_SOURCE_DIR}/doc.h
+    62	    ${CMAKE_CURRENT_SOURCE_DIR}/SpvTools.h
+    63	    ${CMAKE_CURRENT_SOURCE_DIR}/disassemble.h
+    64	    ${CMAKE_CURRENT_SOURCE_DIR}/GLSL.ext.AMD.h
+    65	    ${CMAKE_CURRENT_SOURCE_DIR}/GLSL.ext.NV.h
+    66	    ${CMAKE_CURRENT_SOURCE_DIR}/GLSL.ext.ARM.h
+    67	    ${CMAKE_CURRENT_SOURCE_DIR}/GLSL.ext.QCOM.h
+    68	    ${CMAKE_CURRENT_SOURCE_DIR}/NonSemanticDebugPrintf.h
+    69	    ${CMAKE_CURRENT_SOURCE_DIR}/NonSemanticShaderDebugInfo100.h
+    70	    PARENT_SCOPE)
+    71	
+    72	set(SPVREMAP_HEADERS
+    73	    SPVRemapper.h
+    74	    doc.h)
+    75	
+    76	set(PUBLIC_HEADERS
+    77	    GlslangToSpv.h
+    78	    disassemble.h
+    79	    Logger.h
+    80	    spirv.hpp
+    81	    SPVRemapper.h
+    82	    SpvTools.h)
+    83	
+    84	add_library(SPIRV ${LIB_TYPE} ${CMAKE_CURRENT_SOURCE_DIR}/../glslang/stub.cpp)
+    85	add_library(glslang::SPIRV ALIAS SPIRV)
+    86	set_target_properties(SPIRV PROPERTIES
+    87	    FOLDER glslang
+    88	    POSITION_INDEPENDENT_CODE ON
+    89	    VERSION   "${GLSLANG_VERSION}"
+    90	    SOVERSION "${GLSLANG_VERSION_MAJOR}")
+    91	target_include_directories(SPIRV PUBLIC
+    92	    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/..>
+    93	    $<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>)
+    94	
+    95	if (ENABLE_SPVREMAPPER)
+    96	    add_library(SPVRemapper ${LIB_TYPE} ${SPVREMAP_SOURCES} ${SPVREMAP_HEADERS})
+    97	    add_library(glslang::SPVRemapper ALIAS SPVRemapper)
+    98	    set_target_properties(SPVRemapper PROPERTIES
+    99	        FOLDER glslang
+   100	        POSITION_INDEPENDENT_CODE ON
+   101	        VERSION   "${GLSLANG_VERSION}"
+   102	        SOVERSION "${GLSLANG_VERSION_MAJOR}")
+   103	    glslang_only_export_explicit_symbols(SPVRemapper)
+   104	endif()
+   105	
+   106	if(WIN32 AND BUILD_SHARED_LIBS)
+   107	    set_target_properties(SPIRV PROPERTIES PREFIX "")
+   108	    if (ENABLE_SPVREMAPPER)
+   109	        set_target_properties(SPVRemapper PROPERTIES PREFIX "")
+   110	    endif()
+   111	endif()
+   112	
+   113	if(ENABLE_OPT)
+   114	    target_link_libraries(SPIRV PRIVATE glslang PUBLIC SPIRV-Tools-opt)
+   115	    target_include_directories(SPIRV PUBLIC
+   116	        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/../External>)
+   117	else()
+   118	    target_link_libraries(SPIRV PRIVATE glslang)
+   119	endif()
+   120	
+   121	if(WIN32)
+   122	    source_group("Source" FILES ${SOURCES} ${HEADERS})
+   123	    source_group("Source" FILES ${SPVREMAP_SOURCES} ${SPVREMAP_HEADERS})
+   124	endif()
+   125	
+   126	if(GLSLANG_ENABLE_INSTALL)
+   127	    if (ENABLE_SPVREMAPPER)
+   128	        install(TARGETS SPVRemapper EXPORT glslang-targets)
+   129	    endif()
+   130	
+   131	    install(TARGETS SPIRV EXPORT glslang-targets)
+   132	
+   133	    install(FILES ${PUBLIC_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/glslang/SPIRV/)
+   134	endif()
+
+===== ./MobileGlues-plugin/app/src/main/cpp/CMakeLists.txt =====
+     1	cmake_minimum_required(VERSION 3.10)
+     2	project(mobileglues_info_getter)
+     3	
+     4	if(NOT CMAKE_BUILD_TYPE)
+     5	    set(CMAKE_BUILD_TYPE Release)
+     6	endif()
+     7	
+     8	add_library(mobileglues_info_getter SHARED
+     9	    mobileglues_info_getter.cpp
+    10	)
+    11	
+    12	find_library(android-lib android)
+    13	find_library(log-lib log)
+    14	
+    15	target_compile_options(mobileglues_info_getter PRIVATE
+    16	    -Oz
+    17	    -fdata-sections
+    18	    -ffunction-sections
+    19	    -fvisibility=hidden
+    20	    -fvisibility-inlines-hidden
+    21	    -fno-rtti
+    22	    -fno-exceptions
+    23	    -flto
+    24	)
+    25	
+    26	target_link_options(mobileglues_info_getter PRIVATE
+    27	    -Wl,--gc-sections
+    28	    -Wl,--strip-all
+    29	    -flto
+    30	)
+    31	
+    32	target_include_directories(mobileglues_info_getter PRIVATE
+    33	    ${CMAKE_CURRENT_SOURCE_DIR}
+    34	)
+    35	
+    36	target_link_libraries(mobileglues_info_getter
+    37	    ${android-lib}
+    38	    ${log-lib}
+    39	    dl
+    40	)
