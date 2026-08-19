@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "com.quanneggaes4d.native"
+    namespace = "com.quanneggaes4d.nativelib"
     compileSdk = 36
 
     defaultConfig {
