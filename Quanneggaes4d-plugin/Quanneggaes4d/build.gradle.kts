@@ -1,2 +1,14 @@
-configurations.maybeCreate("default")
-artifacts.add("default", file("src/main/jniLibs/arm64-v8a/libquanneggaes4d.so"))
+plugins {
+    id("com.android.library")
+}
+
+android {
+    namespace = "com.quanneggaes4d.native"
+    compileSdk = 36
+
+    defaultConfig {
+        minSdk = 26
+    }
+
+    sourceSets["main"].jniLibs.srcDirs("src/main/jniLibs")
+}
