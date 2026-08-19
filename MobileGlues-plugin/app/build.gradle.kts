@@ -6,8 +6,8 @@ plugins {
 
 android {
     sourceSets {
-        main {
-            jniLibs.srcDirs = listOf("src\/main\/jniLibs")
+        getByName("main") {
+            jniLibs.srcDirs("src/main/jniLibs")
         }
     }
     namespace = "com.fcl.plugin.mobileglues"
