@@ -47,17 +47,20 @@ jobs:
           mkdir -p MobileGlues-plugin/app/src/main/jniLibs/arm64-v8a
           cp MobileGlues-cpp/build/libmobileglues.so MobileGlues-plugin/app/src/main/jniLibs/arm64-v8a/
 
-      - name: Build APK
+      - name: Setup Gradle (Cache)
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Build APK (Debug)
         working-directory: MobileGlues-plugin
         run: |
           chmod +x gradlew
-          ./gradlew assembleRelease
+          ./gradlew assembleDebug
 
       - name: Locate and Rename APK
         run: |
-          APK_PATH=$(find MobileGlues-plugin -name "*release.apk" 2>/dev/null | head -n 1)
+          APK_PATH=$(find MobileGlues-plugin -name "*debug.apk" 2>/dev/null | head -n 1)
           if [ -n "$APK_PATH" ]; then
-            cp "$APK_PATH" MobileGlues-plugin/MobileGlues-plugin-${{ github.sha }}.apk
+            cp "$APK_PATH" MobileGlues-plugin/MobileGlues-plugin-DEBUG-${{ github.sha }}.apk
           else
             echo "APK not found!"
             exit 1
