@@ -1,4 +1,4 @@
-// MobileGlues - config/stats.cpp
+// QUANNEGGAES4D - config/stats.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -29,7 +29,7 @@ static const char* LAUNCH_COUNT_KEY = "launchCount";
 // Opt in, not out: this library gets loaded by benchmarks, by tools and by the
 // plugin app itself, and none of those is a game launch. Only a launcher that
 // says so counts.
-static const char* COUNT_ENV_VAR = "MG_COUNT_LAUNCH";
+static const char* COUNT_ENV_VAR = "QNG_COUNT_LAUNCH";
 
 static cJSON* read_stats() {
     FILE* file = fopen(stats_file_path, "r");

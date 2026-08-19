@@ -1,12 +1,12 @@
-// MobileGlues - egl/trace.h
+// QUANNEGGAES4D - egl/trace.h
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
 // SPDX-License-Identifier: LGPL-2.1-only
 // End of Source File Header
 
-#ifndef MOBILEGLUES_EGL_TRACE_H
-#define MOBILEGLUES_EGL_TRACE_H
+#ifndef QUANNEGGAES4D_EGL_TRACE_H
+#define QUANNEGGAES4D_EGL_TRACE_H
 
 #include "../gl/log.h"
 #include <EGL/egl.h>
@@ -23,8 +23,8 @@
 // point answers none of that, so every line here carries the calling thread and
 // says what came back, not just what went in.
 //
-//   adb logcat -s MobileGlues:* | grep '\[EGL'
-//   adb logcat -s MobileGlues:* | grep '\[EGL t12345\]'   # one thread's story
+//   adb logcat -s QUANNEGGAES4D:* | grep '\[EGL'
+//   adb logcat -s QUANNEGGAES4D:* | grep '\[EGL t12345\]'   # one thread's story
 //
 // This is deliberately LOG_I rather than LOG_D: it is meant to be readable from a
 // release build on a user's device, without GLOBAL_DEBUG turning the whole
@@ -102,4 +102,4 @@ static inline const char* mg_egl_api_name(EGLenum api) {
     }
 }
 
-#endif // MOBILEGLUES_EGL_TRACE_H
+#endif // QUANNEGGAES4D_EGL_TRACE_H

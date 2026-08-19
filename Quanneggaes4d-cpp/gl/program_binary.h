@@ -1,5 +1,5 @@
-#ifndef MOBILEGLUES_PROGRAM_BINARY_H
-#define MOBILEGLUES_PROGRAM_BINARY_H
+#ifndef QUANNEGGAES4D_PROGRAM_BINARY_H
+#define QUANNEGGAES4D_PROGRAM_BINARY_H
 
 #include <string>
 #include <GL/gl.h>
@@ -8,7 +8,7 @@
 extern "C" {
 #endif
 
-#define SHADER_BINARY_DIR "/sdcard/MG/shaders/"
+#define SHADER_BINARY_DIR "/sdcard/QNG/shaders/"
 
 bool saveProgramBinary(GLuint program, const std::string& name);
 bool loadProgramBinary(GLuint program, const std::string& name);

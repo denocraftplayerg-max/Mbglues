@@ -1,4 +1,4 @@
-// MobileGlues - gl/buffer.cpp
+// QUANNEGGAES4D - gl/buffer.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -1071,7 +1071,7 @@ void* glMapBuffer(GLenum target, GLenum access) {
 
 #if GLOBAL_DEBUG || DEBUG
 #include <fstream>
-#define BIN_FILE_PREFIX "/sdcard/MG/buf/"
+#define BIN_FILE_PREFIX "/sdcard/QNG/buf/"
 #endif
 
 #if !defined(__APPLE__)

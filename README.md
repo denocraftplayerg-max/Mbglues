@@ -1,10 +1,10 @@
-# MobileGlues
+# QUANNEGGAES4D
 
-**MobileGlues**, which stands for "(on) Mobile, GL uses ES", is a GL implementation running on top of host OpenGL ES 3.x (best on 3.2, minimum 3.0), with running Minecraft: Java Edition in mind.
+**QUANNEGGAES4D**, which stands for "(on) Mobile, GL uses ES", is a GL implementation running on top of host OpenGL ES 3.x (best on 3.2, minimum 3.0), with running Minecraft: Java Edition in mind.
 
 # For Shader Developers
 
-1. MobileGlues automatically:
+1. QUANNEGGAES4D automatically:
    - Converts desktop GLSL → GLSL ES
    - Removes `layout(binding)` syntax
    - Handles version directives
@@ -14,19 +14,19 @@
      precision highp int;
      ```
 
-2. MobileGlues (since V1.2.6) injects these macros into your shaders:
+2. QUANNEGGAES4D (since V1.2.6) injects these macros into your shaders:
    ```glsl
-   #define MG_MOBILEGLUES                   // Indicates MobileGlues environment
-   #define MG_MOBILEGLUES_VERSION 1260      // Version number (e.g. 1260 = V1.2.6)
+   #define MG_QUANNEGGAES4D                   // Indicates QUANNEGGAES4D environment
+   #define MG_QUANNEGGAES4D_VERSION 1260      // Version number (e.g. 1260 = V1.2.6)
    ```
 
    Use these macros for platform-specific logic:
    ```glsl
-   #ifdef MG_MOBILEGLUES
-       #if MG_MOBILEGLUES_VERSION >= 1270
-           // Logic for MobileGlues (version >= V1.2.7)
+   #ifdef MG_QUANNEGGAES4D
+       #if MG_QUANNEGGAES4D_VERSION >= 1270
+           // Logic for QUANNEGGAES4D (version >= V1.2.7)
        #else
-           // Logic for MobileGlues (version < V1.2.7)
+           // Logic for QUANNEGGAES4D (version < V1.2.7)
        #endif
    #else
        // ...
@@ -34,13 +34,13 @@
    ```
 
 3. If encountering issues:
-   - Enable `Ignore shader/program error`, and check the logs (located at `/sdcard/MG/latest.log`).
+   - Enable `Ignore shader/program error`, and check the logs (located at `/sdcard/QNG/latest.log`).
 
 # License
 
-MobileGlues is licensed under **GNU LGPL-2.1 License**.
+QUANNEGGAES4D is licensed under **GNU LGPL-2.1 License**.
 
-Please see [LICENSE](https://github.com/MobileGL-Dev/MobileGlues/blob/main/LICENSE).
+Please see [LICENSE](https://github.com/MobileGL-Dev/QUANNEGGAES4D/blob/main/LICENSE).
 
 # Third-party components
 

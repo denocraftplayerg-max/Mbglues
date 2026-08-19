@@ -1,7 +1,7 @@
 
-===== MobileGlues-cpp/CMakeLists.txt =====
+===== Quanneggaes4d-cpp/CMakeLists.txt =====
      1	cmake_minimum_required(VERSION 3.22.1)
-     2	project("mobileglues")
+     2	project("quanneggaes4d")
      3	enable_language(CXX)
      4	set(CMAKE_CXX_STANDARD 20)
      5	set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -188,7 +188,7 @@
    186	    target_compile_definitions(${CMAKE_PROJECT_NAME} PUBLIC PROFILING=1)
    187	endif()
 
-===== MobileGlues-cpp/include/SPIRV/CMakeLists.txt =====
+===== Quanneggaes4d-cpp/include/SPIRV/CMakeLists.txt =====
      1	# Copyright (C) 2020 The Khronos Group Inc.
      2	#
      3	# All rights reserved.
@@ -324,22 +324,22 @@
    133	    install(FILES ${PUBLIC_HEADERS} DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/glslang/SPIRV/)
    134	endif()
 
-===== MobileGlues-plugin/app/src/main/cpp/CMakeLists.txt =====
+===== Quanneggaes4d-plugin/app/src/main/cpp/CMakeLists.txt =====
      1	cmake_minimum_required(VERSION 3.10)
-     2	project(mobileglues_info_getter)
+     2	project(quanneggaes4d_info_getter)
      3	
      4	if(NOT CMAKE_BUILD_TYPE)
      5	    set(CMAKE_BUILD_TYPE Release)
      6	endif()
      7	
-     8	add_library(mobileglues_info_getter SHARED
-     9	    mobileglues_info_getter.cpp
+     8	add_library(quanneggaes4d_info_getter SHARED
+     9	    quanneggaes4d_info_getter.cpp
     10	)
     11	
     12	find_library(android-lib android)
     13	find_library(log-lib log)
     14	
-    15	target_compile_options(mobileglues_info_getter PRIVATE
+    15	target_compile_options(quanneggaes4d_info_getter PRIVATE
     16	    -Oz
     17	    -fdata-sections
     18	    -ffunction-sections
@@ -350,17 +350,17 @@
     23	    -flto
     24	)
     25	
-    26	target_link_options(mobileglues_info_getter PRIVATE
+    26	target_link_options(quanneggaes4d_info_getter PRIVATE
     27	    -Wl,--gc-sections
     28	    -Wl,--strip-all
     29	    -flto
     30	)
     31	
-    32	target_include_directories(mobileglues_info_getter PRIVATE
+    32	target_include_directories(quanneggaes4d_info_getter PRIVATE
     33	    ${CMAKE_CURRENT_SOURCE_DIR}
     34	)
     35	
-    36	target_link_libraries(mobileglues_info_getter
+    36	target_link_libraries(quanneggaes4d_info_getter
     37	    ${android-lib}
     38	    ${log-lib}
     39	    dl

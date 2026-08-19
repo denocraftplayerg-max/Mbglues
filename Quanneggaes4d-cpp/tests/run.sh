@@ -2,7 +2,7 @@
 # Host-side checks for the parts of the pixel and framebuffer code that are pure
 # enough to run without a GPU. Both link the real translation units, not copies.
 #
-#   sh MobileGlues-cpp/tests/run.sh
+#   sh Quanneggaes4d-cpp/tests/run.sh
 set -e
 cd "$(dirname "$0")/.."
 INC="-I. -I./includes -I./include -I./3rdparty/xxhash"

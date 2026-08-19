@@ -1,4 +1,4 @@
-// MobileGlues - gl/glsl/glsl_for_es.cpp
+// QUANNEGGAES4D - gl/glsl/glsl_for_es.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -618,8 +618,8 @@ vec4 GI_TemporalFilter() {
 
 void inject_mg_macro_definition(std::string& glslCode) {
     std::string macro_definitions =
-        "\n#define MG_MOBILEGLUES\n"
-        "#define MG_MOBILEGLUES_VERSION " xstr(MAJOR) xstr(MINOR) xstr(REVISION) xstr(PATCH) "\n";
+        "\n#define MG_QUANNEGGAES4D\n"
+        "#define MG_QUANNEGGAES4D_VERSION " xstr(MAJOR) xstr(MINOR) xstr(REVISION) xstr(PATCH) "\n";
 
     size_t versionPos = glslCode.rfind("#version");
     size_t insertionPos = 0;
@@ -656,7 +656,7 @@ std::string preprocess_glsl(const std::string& glsl, GLenum shaderType) {
         inject_textureQueryLod(ret);
     }
 
-    // MobileGlues macros injection
+    // QUANNEGGAES4D macros injection
     inject_mg_macro_definition(ret);
 
     if (hardware->emulate_texture_buffer) {

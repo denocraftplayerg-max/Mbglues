@@ -1,4 +1,4 @@
-// MobileGlues - gles/loader.cpp
+// QUANNEGGAES4D - gles/loader.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -61,7 +61,7 @@ bool g_angle_in_use = false;
 // library and needs to report which driver answered; the bool above is not
 // exported (the build hides everything not marked), and a function survives
 // symbol-visibility policy changes better than a data export would.
-extern "C" __attribute__((visibility("default"))) int mg_angle_in_use(void) {
+extern "C" __attribute__((visibility("default"))) int qng_angle_in_use(void) {
     return g_angle_in_use ? 1 : 0;
 }
 
@@ -70,7 +70,7 @@ extern "C" __attribute__((visibility("default"))) int mg_angle_in_use(void) {
 // plugin app's benchmark) has to say where the launcher keeps it, or it would
 // silently measure the system driver instead of the one the game will use.
 //
-// MG_ANGLE_DIR has three states, and the empty one is not the same as absent:
+// QNG_ANGLE_DIR has three states, and the empty one is not the same as absent:
 //
 //   unset  -- nobody is managing this. Look ANGLE up by soname, which is how it
 //             resolves inside the launcher's own process.
@@ -85,7 +85,7 @@ extern "C" __attribute__((visibility("default"))) int mg_angle_in_use(void) {
 // Returns nullptr for "do not use ANGLE"; otherwise fills `storage` and returns
 // a pointer into it.
 static const char* angle_override(const char* name, std::string& storage) {
-    const char* dir = getenv("MG_ANGLE_DIR");
+    const char* dir = getenv("QNG_ANGLE_DIR");
     if (dir == nullptr) {
         storage = name;
         return storage.c_str();

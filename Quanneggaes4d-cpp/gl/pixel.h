@@ -1,12 +1,12 @@
-// MobileGlues - gl/pixel.h
+// QUANNEGGAES4D - gl/pixel.h
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
 // SPDX-License-Identifier: LGPL-2.1-only
 // End of Source File Header
 
-#ifndef MOBILEGLUES_PIXEL_H
-#define MOBILEGLUES_PIXEL_H
+#ifndef QUANNEGGAES4D_PIXEL_H
+#define QUANNEGGAES4D_PIXEL_H
 
 #include <GL/gl.h>
 #include "../gles/gles.h"
@@ -81,4 +81,4 @@ bool mg_unpack_state(mg_unpack_state_t* out);
 void mg_unpack_state_adopt(const mg_unpack_state_t& values);
 
 
-#endif // MOBILEGLUES_PIXEL_H
+#endif // QUANNEGGAES4D_PIXEL_H

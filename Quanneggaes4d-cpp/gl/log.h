@@ -1,11 +1,11 @@
-// MobileGlues - gl/log.h
+// QUANNEGGAES4D - gl/log.h
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
 // SPDX-License-Identifier: LGPL-2.1-only
 // End of Source File Header
 
-#ifndef MOBILEGLUES_LOG_H
+#ifndef QUANNEGGAES4D_LOG_H
 
 #include "../includes.h"
 
@@ -137,6 +137,6 @@ void log_unique_function(const char* func_name);
         write_log(__VA_ARGS__);                                                                                        \
     }
 
-#define MOBILEGLUES_LOG_H
+#define QUANNEGGAES4D_LOG_H
 
-#endif // MOBILEGLUES_LOG_H
+#endif // QUANNEGGAES4D_LOG_H

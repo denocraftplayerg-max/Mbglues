@@ -1,14 +1,14 @@
-// MobileGlues - includes.h
+// QUANNEGGAES4D - includes.h
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
 // SPDX-License-Identifier: LGPL-2.1-only
 // End of Source File Header
 
-#ifndef MOBILEGLUES_INCLUDES_H
-#define MOBILEGLUES_INCLUDES_H
+#ifndef QUANNEGGAES4D_INCLUDES_H
+#define QUANNEGGAES4D_INCLUDES_H
 
-#define RENDERERNAME "MobileGlues"
+#define RENDERERNAME "QUANNEGGAES4D"
 #ifdef __ANDROID__
 #include <android/log.h>
 #endif
@@ -16,7 +16,7 @@
 
 #include <EGL/egl.h>
 #include <GLES3/gl32.h>
-#include <MG/extensions.h>
+#include <QNG/extensions.h>
 
 #include "egl/egl.h"
 #include "egl/loader.h"
@@ -63,4 +63,4 @@ template <typename Key, typename T, class Hash = std::hash<Key>, class KeyEqual 
           class Allocator = std::allocator<std::pair<Key, T>>>
 using UnorderedMap = ska::flat_hash_map<Key, T, Hash, KeyEqual, Allocator>;
 
-#endif // MOBILEGLUES_INCLUDES_H
+#endif // QUANNEGGAES4D_INCLUDES_H

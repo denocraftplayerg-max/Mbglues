@@ -1,4 +1,4 @@
-// MobileGlues - config/config.cpp
+// QUANNEGGAES4D - config/config.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -19,7 +19,7 @@
 
 #define DEBUG 0
 
-char* DEFAULT_MG_DIRECTORY_PATH = "/sdcard/MG";
+char* DEFAULT_QNG_DIRECTORY_PATH = "/sdcard/QNG";
 
 bool is_custom_mg_dir = false;
 char* mg_directory_path = nullptr;
@@ -40,9 +40,9 @@ char* concatenate(char* str1, char* str2) {
 
 int check_path() {
     if (!mg_directory_path) {
-        char* var = getenv("MG_DIR_PATH");
+        char* var = getenv("QNG_DIR_PATH");
         is_custom_mg_dir = var ? true : false;
-        mg_directory_path = var ? strdup(var) : DEFAULT_MG_DIRECTORY_PATH;
+        mg_directory_path = var ? strdup(var) : DEFAULT_QNG_DIRECTORY_PATH;
     }
     config_file_path = concatenate(mg_directory_path, "/config.json");
     log_file_path = concatenate(mg_directory_path, "/latest.log");
@@ -57,7 +57,7 @@ int check_path() {
 }
 
 int config_refresh() {
-    LOG_D("MG_DIRECTORY_PATH=%s", mg_directory_path)
+    LOG_D("QNG_DIRECTORY_PATH=%s", mg_directory_path)
     LOG_D("CONFIG_FILE_PATH=%s", config_file_path)
     LOG_D("LOG_FILE_PATH=%s", log_file_path)
     LOG_D("GLSL_CACHE_FILE_PATH=%s", glsl_cache_file_path)

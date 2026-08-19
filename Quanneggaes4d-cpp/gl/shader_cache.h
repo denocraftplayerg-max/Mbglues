@@ -1,5 +1,5 @@
-#ifndef MOBILEGLUES_SHADER_CACHE_H
-#define MOBILEGLUES_SHADER_CACHE_H
+#ifndef QUANNEGGAES4D_SHADER_CACHE_H
+#define QUANNEGGAES4D_SHADER_CACHE_H
 
 #include <string>
 #include <vector>
@@ -10,7 +10,7 @@
 extern "C" {
 #endif
 
-#define SHADER_CACHE_BASE "/sdcard/MG/shaders/"
+#define SHADER_CACHE_BASE "/sdcard/QNG/shaders/"
 #define SHADER_MINECRAFT_DIR SHADER_CACHE_BASE "minecraft/"
 #define SHADER_EXTERNAL_DIR SHADER_CACHE_BASE "external/"
 
@@ -61,4 +61,4 @@ void cleanOldShaderCache(ShaderSource source, int days = 30);
 }
 #endif
 
-#endif // MOBILEGLUES_SHADER_CACHE_H
+#endif // QUANNEGGAES4D_SHADER_CACHE_H

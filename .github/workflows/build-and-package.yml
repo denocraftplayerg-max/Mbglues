@@ -1,4 +1,4 @@
-name: Build MobileGlues (Lib + APK)
+name: Build QUANNEGGAES4D (Lib + APK)
 
 on:
   push:
@@ -28,8 +28,8 @@ jobs:
           echo "y" | sdkmanager "ndk;27.3.13750724"
           echo "ANDROID_NDK_HOME=$ANDROID_HOME/ndk/27.3.13750724" >> $GITHUB_ENV
 
-      - name: Build MobileGlues Library (arm64-v8a)
-        working-directory: MobileGlues-cpp
+      - name: Build QUANNEGGAES4D Library (arm64-v8a)
+        working-directory: Quanneggaes4d-cpp
         run: |
           mkdir -p build
           cd build
@@ -44,23 +44,23 @@ jobs:
 
       - name: Copy lib to APK project
         run: |
-          mkdir -p MobileGlues-plugin/app/src/main/jniLibs/arm64-v8a
-          cp MobileGlues-cpp/build/libmobileglues.so MobileGlues-plugin/app/src/main/jniLibs/arm64-v8a/
+          mkdir -p Quanneggaes4d-plugin/app/src/main/jniLibs/arm64-v8a
+          cp Quanneggaes4d-cpp/build/libquanneggaes4d.so Quanneggaes4d-plugin/app/src/main/jniLibs/arm64-v8a/
 
       - name: Setup Gradle (Cache)
         uses: gradle/actions/setup-gradle@v4
 
       - name: Build APK (Debug)
-        working-directory: MobileGlues-plugin
+        working-directory: Quanneggaes4d-plugin
         run: |
           chmod +x gradlew
           ./gradlew assembleDebug
 
       - name: Locate and Rename APK
         run: |
-          APK_PATH=$(find MobileGlues-plugin -name "*debug.apk" 2>/dev/null | head -n 1)
+          APK_PATH=$(find Quanneggaes4d-plugin -name "*debug.apk" 2>/dev/null | head -n 1)
           if [ -n "$APK_PATH" ]; then
-            cp "$APK_PATH" MobileGlues-plugin/MobileGlues-plugin-DEBUG-${{ github.sha }}.apk
+            cp "$APK_PATH" Quanneggaes4d-plugin/Quanneggaes4d-plugin-DEBUG-${{ github.sha }}.apk
           else
             echo "APK not found!"
             exit 1
@@ -69,6 +69,6 @@ jobs:
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: MobileGlues-plugin-APK
-          path: MobileGlues-plugin/MobileGlues-plugin-*.apk
+          name: Quanneggaes4d-plugin-APK
+          path: Quanneggaes4d-plugin/Quanneggaes4d-plugin-*.apk
           retention-days: 30

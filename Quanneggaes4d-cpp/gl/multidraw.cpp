@@ -1,4 +1,4 @@
-// MobileGlues - gl/multidraw.cpp
+// QUANNEGGAES4D - gl/multidraw.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -165,7 +165,7 @@ static GLsizei mg_verts_per_primitive(GLenum mode) {
 //
 // Resolution goes through the GLES library handle, NOT eglGetProcAddress: this
 // layer's own eglGetProcAddress forwards to glXGetProcAddress, which does
-// dlsym(RTLD_DEFAULT, ...) and would hand back MobileGlues' own exported
+// dlsym(RTLD_DEFAULT, ...) and would hand back QUANNEGGAES4D' own exported
 // glMultiDrawArraysEXT -- an alias of glMultiDrawArrays -- so calling it from
 // inside glMultiDrawArrays would recurse until the stack ran out. `gles` is the
 // same handle gles/loader.cpp resolves every other entry point from.
@@ -199,7 +199,7 @@ bool mg_multi_draw_arrays_ext_available() {
         const bool ext = mg_gles_has_extension("GL_EXT_multi_draw_arrays");
         const bool angle = mg_gles_has_extension("GL_ANGLE_multi_draw");
         // On Apple `gles` is a dlsym pseudo-handle, not a library, and resolving
-        // through it would find MobileGlues' own alias and recurse. The only thing
+        // through it would find QUANNEGGAES4D' own alias and recurse. The only thing
         // keeping that unreachable today is that neither extension is ever
         // advertised (gles/loader.cpp), which is not a guarantee worth relying on.
         const bool real_handle = gles != nullptr && gles != reinterpret_cast<void*>(~(uintptr_t)0);

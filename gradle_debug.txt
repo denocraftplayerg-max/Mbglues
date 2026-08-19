@@ -5,7 +5,7 @@
      3	}
      4	
      5	android {
-     6	    namespace = "top.mobilegl.mobileglues"
+     6	    namespace = "top.quanneggaes4d.core"
      7	    compileSdk = 36
      8	
      9	    defaultConfig {
@@ -28,7 +28,7 @@
     26	
     27	    externalNativeBuild {
     28	        cmake {
-    29	            path = file("MobileGlues-cpp/CMakeLists.txt")
+    29	            path = file("Quanneggaes4d-cpp/CMakeLists.txt")
     30	            version = "3.22.1"
     31	        }
     32	    }
@@ -39,14 +39,14 @@
     37	    }
     38	}
 
-===== MobileGlues-plugin/build.gradle.kts =====
+===== Quanneggaes4d-plugin/build.gradle.kts =====
      1	// Top-level build file where you can add configuration options common to all sub-projects/modules.
      2	plugins {
      3	    alias(libs.plugins.android.application) apply false
      4	    alias(libs.plugins.kotlin.android) apply false
      5	}
 
-===== MobileGlues-plugin/settings.gradle.kts =====
+===== Quanneggaes4d-plugin/settings.gradle.kts =====
      1	pluginManagement {
      2	    repositories {
      3	        google {
@@ -69,18 +69,18 @@
     20	    }
     21	}
     22	
-    23	rootProject.name = "MobileGlues-plugin"
+    23	rootProject.name = "Quanneggaes4d-plugin"
     24	include(":app")
-    25	include(":MobileGlues")
+    25	include(":QUANNEGGAES4D")
 
-===== MobileGlues-plugin/gradle.properties =====
+===== Quanneggaes4d-plugin/gradle.properties =====
      1	org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
      2	android.useAndroidX=true
      3	kotlin.code.style=official
      4	android.nonTransitiveRClass=true
      5	android.suppressUnsupportedCompileOptionsWarning=true
 
-===== MobileGlues-plugin/gradle/libs.versions.toml =====
+===== Quanneggaes4d-plugin/gradle/libs.versions.toml =====
      1	[versions]
      2	agp = "8.12.3"
      3	gson = "2.13.2"
@@ -117,11 +117,11 @@
     34	kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
     35	kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 
-===== MobileGlues-plugin/MobileGlues/build.gradle.kts =====
+===== Quanneggaes4d-plugin/QUANNEGGAES4D/build.gradle.kts =====
      1	configurations.maybeCreate("default")
-     2	artifacts.add("default", file("src/main/jniLibs/arm64-v8a/libmobileglues.so"))
+     2	artifacts.add("default", file("src/main/jniLibs/arm64-v8a/libquanneggaes4d.so"))
 
-===== MobileGlues-plugin/app/build.gradle.kts =====
+===== Quanneggaes4d-plugin/app/build.gradle.kts =====
      1	plugins {
      2	    alias(libs.plugins.android.application)
      3	    alias(libs.plugins.kotlin.android)
@@ -134,13 +134,13 @@
     10	            jniLibs.srcDirs = listOf("src\/main\/jniLibs")
     11	        }
     12	    }
-    13	    namespace = "com.fcl.plugin.mobileglues"
+    13	    namespace = "com.quanneggaes4d.plugin"
     14	    compileSdk = 36
     15	
     16	    ndkVersion = "27.3.13750724"
     17	
     18	    defaultConfig {
-    19	        applicationId = "com.fcl.plugin.mobileglues"
+    19	        applicationId = "com.quanneggaes4d.plugin"
     20	        minSdk = 26
     21	        targetSdk = 36
     22	        versionCode = 2000
@@ -169,19 +169,19 @@
     45	        }
     46	
     47	        configureEach {
-    48	            resValue("string","app_name","MobileGlues")
+    48	            resValue("string","app_name","QUANNEGGAES4D")
     49	
-    50	            manifestPlaceholders["des"] = "MobileGlues (OpenGL 4.0, 1.17+)"
-    51	            manifestPlaceholders["renderer"] = "MobileGlues:libmobileglues.so:libmobileglues.so"
+    50	            manifestPlaceholders["des"] = "QUANNEGGAES4D (OpenGL 4.0, 1.17+)"
+    51	            manifestPlaceholders["renderer"] = "QUANNEGGAES4D:libquanneggaes4d.so:libquanneggaes4d.so"
     52	
     53	            manifestPlaceholders["minMCVer"] = "1.17"
     54	            manifestPlaceholders["maxMCVer"] = "" //为空则不限制 No restriction if empty
     55	
-    56	            // MG_COUNT_LAUNCH：只有经启动器起来的这一次才算「一次启动」。
+    56	            // QNG_COUNT_LAUNCH：只有经启动器起来的这一次才算「一次启动」。
     57	            // 基准测试、各种工具、以及本插件自己 dlopen 一次去读 GL 信息，都不该计数。
     58	            manifestPlaceholders["boatEnv"] = mutableMapOf<String,String>().apply {
     59	                put("LIBGL_ES", "3")
-    60	                put("MG_COUNT_LAUNCH", "1")
+    60	                put("QNG_COUNT_LAUNCH", "1")
     61	            }.run {
     62	                var env = ""
     63	                forEach { (key, value) ->
@@ -192,9 +192,9 @@
     68	            manifestPlaceholders["pojavEnv"] = mutableMapOf<String,String>().apply {
     69	                put("LIBGL_ES", "3")
     70	                put("POJAV_RENDERER", "opengles3")
-    71					put("POJAVEXEC_EGL", "libmobileglues.so")
-    72					put("LIBGL_EGL", "libmobileglues.so")
-    73	                put("MG_COUNT_LAUNCH", "1")
+    71					put("POJAVEXEC_EGL", "libquanneggaes4d.so")
+    72					put("LIBGL_EGL", "libquanneggaes4d.so")
+    73	                put("QNG_COUNT_LAUNCH", "1")
     74	            }.run {
     75	                var env = ""
     76	                forEach { (key, value) ->
@@ -246,7 +246,7 @@
    122	    // 协程和 lifecycleScope 以前是从 appcompat 传递依赖里蹭来的，这里显式声明。
    123	    implementation(libs.coroutines.android)
    124	    implementation(libs.lifecycle.runtime.ktx)
-   125	    implementation(project(":MobileGlues"))
+   125	    implementation(project(":QUANNEGGAES4D"))
    126	
    127	    testImplementation(libs.junit)
    128	    testImplementation(libs.coroutines.test)

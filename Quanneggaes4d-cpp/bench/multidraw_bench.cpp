@@ -1,4 +1,4 @@
-// MobileGlues - bench/multidraw_bench.cpp
+// QUANNEGGAES4D - bench/multidraw_bench.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -7,8 +7,8 @@
 
 // In-process micro benchmark behind the plugin app's "benchmark and sort"
 // button. The app dlopens this library, makes a context current through our own
-// EGL layer (the same path MGInfoGetter uses to query GL info), then calls
-// mg_multidraw_bench_run() and reads back one JSON string.
+// EGL layer (the same path QNGInfoGetter uses to query GL info), then calls
+// qng_multidraw_bench_run() and reads back one JSON string.
 //
 // The measurement therefore runs on the same GPU and driver the game will use,
 // but in the plugin app's process, not the game's -- an accepted trade-off for
@@ -73,7 +73,7 @@ extern std::atomic<uint32_t> g_md_fallback_tick;
 // Progress of the current run, as attempt * 1000 + permille within that attempt
 // (attempt is 0-based). A retry restarts the bar, which is what actually
 // happened; keeping both numbers in one atomic keeps them consistent for the
-// thread reading them through mg_multidraw_bench_progress().
+// thread reading them through qng_multidraw_bench_progress().
 static std::atomic<int> g_bench_progress{0};
 
 namespace {
@@ -1093,7 +1093,7 @@ const char* bench_entry_label(md_entry_t e) {
 
 // attempt * 1000 + permille within that attempt, attempt 0-based. Stays at its
 // last value once the run returns; the caller decides what to do with that.
-extern "C" __attribute__((visibility("default"))) int mg_multidraw_bench_progress() {
+extern "C" __attribute__((visibility("default"))) int qng_multidraw_bench_progress() {
     return g_bench_progress.load(std::memory_order_relaxed);
 }
 
@@ -1102,7 +1102,7 @@ extern "C" __attribute__((visibility("default"))) int mg_multidraw_bench_progres
 //                 caller sets this after a previous run lost the context, since
 //                 the size that did it cannot be discovered twice in one
 //                 process -- the context it would need is the one that died.
-extern "C" __attribute__((visibility("default"))) const char* mg_multidraw_bench_run(
+extern "C" __attribute__((visibility("default"))) const char* qng_multidraw_bench_run(
         int start_sections, int max_sections) {
     static std::string result;
 

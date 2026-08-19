@@ -1,4 +1,4 @@
-// MobileGlues - gl/enable.cpp
+// QUANNEGGAES4D - gl/enable.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -253,7 +253,7 @@ mg_enable_state_t g_default_state;
 //     framebuffer bindings only, no capability.
 //   bench/multidraw_bench.cpp -- GL_DEPTH_TEST and GL_CULL_FACE enabled with no
 //     matching disable, on a context this layer does track. Real divergence, but
-//     unreachable: it is behind mg_multidraw_bench_run(), which only the plugin
+//     unreachable: it is behind qng_multidraw_bench_run(), which only the plugin
 //     app dlsyms in its own process, and nothing there calls this layer's
 //     glEnable/glDisable afterwards -- the benchmark itself speaks to GLES
 //     directly throughout. No capability is excluded from the filter for it.

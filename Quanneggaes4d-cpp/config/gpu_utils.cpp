@@ -1,4 +1,4 @@
-// MobileGlues - config/gpu_utils.cpp
+// QUANNEGGAES4D - config/gpu_utils.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -208,7 +208,7 @@ int hasVulkan12() {
     appInfo.pNext = nullptr;
     appInfo.pApplicationName = "Vulkan Check";
     appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
-    appInfo.pEngineName = "MobileGlues";
+    appInfo.pEngineName = "QUANNEGGAES4D";
     appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
     appInfo.apiVersion = VK_API_VERSION_1_3;
 

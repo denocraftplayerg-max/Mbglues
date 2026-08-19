@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "top.mobilegl.mobileglues"
+    namespace = "top.quanneggaes4d.core"
     compileSdk = 36
 
     defaultConfig {
@@ -26,7 +26,7 @@ android {
 
     externalNativeBuild {
         cmake {
-            path = file("MobileGlues-cpp/CMakeLists.txt")
+            path = file("Quanneggaes4d-cpp/CMakeLists.txt")
             version = "3.22.1"
         }
     }

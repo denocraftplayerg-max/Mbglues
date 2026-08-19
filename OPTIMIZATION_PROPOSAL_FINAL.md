@@ -1,8 +1,8 @@
-# 🎮 PROPOSTA COMPLETA DE OTIMIZAÇÃO - MobileGlues + ANGLE Integration
+# 🎮 PROPOSTA COMPLETA DE OTIMIZAÇÃO - QUANNEGGAES4D + ANGLE Integration
 
 **Data:** 18 de Agosto de 2026  
 **Dispositivo Alvo:** PowerVR Rogue GE8320 (MediaTek)  
-**Jogo:** Minecraft (via MobileGlues)  
+**Jogo:** Minecraft (via QUANNEGGAES4D)  
 **Status Atual:** Sem Performance Otimizada
 
 ---
@@ -33,7 +33,7 @@ MEMÓRIA & BANDWIDTH:
 ✅ GL_IMG_framebuffer_downsample     → MSAA otimizado para PowerVR
 ```
 
-### ❌ O QUE MOBILEGLUES ESTÁ USANDO (SUBOTIMIZADO)
+### ❌ O QUE QUANNEGGAES4D ESTÁ USANDO (SUBOTIMIZADO)
 
 ```
 ATUAL - Configuração Padrão:
@@ -58,7 +58,7 @@ IMPACTO NA PERFORMANCE:
 
 ### FASE 1: Ativar Multidraw Backend Nativo (Crítico)
 
-**Problema:** Seu GPU suporta `GL_EXT_multi_draw_arrays` mas MobileGlues está fazendo UNROLL (fallback).
+**Problema:** Seu GPU suporta `GL_EXT_multi_draw_arrays` mas QUANNEGGAES4D está fazendo UNROLL (fallback).
 
 **Solução:** Usar order de multidraw otimizado para PowerVR:
 
@@ -79,12 +79,12 @@ IMPACTO NA PERFORMANCE:
 
 **Problema:** ANGLE não está sendo carregado automaticamente mesmo quando disponível.
 
-**Solução:** Implementar bundle de ANGLE com MobileGlues
+**Solução:** Implementar bundle de ANGLE com QUANNEGGAES4D
 
 #### 2.1 - Modificar gles/loader.cpp
 
 ```cpp
-// MobileGlues-cpp/gles/loader.cpp - LINHA ~45
+// Quanneggaes4d-cpp/gles/loader.cpp - LINHA ~45
 
 static const char* gles3_lib[] = {
     "libGLESv3_CM", "libGLESv3", nullptr
@@ -180,7 +180,7 @@ bool try_load_angle() {
 
 ---
 
-## 📁 ESTRUTURA DE CARREGAR ANGLE COM LIBMOBILEGLUES.SO
+## 📁 ESTRUTURA DE CARREGAR ANGLE COM LIBQUANNEGGAES4D.SO
 
 ### Opção 1: Bundle ANGLE Dentro da Build (Recomendado)
 
@@ -188,7 +188,7 @@ bool try_load_angle() {
 # Estrutura do APK
 app/
   ├── lib/arm64-v8a/
-  │   ├── libmobileglues.so          # MobileGlues (1.5MB)
+  │   ├── libquanneggaes4d.so          # QUANNEGGAES4D (1.5MB)
   │   ├── libGLESv2_angle.so         # ANGLE GLESv2 (2.8MB)
   │   ├── libEGL_angle.so            # ANGLE EGL (1.2MB)
   │   └── libVulkan_angle.so         # ANGLE Vulkan backend (0.5MB)
@@ -198,7 +198,7 @@ app/
 ### Opção 2: Load On-Demand (Flexible)
 
 ```cpp
-// No MobileGlues init:
+// No QUANNEGGAES4D init:
 void mg_init() {
     // 1. Verificar se Vulkan 1.2 está disponível
     if (hasVulkan12()) {
@@ -217,7 +217,7 @@ void mg_init() {
 ### Modificar CMakeLists.txt para Bundle
 
 ```cmake
-# MobileGlues-cpp/CMakeLists.txt
+# Quanneggaes4d-cpp/CMakeLists.txt
 
 # Adicionar ANGLE como opcional
 option(BUNDLE_ANGLE "Bundle ANGLE libraries" ON)
@@ -243,7 +243,7 @@ endif()
 
 Crie arquivo `config.json` e coloque em:
 ```
-/sdcard/mobileglues_data/config.json
+/sdcard/quanneggaes4d_data/config.json
 ```
 
 ```json
@@ -303,7 +303,7 @@ bool angle_load_attempt = false;
 bool try_load_angle() {
     const char* angle_base_dirs[] = {
         "/system/lib64/angle/",
-        getenv("MG_ANGLE_DIR"),
+        getenv("QNG_ANGLE_DIR"),
         nullptr
     };
     
@@ -337,7 +337,7 @@ bool try_load_angle() {
 
 ```bash
 # No seu launcher/app
-adb push config.json /sdcard/mobileglues_data/
+adb push config.json /sdcard/quanneggaes4d_data/
 ```
 
 ### Passo 4: Testar Performance
@@ -349,7 +349,7 @@ adb shell "cat /proc/stat > before.txt"
 adb shell "cat /proc/stat > after.txt"
 
 # Ver FPS (via logcat)
-adb logcat | grep "MobileGlues\|FPS"
+adb logcat | grep "QUANNEGGAES4D\|FPS"
 ```
 
 ---
@@ -368,14 +368,14 @@ adb logcat | grep "MobileGlues\|FPS"
 
 ## ⚠️ PROBLEMAS CONHECIDOS & SOLUÇÕES
 
-### Problema 1: Launcher não reconhece MG_PLUGIN_STATUS
+### Problema 1: Launcher não reconhece QNG_PLUGIN_STATUS
 
 **Sintoma:** ExtComputeShader sempre FALSE mesmo na config
 
 **Solução:** Forçar via environment variable
 
 ```bash
-setenv("MG_PLUGIN_STATUS", "1", 1);  // Antes de init_gles
+setenv("QNG_PLUGIN_STATUS", "1", 1);  // Antes de init_gles
 ```
 
 ### Problema 2: ANGLE não encontrado em alguns roms
@@ -407,7 +407,7 @@ cleanOldShaderCache(ShaderSource::Minecraft, 0);  // Limpa tudo
 ```
 SEMANA 1:
   ✓ Aplicar config.json otimizado
-  ✓ Compilar MobileGlues com OpenSSL
+  ✓ Compilar QUANNEGGAES4D com OpenSSL
   ✓ Testar multidraw backends
 
 SEMANA 2:
@@ -433,7 +433,7 @@ SEMANA 4:
 - [OpenGL ES 3.2 Spec](https://khronos.org/opengl/wiki/OpenGL_ES)
 - [ANGLE Project](https://chromium.googlesource.com/angle/angle)
 - [PowerVR Developer Docs](https://www.imaginationtech.com/products/powervr/)
-- [MobileGlues Multidraw Bench](../bench/multidraw_bench.cpp)
+- [QUANNEGGAES4D Multidraw Bench](../bench/multidraw_bench.cpp)
 
 ---
 

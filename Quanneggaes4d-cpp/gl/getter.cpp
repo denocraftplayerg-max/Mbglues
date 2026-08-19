@@ -1,4 +1,4 @@
-// MobileGlues - gl/getter.cpp
+// QUANNEGGAES4D - gl/getter.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -36,15 +36,15 @@ void mg_set_gl_error(GLenum error) {
     // actually explains what the application did wrong.
     if (g_frontend_error != GL_NO_ERROR) return;
     g_frontend_error = error;
-    LOG_D("MobileGlues raised %s", glEnumToString(error))
+    LOG_D("QUANNEGGAES4D raised %s", glEnumToString(error))
 }
 
 void glGetIntegerv(GLenum pname, GLint* params) {
     LOG()
     LOG_D("glGetIntegerv, pname: %s", glEnumToString(pname))
     switch (pname) {
-    case GL_NUM_EXTENSIONS + GL_BACKEND_GETTER_MG:
-        GLES.glGetIntegerv(pname - GL_BACKEND_GETTER_MG, params);
+    case GL_NUM_EXTENSIONS + GL_QNG_BACKEND_GETTER:
+        GLES.glGetIntegerv(pname - GL_QNG_BACKEND_GETTER, params);
         return;
     case GL_CONTEXT_PROFILE_MASK:
         (*params) = GL_CONTEXT_CORE_PROFILE_BIT;
@@ -217,9 +217,9 @@ void InitGLESBaseExtensions() {
     std::vector<std::string> extensions;
 
     if (global_settings.hide_mg_env_level == HideMGEnvLevel::Disabled) {
-        extensions.push_back("GL_MG_mobileglues");
-        extensions.push_back("GL_MG_backend_string_getter_access");
-        extensions.push_back("GL_MG_settings_string_dump");
+        extensions.push_back("GL_QNG_quanneggaes4d");
+        extensions.push_back("GL_QNG_backend_string_getter_access");
+        extensions.push_back("GL_QNG_settings_string_dump");
     }
 
     const char* base_exts[] = {"GL_ARB_fragment_program",
@@ -372,10 +372,10 @@ const GLubyte* glGetString(GLenum name) {
             versionString = GLVersion.toString();
             if (global_settings.hide_mg_env_level == HideMGEnvLevel::Disabled) {
                 if (GLVersion.toInt(2) == DEFAULT_GL_VERSION) {
-                    versionString += " MobileGlues ";
+                    versionString += " QUANNEGGAES4D ";
                 } else {
                     Version defaultVersion = Version(DEFAULT_GL_VERSION);
-                    versionString += " §4§l(" + defaultVersion.toString() + ") MobileGlues§r ";
+                    versionString += " §4§l(" + defaultVersion.toString() + ") QUANNEGGAES4D§r ";
                 }
 
                 versionString += std::to_string(MAJOR) + "." + std::to_string(MINOR) + "." + std::to_string(REVISION);
@@ -478,7 +478,7 @@ const GLubyte* glGetString(GLenum name) {
                     shadingLangString += GenerateRandomString(junkOpts);
                 }
             } else {
-                shadingLangString = baseVer + " MobileGlues with glslang and SPIRV-Cross";
+                shadingLangString = baseVer + " QUANNEGGAES4D with glslang and SPIRV-Cross";
             }
         }
 
@@ -495,7 +495,7 @@ const GLubyte* glGetString(GLenum name) {
 
         return (const GLubyte*)extensionsString.c_str();
     }
-    case GL_SETTINGS_MG: {
+    case GL_QNG_SETTINGS: {
         if (global_settings.hide_mg_env_level >= HideMGEnvLevel::Level1) return GLES.glGetString(name);
 
         static char* settings_string = nullptr;
@@ -503,13 +503,13 @@ const GLubyte* glGetString(GLenum name) {
         settings_string = strdup(tmp.c_str());
         return reinterpret_cast<const GLubyte*>(settings_string);
     }
-    case GL_VERSION + GL_BACKEND_GETTER_MG:
-    case GL_VENDOR + GL_BACKEND_GETTER_MG:
-    case GL_RENDERER + GL_BACKEND_GETTER_MG:
-    case GL_EXTENSIONS + GL_BACKEND_GETTER_MG:
-    case GL_SHADING_LANGUAGE_VERSION + GL_BACKEND_GETTER_MG:
+    case GL_VERSION + GL_QNG_BACKEND_GETTER:
+    case GL_VENDOR + GL_QNG_BACKEND_GETTER:
+    case GL_RENDERER + GL_QNG_BACKEND_GETTER:
+    case GL_EXTENSIONS + GL_QNG_BACKEND_GETTER:
+    case GL_SHADING_LANGUAGE_VERSION + GL_QNG_BACKEND_GETTER:
         if (global_settings.hide_mg_env_level == HideMGEnvLevel::Disabled)
-            return GLES.glGetString(name - GL_BACKEND_GETTER_MG);
+            return GLES.glGetString(name - GL_QNG_BACKEND_GETTER);
         else
             return GLES.glGetString(name);
     default:
@@ -519,8 +519,8 @@ const GLubyte* glGetString(GLenum name) {
 
 const GLubyte* glGetStringi(GLenum name, GLuint index) {
     LOG()
-    if (name == GL_EXTENSIONS + GL_BACKEND_GETTER_MG && global_settings.hide_mg_env_level == HideMGEnvLevel::Disabled) {
-        return GLES.glGetStringi(name - GL_BACKEND_GETTER_MG, index);
+    if (name == GL_EXTENSIONS + GL_QNG_BACKEND_GETTER && global_settings.hide_mg_env_level == HideMGEnvLevel::Disabled) {
+        return GLES.glGetStringi(name - GL_QNG_BACKEND_GETTER, index);
     }
 
     typedef struct {

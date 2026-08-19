@@ -1,11 +1,11 @@
-// MobileGlues - gl/buffer.h
+// QUANNEGGAES4D - gl/buffer.h
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
 // SPDX-License-Identifier: LGPL-2.1-only
 // End of Source File Header
 
-#ifndef MOBILEGLUES_BUFFER_H
+#ifndef QUANNEGGAES4D_BUFFER_H
 #define GL_GLEXT_PROTOTYPES
 #include "../config/settings.h"
 #include "../gles/loader.h"
@@ -110,6 +110,6 @@ extern "C"
 }
 #endif
 
-#define MOBILEGLUES_BUFFER_H
+#define QUANNEGGAES4D_BUFFER_H
 
-#endif // MOBILEGLUES_BUFFER_H
+#endif // QUANNEGGAES4D_BUFFER_H

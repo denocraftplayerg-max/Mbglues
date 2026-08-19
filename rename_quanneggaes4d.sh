@@ -12,8 +12,8 @@ echo "============================================================"
 echo ""
 echo "[FASE 0] Verificações..."
 
-if [ ! -d "MobileGlues-cpp" ]; then
-    echo "❌ ERRO: MobileGlues-cpp não encontrado. Já foi renomeado?"
+if [ ! -d "Quanneggaes4d-cpp" ]; then
+    echo "❌ ERRO: Quanneggaes4d-cpp não encontrado. Já foi renomeado?"
     exit 1
 fi
 
@@ -39,64 +39,64 @@ echo ""
 echo "[FASE 2] Renomeando diretórios..."
 
 # Diretórios Java/Kotlin (package structure)
-if [ -d "MobileGlues-plugin/app/src/main/java/com/fcl/plugin/mobileglues" ]; then
-    mkdir -p "MobileGlues-plugin/app/src/main/java/com/quanneggaes4d/plugin"
-    mv MobileGlues-plugin/app/src/main/java/com/fcl/plugin/mobileglues/* \
-       MobileGlues-plugin/app/src/main/java/com/quanneggaes4d/plugin/ 2>/dev/null || true
-    rmdir -p MobileGlues-plugin/app/src/main/java/com/fcl/plugin/mobileglues 2>/dev/null || true
+if [ -d "Quanneggaes4d-plugin/app/src/main/java/com/fcl/plugin/quanneggaes4d" ]; then
+    mkdir -p "Quanneggaes4d-plugin/app/src/main/java/com/quanneggaes4d/plugin"
+    mv Quanneggaes4d-plugin/app/src/main/java/com/fcl/plugin/quanneggaes4d/* \
+       Quanneggaes4d-plugin/app/src/main/java/com/quanneggaes4d/plugin/ 2>/dev/null || true
+    rmdir -p Quanneggaes4d-plugin/app/src/main/java/com/fcl/plugin/quanneggaes4d 2>/dev/null || true
     echo "  ✅ main/java renomeado"
 fi
 
-if [ -d "MobileGlues-plugin/app/src/main/aidl/com/fcl/plugin/mobileglues" ]; then
-    mkdir -p "MobileGlues-plugin/app/src/main/aidl/com/quanneggaes4d/plugin"
-    mv MobileGlues-plugin/app/src/main/aidl/com/fcl/plugin/mobileglues/* \
-       MobileGlues-plugin/app/src/main/aidl/com/quanneggaes4d/plugin/ 2>/dev/null || true
-    rmdir -p MobileGlues-plugin/app/src/main/aidl/com/fcl/plugin/mobileglues 2>/dev/null || true
+if [ -d "Quanneggaes4d-plugin/app/src/main/aidl/com/fcl/plugin/quanneggaes4d" ]; then
+    mkdir -p "Quanneggaes4d-plugin/app/src/main/aidl/com/quanneggaes4d/plugin"
+    mv Quanneggaes4d-plugin/app/src/main/aidl/com/fcl/plugin/quanneggaes4d/* \
+       Quanneggaes4d-plugin/app/src/main/aidl/com/quanneggaes4d/plugin/ 2>/dev/null || true
+    rmdir -p Quanneggaes4d-plugin/app/src/main/aidl/com/fcl/plugin/quanneggaes4d 2>/dev/null || true
     echo "  ✅ aidl renomeado"
 fi
 
-if [ -d "MobileGlues-plugin/app/src/test/java/com/fcl/plugin/mobileglues" ]; then
-    mkdir -p "MobileGlues-plugin/app/src/test/java/com/quanneggaes4d/plugin"
-    mv MobileGlues-plugin/app/src/test/java/com/fcl/plugin/mobileglues/* \
-       MobileGlues-plugin/app/src/test/java/com/quanneggaes4d/plugin/ 2>/dev/null || true
-    rmdir -p MobileGlues-plugin/app/src/test/java/com/fcl/plugin/mobileglues 2>/dev/null || true
+if [ -d "Quanneggaes4d-plugin/app/src/test/java/com/fcl/plugin/quanneggaes4d" ]; then
+    mkdir -p "Quanneggaes4d-plugin/app/src/test/java/com/quanneggaes4d/plugin"
+    mv Quanneggaes4d-plugin/app/src/test/java/com/fcl/plugin/quanneggaes4d/* \
+       Quanneggaes4d-plugin/app/src/test/java/com/quanneggaes4d/plugin/ 2>/dev/null || true
+    rmdir -p Quanneggaes4d-plugin/app/src/test/java/com/fcl/plugin/quanneggaes4d 2>/dev/null || true
     echo "  ✅ test renomeado"
 fi
 
-if [ -d "MobileGlues-plugin/app/src/androidTest/java/com/fcl/plugin/mobileglues" ]; then
-    mkdir -p "MobileGlues-plugin/app/src/androidTest/java/com/quanneggaes4d/plugin"
-    mv MobileGlues-plugin/app/src/androidTest/java/com/fcl/plugin/mobileglues/* \
-       MobileGlues-plugin/app/src/androidTest/java/com/quanneggaes4d/plugin/ 2>/dev/null || true
-    rmdir -p MobileGlues-plugin/app/src/androidTest/java/com/fcl/plugin/mobileglues 2>/dev/null || true
+if [ -d "Quanneggaes4d-plugin/app/src/androidTest/java/com/fcl/plugin/quanneggaes4d" ]; then
+    mkdir -p "Quanneggaes4d-plugin/app/src/androidTest/java/com/quanneggaes4d/plugin"
+    mv Quanneggaes4d-plugin/app/src/androidTest/java/com/fcl/plugin/quanneggaes4d/* \
+       Quanneggaes4d-plugin/app/src/androidTest/java/com/quanneggaes4d/plugin/ 2>/dev/null || true
+    rmdir -p Quanneggaes4d-plugin/app/src/androidTest/java/com/fcl/plugin/quanneggaes4d 2>/dev/null || true
     echo "  ✅ androidTest renomeado"
 fi
 
 # Diretório MG dentro do include C++
-if [ -d "MobileGlues-cpp/include/MG" ]; then
-    git mv "MobileGlues-cpp/include/MG" "MobileGlues-cpp/include/QNG"
+if [ -d "Quanneggaes4d-cpp/include/MG" ]; then
+    git mv "Quanneggaes4d-cpp/include/MG" "Quanneggaes4d-cpp/include/QNG"
     echo "  ✅ include/MG -> include/QNG"
 fi
 
 # Diretório MG dentro do cpp do plugin
-if [ -d "MobileGlues-plugin/app/src/main/cpp/MG" ]; then
-    git mv "MobileGlues-plugin/app/src/main/cpp/MG" "MobileGlues-plugin/app/src/main/cpp/QNG"
+if [ -d "Quanneggaes4d-plugin/app/src/main/cpp/MG" ]; then
+    git mv "Quanneggaes4d-plugin/app/src/main/cpp/MG" "Quanneggaes4d-plugin/app/src/main/cpp/QNG"
     echo "  ✅ cpp/MG -> cpp/QNG"
 fi
 
 # Diretórios principais (por último)
-if [ -d "MobileGlues-plugin/MobileGlues" ]; then
-    git mv "MobileGlues-plugin/MobileGlues" "MobileGlues-plugin/Quanneggaes4d"
-    echo "  ✅ MobileGlues-plugin/MobileGlues -> Quanneggaes4d"
+if [ -d "Quanneggaes4d-plugin/QUANNEGGAES4D" ]; then
+    git mv "Quanneggaes4d-plugin/QUANNEGGAES4D" "Quanneggaes4d-plugin/Quanneggaes4d"
+    echo "  ✅ Quanneggaes4d-plugin/QUANNEGGAES4D -> Quanneggaes4d"
 fi
 
-if [ -d "MobileGlues-cpp" ]; then
-    git mv "MobileGlues-cpp" "Quanneggaes4d-cpp"
-    echo "  ✅ MobileGlues-cpp -> Quanneggaes4d-cpp"
+if [ -d "Quanneggaes4d-cpp" ]; then
+    git mv "Quanneggaes4d-cpp" "Quanneggaes4d-cpp"
+    echo "  ✅ Quanneggaes4d-cpp -> Quanneggaes4d-cpp"
 fi
 
-if [ -d "MobileGlues-plugin" ]; then
-    git mv "MobileGlues-plugin" "Quanneggaes4d-plugin"
-    echo "  ✅ MobileGlues-plugin -> Quanneggaes4d-plugin"
+if [ -d "Quanneggaes4d-plugin" ]; then
+    git mv "Quanneggaes4d-plugin" "Quanneggaes4d-plugin"
+    echo "  ✅ Quanneggaes4d-plugin -> Quanneggaes4d-plugin"
 fi
 
 echo "✅ Diretórios renomeados"
@@ -123,26 +123,26 @@ PLUGIN_AIDL="Quanneggaes4d-plugin/app/src/main/aidl/com/quanneggaes4d/plugin"
 PLUGIN_SETTINGS="$PLUGIN_JAVA/settings"
 
 # C++ info getter
-rename_file "$PLUGIN_CPP" "mobileglues_info_getter.cpp" "quanneggaes4d_info_getter.cpp"
-rename_file "$PLUGIN_CPP" "mobileglues_info_getter.h" "quanneggaes4d_info_getter.h"
+rename_file "$PLUGIN_CPP" "quanneggaes4d_info_getter.cpp" "quanneggaes4d_info_getter.cpp"
+rename_file "$PLUGIN_CPP" "quanneggaes4d_info_getter.h" "quanneggaes4d_info_getter.h"
 
 # Kotlin root
-rename_file "$PLUGIN_JAVA" "MGInfoGetter.kt" "QNGInfoGetter.kt"
-rename_file "$PLUGIN_JAVA" "MGBench.kt" "QNGBench.kt"
-rename_file "$PLUGIN_JAVA" "MGApplication.kt" "QNGApplication.kt"
-rename_file "$PLUGIN_JAVA" "MgQuery.kt" "QngQuery.kt"
-rename_file "$PLUGIN_JAVA" "MgQueryService.kt" "QngQueryService.kt"
+rename_file "$PLUGIN_JAVA" "QNGInfoGetter.kt" "QNGInfoGetter.kt"
+rename_file "$PLUGIN_JAVA" "QNGBench.kt" "QNGBench.kt"
+rename_file "$PLUGIN_JAVA" "QNGApplication.kt" "QNGApplication.kt"
+rename_file "$PLUGIN_JAVA" "QngQuery.kt" "QngQuery.kt"
+rename_file "$PLUGIN_JAVA" "QngQueryService.kt" "QngQueryService.kt"
 
 # AIDL
-rename_file "$PLUGIN_AIDL" "IMgQuery.aidl" "IQngQuery.aidl"
+rename_file "$PLUGIN_AIDL" "IQngQuery.aidl" "IQngQuery.aidl"
 
 # Settings
-rename_file "$PLUGIN_SETTINGS" "MGCacheExporter.kt" "QNGCacheExporter.kt"
-rename_file "$PLUGIN_SETTINGS" "MGConfig.kt" "QNGConfig.kt"
-rename_file "$PLUGIN_SETTINGS" "MGConfigCodec.kt" "QNGConfigCodec.kt"
-rename_file "$PLUGIN_SETTINGS" "MGConfigStore.kt" "QNGConfigStore.kt"
-rename_file "$PLUGIN_SETTINGS" "MgStats.kt" "QngStats.kt"
-rename_file "$PLUGIN_SETTINGS" "MgStorage.kt" "QngStorage.kt"
+rename_file "$PLUGIN_SETTINGS" "QNGCacheExporter.kt" "QNGCacheExporter.kt"
+rename_file "$PLUGIN_SETTINGS" "QNGConfig.kt" "QNGConfig.kt"
+rename_file "$PLUGIN_SETTINGS" "QNGConfigCodec.kt" "QNGConfigCodec.kt"
+rename_file "$PLUGIN_SETTINGS" "QNGConfigStore.kt" "QNGConfigStore.kt"
+rename_file "$PLUGIN_SETTINGS" "QngStats.kt" "QngStats.kt"
+rename_file "$PLUGIN_SETTINGS" "QngStorage.kt" "QngStorage.kt"
 
 echo "✅ Arquivos renomeados"
 
@@ -174,73 +174,73 @@ SKIP_DIRS = {
 # Substituições ORDENADAS (mais específico primeiro)
 REPLACEMENTS = [
     # === Nomes de diretórios e paths ===
-    ('MobileGlues-cpp', 'Quanneggaes4d-cpp'),
-    ('MobileGlues-plugin', 'Quanneggaes4d-plugin'),
+    ('Quanneggaes4d-cpp', 'Quanneggaes4d-cpp'),
+    ('Quanneggaes4d-plugin', 'Quanneggaes4d-plugin'),
     
     # === Package names (antes de substituições genéricas) ===
-    ('com.fcl.plugin.mobileglues', 'com.quanneggaes4d.plugin'),
-    ('top.mobilegl.mobileglues', 'top.quanneggaes4d.core'),
+    ('com.quanneggaes4d.plugin', 'com.quanneggaes4d.plugin'),
+    ('top.quanneggaes4d.core', 'top.quanneggaes4d.core'),
     
     # === Nomes de arquivos .so ===
-    ('libmobileglues_info_getter', 'libquanneggaes4d_info_getter'),
-    ('libmobileglues', 'libquanneggaes4d'),
+    ('libquanneggaes4d_info_getter', 'libquanneggaes4d_info_getter'),
+    ('libquanneggaes4d', 'libquanneggaes4d'),
     
     # === JNI function names ===
-    ('Java_com_fcl_plugin_mobileglues_MGInfoGetter_getMobileGluesGLInfo', 
+    ('Java_com_quanneggaes4d_plugin_QNGInfoGetter_getQuanneggaes4dGLInfo', 
      'Java_com_quanneggaes4d_plugin_QNGInfoGetter_getQuanneggaes4dGLInfo'),
-    ('Java_com_fcl_plugin_mobileglues_MGInfoGetter_setenv',
+    ('Java_com_quanneggaes4d_plugin_QNGInfoGetter_setenv',
      'Java_com_quanneggaes4d_plugin_QNGInfoGetter_setenv'),
-    ('Java_com_fcl_plugin_mobileglues_MGBench_runMultidrawBench',
+    ('Java_com_quanneggaes4d_plugin_QNGBench_runMultidrawBench',
      'Java_com_quanneggaes4d_plugin_QNGBench_runMultidrawBench'),
-    ('Java_com_fcl_plugin_mobileglues_MGBench_benchProgress',
+    ('Java_com_quanneggaes4d_plugin_QNGBench_benchProgress',
      'Java_com_quanneggaes4d_plugin_QNGBench_benchProgress'),
-    ('getMobileGluesGLInfo', 'getQuanneggaes4dGLInfo'),
+    ('getQuanneggaes4dGLInfo', 'getQuanneggaes4dGLInfo'),
     
     # === Extensões GL custom ===
-    ('GL_MG_backend_string_getter_access', 'GL_QNG_backend_string_getter_access'),
-    ('GL_MG_settings_string_dump', 'GL_QNG_settings_string_dump'),
-    ('GL_MG_mobileglues', 'GL_QNG_quanneggaes4d'),
-    ('GL_BACKEND_GETTER_MG', 'GL_BACKEND_GETTER_QNG'),
-    ('GL_SETTINGS_MG', 'GL_SETTINGS_QNG'),
+    ('GL_QNG_backend_string_getter_access', 'GL_QNG_backend_string_getter_access'),
+    ('GL_QNG_settings_string_dump', 'GL_QNG_settings_string_dump'),
+    ('GL_QNG_quanneggaes4d', 'GL_QNG_quanneggaes4d'),
+    ('GL_QNG_BACKEND_GETTER', 'GL_BACKEND_GETTER_QNG'),
+    ('GL_QNG_SETTINGS', 'GL_SETTINGS_QNG'),
     
     # === Símbolos C++ exportados ===
-    ('mg_multidraw_bench_progress', 'qng_multidraw_bench_progress'),
-    ('mg_multidraw_bench_run', 'qng_multidraw_bench_run'),
-    ('mg_angle_in_use', 'qng_angle_in_use'),
+    ('qng_multidraw_bench_progress', 'qng_multidraw_bench_progress'),
+    ('qng_multidraw_bench_run', 'qng_multidraw_bench_run'),
+    ('qng_angle_in_use', 'qng_angle_in_use'),
     
     # === Classes Kotlin (específicas) ===
-    ('MGConfigStore', 'QNGConfigStore'),
-    ('MGConfigCodec', 'QNGConfigCodec'),
-    ('MGCacheExporter', 'QNGCacheExporter'),
-    ('MGApplication', 'QNGApplication'),
-    ('MGInfoGetter', 'QNGInfoGetter'),
-    ('MGConfig', 'QNGConfig'),
-    ('MGBench', 'QNGBench'),
-    ('MgQueryService', 'QngQueryService'),
-    ('MgQuery', 'QngQuery'),
-    ('MgStorage', 'QngStorage'),
-    ('MgStats', 'QngStats'),
-    ('IMgQuery', 'IQngQuery'),
+    ('QNGConfigStore', 'QNGConfigStore'),
+    ('QNGConfigCodec', 'QNGConfigCodec'),
+    ('QNGCacheExporter', 'QNGCacheExporter'),
+    ('QNGApplication', 'QNGApplication'),
+    ('QNGInfoGetter', 'QNGInfoGetter'),
+    ('QNGConfig', 'QNGConfig'),
+    ('QNGBench', 'QNGBench'),
+    ('QngQueryService', 'QngQueryService'),
+    ('QngQuery', 'QngQuery'),
+    ('QngStorage', 'QngStorage'),
+    ('QngStats', 'QngStats'),
+    ('IQngQuery', 'IQngQuery'),
     
     # === Env vars ===
-    ('MG_ANGLE_DIR', 'QNG_ANGLE_DIR'),
-    ('MG_DIR_PATH', 'QNG_DIR_PATH'),
-    ('MG_PLUGIN_STATUS', 'QNG_PLUGIN_STATUS'),
-    ('MG_COUNT_LAUNCH', 'QNG_COUNT_LAUNCH'),
-    ('MG_DIRECTORY_PATH', 'QNG_DIRECTORY_PATH'),
+    ('QNG_ANGLE_DIR', 'QNG_ANGLE_DIR'),
+    ('QNG_DIR_PATH', 'QNG_DIR_PATH'),
+    ('QNG_PLUGIN_STATUS', 'QNG_PLUGIN_STATUS'),
+    ('QNG_COUNT_LAUNCH', 'QNG_COUNT_LAUNCH'),
+    ('QNG_DIRECTORY_PATH', 'QNG_DIRECTORY_PATH'),
     
     # === Diretório config ===
-    ('/sdcard/MG', '/sdcard/QNG'),
-    ('"MG_DIRECTORY_NAME = "MG"', 'MG_DIRECTORY_NAME = "QNG"'),
-    ('MG_DIRECTORY_NAME = "MG"', 'MG_DIRECTORY_NAME = "QNG"'),
+    ('/sdcard/QNG', '/sdcard/QNG'),
+    ('"MG_DIRECTORY_NAME = "QNG"', 'MG_DIRECTORY_NAME = "QNG"'),
+    ('MG_DIRECTORY_NAME = "QNG"', 'MG_DIRECTORY_NAME = "QNG"'),
     
     # === Meta-data AndroidManifest ===
-    ('fclPlugin', 'qngPlugin'),
+    ('qngPlugin', 'qngPlugin'),
     
     # === Strings visíveis ===
-    ('MobileGlues', 'QUANNEGGAES4D'),
-    ('mobileglues', 'quanneggaes4d'),
-    ('MOBILEGLUES', 'QUANNEGGAES4D'),
+    ('QUANNEGGAES4D', 'QUANNEGGAES4D'),
+    ('quanneggaes4d', 'quanneggaes4d'),
+    ('QUANNEGGAES4D', 'QUANNEGGAES4D'),
     
     # === Prefixos C++ internos ===
     # ATENÇÃO: só substituir mg_ quando for prefixo de função/variável
@@ -404,15 +404,15 @@ echo "[FASE 5] Corrigindo paths de include..."
 # Garantir que includes de MG viraram QNG
 find . -type f \( -name "*.cpp" -o -name "*.h" -o -name "*.c" \) \
     -not -path "./.git/*" \
-    -exec sed -i 's|include/MG/|include/QNG/|g' {} + 2>/dev/null || true
+    -exec sed -i 's|include/QNG/|include/QNG/|g' {} + 2>/dev/null || true
 
 find . -type f \( -name "*.cpp" -o -name "*.h" -o -name "*.c" \) \
     -not -path "./.git/*" \
-    -exec sed -i 's|"MG/|"QNG/|g' {} + 2>/dev/null || true
+    -exec sed -i 's|"QNG/|"QNG/|g' {} + 2>/dev/null || true
 
 find . -type f \( -name "*.cpp" -o -name "*.h" -o -name "*.c" \) \
     -not -path "./.git/*" \
-    -exec sed -i 's|<MG/|<QNG/|g' {} + 2>/dev/null || true
+    -exec sed -i 's|<QNG/|<QNG/|g' {} + 2>/dev/null || true
 
 echo "✅ Includes corrigidos"
 
@@ -429,20 +429,20 @@ cat > QUANNEGGAES4D_IMPLEMENTATION.md << 'MDEOF'
 
 ## Overview
 
-This document describes the complete rename and rebranding from **MobileGlues** to **QUANNEGGAES4D**, performed to avoid installation and runtime conflicts with the original project.
+This document describes the complete rename and rebranding from **QUANNEGGAES4D** to **QUANNEGGAES4D**, performed to avoid installation and runtime conflicts with the original project.
 
 ## Rename Map
 
 | Category | Original | New |
 |---|---|---|
-| Native library | `libmobileglues.so` | `libquanneggaes4d.so` |
-| Info getter lib | `libmobileglues_info_getter.so` | `libquanneggaes4d_info_getter.so` |
-| Android package | `com.fcl.plugin.mobileglues` | `com.quanneggaes4d.plugin` |
-| Core namespace | `top.mobilegl.mobileglues` | `top.quanneggaes4d.core` |
-| C++ directory | `MobileGlues-cpp` | `Quanneggaes4d-cpp` |
-| Plugin directory | `MobileGlues-plugin` | `Quanneggaes4d-plugin` |
-| Library module | `MobileGlues` | `Quanneggaes4d` |
-| Config directory | `/sdcard/MG` | `/sdcard/QNG` |
+| Native library | `libquanneggaes4d.so` | `libquanneggaes4d.so` |
+| Info getter lib | `libquanneggaes4d_info_getter.so` | `libquanneggaes4d_info_getter.so` |
+| Android package | `com.quanneggaes4d.plugin` | `com.quanneggaes4d.plugin` |
+| Core namespace | `top.quanneggaes4d.core` | `top.quanneggaes4d.core` |
+| C++ directory | `Quanneggaes4d-cpp` | `Quanneggaes4d-cpp` |
+| Plugin directory | `Quanneggaes4d-plugin` | `Quanneggaes4d-plugin` |
+| Library module | `QUANNEGGAES4D` | `Quanneggaes4d` |
+| Config directory | `/sdcard/QNG` | `/sdcard/QNG` |
 | Env var prefix | `MG_*` | `QNG_*` |
 | GL extensions | `GL_MG_*` | `GL_QNG_*` |
 | C++ prefix | `mg_` | `qng_` |
@@ -526,8 +526,8 @@ echo ""
 echo "[FASE 7] Verificações finais..."
 
 echo ""
-echo "--- Verificando referências residuais a 'mobileglues' ---"
-RESIDUAL=$(grep -ri "mobileglues" \
+echo "--- Verificando referências residuais a 'quanneggaes4d' ---"
+RESIDUAL=$(grep -ri "quanneggaes4d" \
     --include="*.cpp" --include="*.h" --include="*.kt" --include="*.kts" \
     --include="*.xml" --include="*.gradle" --include="*.aidl" --include="*.toml" \
     --exclude-dir=".git" --exclude-dir="build" --exclude-dir="3rdparty" \
@@ -537,7 +537,7 @@ if [ -n "$RESIDUAL" ]; then
     echo "⚠️  Referências residuais encontradas:"
     echo "$RESIDUAL" | head -20
 else
-    echo "✅ Nenhuma referência residual a 'mobileglues'"
+    echo "✅ Nenhuma referência residual a 'quanneggaes4d'"
 fi
 
 echo ""
@@ -559,16 +559,16 @@ echo "[FASE 8] Commit das alterações..."
 git add -A
 git commit -m "feat: rename to QUANNEGGAES4D (QUANTIC NEXUS NEXT GENERATION GRAPHIC ENGINE SYSTEM 4D)
 
-- Renamed libmobileglues.so -> libquanneggaes4d.so
-- Renamed package com.fcl.plugin.mobileglues -> com.quanneggaes4d.plugin
-- Renamed namespace top.mobilegl.mobileglues -> top.quanneggaes4d.core
-- Renamed config dir /sdcard/MG -> /sdcard/QNG
+- Renamed libquanneggaes4d.so -> libquanneggaes4d.so
+- Renamed package com.quanneggaes4d.plugin -> com.quanneggaes4d.plugin
+- Renamed namespace top.quanneggaes4d.core -> top.quanneggaes4d.core
+- Renamed config dir /sdcard/QNG -> /sdcard/QNG
 - Renamed env vars MG_* -> QNG_*
 - Renamed GL extensions GL_MG_* -> GL_QNG_*
 - Renamed C++ prefix mg_ -> qng_
 - Renamed Kotlin classes MG*/Mg* -> QNG*/Qng*
 - Added QUANNEGGAES4D_IMPLEMENTATION.md documentation
-- Avoids installation and runtime conflicts with original MobileGlues"
+- Avoids installation and runtime conflicts with original QUANNEGGAES4D"
 
 echo ""
 echo "============================================================"

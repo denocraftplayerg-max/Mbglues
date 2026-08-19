@@ -1,4 +1,4 @@
-// MobileGlues - config/settings.cpp
+// QUANNEGGAES4D - config/settings.cpp
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
@@ -114,7 +114,7 @@ void init_settings() {
     Version customGLVersion(customGLVersionInt);
 
     int isInPluginApp = 0;
-    GetEnvVarInt("MG_PLUGIN_STATUS", &isInPluginApp, 0);
+    GetEnvVarInt("QNG_PLUGIN_STATUS", &isInPluginApp, 0);
     int fclVersion = 0;
     GetEnvVarInt("FCL_VERSION_CODE", &fclVersion, 0);
     int zlVersion = 0;
@@ -122,7 +122,7 @@ void init_settings() {
     int pgwVersion = 0;
     GetEnvVarInt("PGW_VERSION_CODE", &pgwVersion, 0);
 
-    LOG_V("MG_DIR_PATH = %s", mg_directory_path ? mg_directory_path : "(default)")
+    LOG_V("QNG_DIR_PATH = %s", mg_directory_path ? mg_directory_path : "(default)")
 
     if (isInPluginApp == 0 && fclVersion == 0 && zlVersion == 0 && pgwVersion == 0 && !is_custom_mg_dir) {
         LOG_V("Unsupported launcher detected, force using default config.")
@@ -219,28 +219,28 @@ void init_settings() {
     global_settings.hide_mg_env_level = hideMGEnvLevel;
 #endif
 
-    LOG_V("[MobileGlues] Setting: enableAngle                 = %s",
+    LOG_V("[QUANNEGGAES4D] Setting: enableAngle                 = %s",
           global_settings.angle == AngleMode::Enabled ? "true" : "false")
-    LOG_V("[MobileGlues] Setting: ignoreError                 = %i", static_cast<int>(global_settings.ignore_error))
-    LOG_V("[MobileGlues] Setting: enableExtComputeShader      = %s",
+    LOG_V("[QUANNEGGAES4D] Setting: ignoreError                 = %i", static_cast<int>(global_settings.ignore_error))
+    LOG_V("[QUANNEGGAES4D] Setting: enableExtComputeShader      = %s",
           global_settings.ext_compute_shader ? "true" : "false")
-    LOG_V("[MobileGlues] Setting: enableExtTimerQuery         = %s", global_settings.ext_timer_query ? "true" : "false")
-    LOG_V("[MobileGlues] Setting: enableExtDirectStateAccess  = %s",
+    LOG_V("[QUANNEGGAES4D] Setting: enableExtTimerQuery         = %s", global_settings.ext_timer_query ? "true" : "false")
+    LOG_V("[QUANNEGGAES4D] Setting: enableExtDirectStateAccess  = %s",
           global_settings.ext_direct_state_access ? "true" : "false")
-    LOG_V("[MobileGlues] Setting: maxGlslCacheSize            = %i",
+    LOG_V("[QUANNEGGAES4D] Setting: maxGlslCacheSize            = %i",
           static_cast<int>(global_settings.max_glsl_cache_size / 1024 / 1024))
-    LOG_V("[MobileGlues] Setting: angleDepthClearFixMode      = %i",
+    LOG_V("[QUANNEGGAES4D] Setting: angleDepthClearFixMode      = %i",
           static_cast<int>(global_settings.angle_depth_clear_fix_mode))
-    LOG_V("[MobileGlues] Setting: bufferCoherentAsFlush       = %i",
+    LOG_V("[QUANNEGGAES4D] Setting: bufferCoherentAsFlush       = %i",
           static_cast<int>(global_settings.buffer_coherent_as_flush))
     if (global_settings.custom_gl_version.isEmpty()) {
-        LOG_V("[MobileGlues] Setting: customGLVersion             = (default)");
+        LOG_V("[QUANNEGGAES4D] Setting: customGLVersion             = (default)");
     } else {
-        LOG_V("[MobileGlues] Setting: customGLVersion             = %s",
+        LOG_V("[QUANNEGGAES4D] Setting: customGLVersion             = %s",
               global_settings.custom_gl_version.toString().c_str());
     }
-    LOG_V("[MobileGlues] Setting: fsr1Setting                 = %i", static_cast<int>(global_settings.fsr1_setting))
-    LOG_V("[MobileGlues] Setting: hideMGEnvLevel              = %i",
+    LOG_V("[QUANNEGGAES4D] Setting: fsr1Setting                 = %i", static_cast<int>(global_settings.fsr1_setting))
+    LOG_V("[QUANNEGGAES4D] Setting: hideMGEnvLevel              = %i",
           static_cast<int>(global_settings.hide_mg_env_level))
 
     GLVersion =
@@ -673,7 +673,7 @@ void init_settings_post() {
             if (!order_str.empty()) order_str += " > ";
             order_str += md_backend_name(global_settings.multidraw_order[i][k]);
         }
-        LOG_V("[MobileGlues] %-34s = %s", k_md_entries[i].order_key, order_str.c_str())
+        LOG_V("[QUANNEGGAES4D] %-34s = %s", k_md_entries[i].order_key, order_str.c_str())
     }
 }
 

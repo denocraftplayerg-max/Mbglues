@@ -1,12 +1,12 @@
-// MobileGlues - egl/context.h
+// QUANNEGGAES4D - egl/context.h
 // Copyright (c) 2025-2026 MobileGL-Dev
 // Licensed under the GNU Lesser General Public License v2.1:
 //   https://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
 // SPDX-License-Identifier: LGPL-2.1-only
 // End of Source File Header
 
-#ifndef MOBILEGLUES_EGL_CONTEXT_H
-#define MOBILEGLUES_EGL_CONTEXT_H
+#ifndef QUANNEGGAES4D_EGL_CONTEXT_H
+#define QUANNEGGAES4D_EGL_CONTEXT_H
 
 #include "../includes.h"
 #include "../gl/enable.h"
@@ -16,7 +16,7 @@
 // ---------------------------------------------------------------------------
 // Virtual context records
 //
-// Everything MobileGlues emulates has to live somewhere, and until now there was
+// Everything QUANNEGGAES4D emulates has to live somewhere, and until now there was
 // nowhere to put it: eglMakeCurrent was a five-line passthrough, so the layer had
 // no idea a context switch had happened. State that GL scopes to a context ended
 // up as process-global singletons, and gl/multidraw.cpp had to poll
@@ -125,4 +125,4 @@ void mg_depth_clear_forget_context(unsigned long long ctx_id);
 void mg_display_initialised(EGLDisplay dpy, bool probe);
 bool mg_display_release(EGLDisplay dpy, bool probe); // true when this was the last holder
 
-#endif // MOBILEGLUES_EGL_CONTEXT_H
+#endif // QUANNEGGAES4D_EGL_CONTEXT_H
